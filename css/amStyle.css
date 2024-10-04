@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #016ce6;
+    padding:1em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+    display: flex;
+    height: auto;
+}
+
+
+header div h1{
+    color: white;
+    font-size: 1.5em;
+    margin-right: 0%;
+}
+
+.headerIcon {
+    color: white;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    /*for icon and text*/
+}
+.headerIcon img {
+    display: block;
+    filter: drop-shadow(-5px -5px 10px rgba(0, 0, 0, 0.8));
+    transition: transform 0.3s ease, filter 0.3s ease;
+    transform: translateY(-5px);
+    
+}
+.headerIcon img:hover {
+    filter: none;
+    transform: translateY(0);
+}
+
+.headerIcon p {
+    margin-top: 10px;
+    display: block;
+    color: rgb(255, 255, 255);
+    font-size: 0.8em;
+}
+
+.iconHome {
+    position: absolute;
+    right: 250px;
+}
+.iconAbout {
+    position: absolute;
+    right: 150px;
+}
+.iconContact {
+    position: absolute;
+    right: 50px;
+}
+
+footer {
+    background-color: #016ce6;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: relative;
+    bottom: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    background-image: url('../resource/am_college.jpg');
+    background-size: cover;
+    animation: fadeIn 3s ease-in-out;
+}   
+
+.box {
+    background-color: #ddd;
+    border-radius: 10px;
+    width: 200px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.box img {
+    width: 100px;
+    height: 100px;
+    transition: 1s ease;
+}
+
+.box h3 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.box:hover .content {
+    max-height: 150px; /* 根據需要調整展開的高度 */
+}
+
+.box:hover {
+    background-color: #4CAF50;
+    color: white;
+    transition: 1s ease;
+    transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

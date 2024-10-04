@@ -1,0 +1,182 @@
+
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: bisque;
+    margin: 0;
+}
+
+header {
+    background-color: #016ce6;
+    padding:1em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+    display: flex;
+    height: auto;
+}
+
+
+header div h1{
+    color: white;
+    font-size: 1.5em;
+    margin-right: 0%;
+}
+
+.headerIcon {
+    color: white;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    /*for icon and text*/
+}
+.headerIcon img {
+    display: block;
+    filter: drop-shadow(-5px -5px 10px rgba(0, 0, 0, 0.8));
+    transition: transform 0.3s ease, filter 0.3s ease;
+    transform: translateY(-5px);
+    
+}
+.headerIcon img:hover {
+    filter: none;
+    transform: translateY(0);
+}
+
+.headerIcon p {
+    margin-top: 10px;
+    display: block;
+    color: rgb(255, 255, 255);
+    font-size: 0.8em;
+}
+
+.iconHome {
+    position: absolute;
+    right: 250px;
+}
+.iconAbout {
+    position: absolute;
+    right: 150px;
+}
+.iconContact {
+    position: absolute;
+    right: 50px;
+}
+
+.container {
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    position: relative;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    scroll-snap-align: start;
+    position: relative; /* 取消邊框 */
+    background-color: white; /* 你可以根據需求調整背景顏色 */
+}
+
+.circle {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgb(249, 241, 2);
+    color: rgb(40, 12, 255);
+    border: 2px solid rgb(159, 151, 151);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 2;  /* 圓圈在前面 */
+    font-size: 1.5em;
+}
+
+.content {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 10px;
+    
+    background-color: rgba(205, 103, 134, 0.2);
+    min-height: 80vh;
+    min-width: 40vw;
+    max-width: 40vw;
+    padding: 20px;
+    box-sizing: border-box;
+    
+}
+
+/* 設置每個階段的線 */
+.section::before {
+    content: '';
+    position: absolute;
+    left: 50px; 
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: black;
+    z-index: 1; /* 線在圓圈下方 */
+}
+
+/*stage 1*/
+#stage1 .content {
+    text-align: center;
+}
+#stage1 .myPhoto {
+    width: 400px;
+    height: 560px;
+    margin-right: 180px;
+}
+#stage1 .sign {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 100px;
+    border-radius: 20%;
+}
+
+
+/*stage 2*/
+.content .myPhoto2 {
+    width: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+#stage2 .content {
+    text-align: left;
+}
+#stage2 .content li {
+    text-align: center;
+    list-style-type: none;
+}
+
+/*stage 3*/
+#stage3 .content {
+    text-align: left;
+}
+#stage3 .content img {
+    width: 600px;
+    height: 500px;
+    border-radius: 20%;
+}
+
+/*stage 4*/
+#stage4 .content {
+    text-align: left;
+}
+
+/*footer*/
+footer {
+    background-color: #016ce6;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: relative;
+    bottom: 0;
+}

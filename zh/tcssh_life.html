@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/life.css">
+    <title>二中生活</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #016ce6;
+            padding: 1em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+            display: flex;
+        }
+
+        header p {
+            margin: 0;
+        }
+
+        header div h1 {
+            color: white;
+            font-size: 1.5em;
+        }
+
+        body a {
+            color: black;
+            text-decoration: none;
+        }
+
+        body a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        body li {
+            list-style-type: "🥕";
+        }
+
+        .headerIcon {
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .headerIcon img {
+            display: block;
+            filter: drop-shadow(-5px -5px 10px rgba(0, 0, 0, 0.8));
+            transition: transform 0.3s ease, filter 0.3s ease;
+            transform: translateY(-5px);
+        }
+
+        .headerIcon img:hover {
+            filter: none;
+            transform: translateY(0);
+        }
+
+        .headerIcon p {
+            position: relative;
+            margin-top: 10px;
+            display: block;
+            color: white;
+            font-size: 0.8em;
+        }
+
+        .iconHome {
+            position: absolute;
+            right: 250px;
+        }
+
+        .iconAbout {
+            position: absolute;
+            right: 150px;
+        }
+
+        .iconContact {
+            position: absolute;
+            right: 50px;
+        }
+
+        /* main */
+        main {
+            flex-grow: 1; /* 讓 main 區域擴展，佔據剩餘空間 */
+            padding: 20px;
+            position: relative;
+        }
+
+        /* 照片牆佈局 */
+        .photo-wall {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        figure {
+            margin: 0;
+            position: relative;
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+
+        figure:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+
+        figure:nth-child(2) {
+            animation-delay: 0.6s;
+        }
+
+        figure:nth-child(3) {
+            animation-delay: 0.9s;
+        }
+
+        figure:nth-child(4) {
+            animation-delay: 1.2s;
+        }
+
+        section img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        figcaption {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        /* 懸浮圖片放大效果 */
+        figure:hover img {
+            transform: scale(1.1);
+        }
+
+        /* 滑入效果 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* footer */
+        footer {
+            background-color: #016ce6;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: relative;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>二中生活</h1>
+        </div>
+
+        <div class="headerIcon iconHome">
+            <a href="index.html">
+                <img src="../resource/home.png" alt="首頁" width="50" height="50">
+            </a>
+            <p>主頁</p>
+        </div>
+
+        <div class="headerIcon iconAbout">
+            <a href="sitemap_zh.html">
+                <img src="../resource/bunny_icon.png" alt="網站導覽" width="50" height="50">
+            </a>
+            <p>網頁導覽</p>
+        </div>
+
+        <div class="headerIcon iconContact">
+            <a href="contact.html">
+                <img src="../resource/contact_icon.png" alt="聯絡資訊" width="50" height="50">
+            </a>
+            <p>聯絡資訊</p>
+        </div>
+    </header>
+
+    <main calss="container">
+        <section class="photo-wall">
+            <figure>
+                <img src="../resource/105水啦.jpg" alt="生活照片1">
+                <figcaption>高一大隊接力，忘了得第幾名了</figcaption>
+            </figure>
+            <figure>
+                <img src="../resource/volleyball_class.jpg" alt="生活照片2">
+                <figcaption>班際排球亞軍，沒有任何一個隊員是校隊的，雖然沒有得冠軍有點可惜。</figcaption>
+            </figure>
+            <figure>
+                <img src="../resource/mess.jpg" alt="生活照片3">
+                <figcaption>回二中找對我們班很好的美術老師。</figcaption>
+            </figure>
+            <figure>
+                <img src="../resource/最新制服日.jpg" alt="生活照片4">
+                <figcaption>去年的制服日，都是男生QQ @浩然前面</figcaption>
+            </figure>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 弘叡's網站</p>
+    </footer>
+</body>
+</html>
