@@ -1,5 +1,7 @@
-
-
+/*
+111652049 吳弘叡 第三次作業 11/1
+111652049 Hong-Ruei Wu The Third Homework 11/1
+*/
 html, body {
     height: 100%;
     font-family: Arial, sans-serif;
@@ -20,6 +22,13 @@ header div h1{
     color: white;
     font-size: 1.5em;
     margin-right: 0%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .headerIcon {
@@ -63,6 +72,7 @@ header div h1{
 
 .container {
     height: 100vh;
+    width: 80vw;
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
     position: relative;
@@ -76,6 +86,16 @@ header div h1{
     scroll-snap-align: start;
     position: relative; /* 取消邊框 */
     background-color: white; /* 你可以根據需求調整背景顏色 */
+}
+
+.section.hidden {
+    opacity: 0;
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.section.visible {
+    opacity: 1;
+    
 }
 
 .circle {
@@ -100,12 +120,12 @@ header div h1{
 .content {
     text-align: center;
     font-size: 1.2rem;
-    margin: 10px;
+    margin: 30px;
     
     background-color: rgba(205, 103, 134, 0.2);
     min-height: 80vh;
-    min-width: 40vw;
-    max-width: 40vw;
+    min-width: 20vw;
+    max-width: 25vw;
     padding: 20px;
     box-sizing: border-box;
     
@@ -128,9 +148,10 @@ header div h1{
     text-align: center;
 }
 #stage1 .myPhoto {
-    width: 400px;
-    height: 560px;
-    margin-right: 180px;
+    width: auto;
+    height: 60vh;
+    margin-left: 10vw;
+    margin-right: 3vw;
 }
 #stage1 .sign {
     display: block;
@@ -143,9 +164,9 @@ header div h1{
 
 /*stage 2*/
 .content .myPhoto2 {
-    width: 400px;
-    height: auto;
     display: block;
+    width: 20vw;
+    height: auto;
     margin: 0 auto;
 }
 #stage2 .content {
@@ -177,6 +198,9 @@ footer {
     color: white;
     text-align: center;
     padding: 1em;
-    position: relative;
-    bottom: 0;
+    position: static;
+    width: 100vw;
+    height: 10vh;
+    bottom: 0%;
+    margin: 0;
 }

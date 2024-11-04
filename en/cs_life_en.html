@@ -1,4 +1,7 @@
-
+<!--
+111652049 吳弘叡 第三次作業 11/1
+111652049 Hong-Ruei Wu The Third Homework 11/1
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,21 +41,31 @@
     <main class="container">
         <section class="photo-wall">
             <figure>
-                <img src="../resource/internship.jpg" alt="Life Photo 1">
+                <div class="spotlight">
+                    <img src="../resource/internship.jpg" alt="Life Photo 1">
+                </div>
+                
                 <figcaption>Academia Sinica Internship</figcaption>
             </figure>
             <figure>
-                <img src="../resource/ddl.jpg" alt="Life Photo 2">
+                <div class="spotlight">
+                    <img src="../resource/ddl.jpg" alt="Life Photo 2">
+                </div>
                 <figcaption>Crushed by deadlines</figcaption>
             </figure>
             <figure>
-                <img src="../resource/hackthon.jpg" alt="Life Photo 3">
+                <div class="spotlight">
+                    <img src="../resource/hackthon.jpg" alt="Life Photo 3">
+                </div>
                 <figcaption>Taipei Hackathon at NTU</figcaption>
             </figure>
             <figure>
-                <a href="https://github.com/kuwaai/genai-os">
-                    <img src="../resource/github.jpg" alt="Life Photo 4">
-                </a>
+                <div class="spotlight">
+                    <a onclick="openGitHub()">
+                        <img src="../resource/github.jpg" alt="Life Photo 4">
+                    </a>
+                </div>
+                
                 <figcaption>First project uploaded to GitHub</figcaption>
             </figure>
         </section>
@@ -61,5 +74,12 @@
     <footer>
         <p>&copy; 2024 Hung-Ruei's Website</p>
     </footer>
+
+    <script src="../script/life.js"></script>
+    <script>
+        function openGitHub() {
+            window.open("https://github.com/kuwaai/genai-os#user-content-----------kuwa-genai-os--", "_blank", "width=800, height=600");
+        }
+    </script>
 </body>
 </html>

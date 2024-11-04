@@ -1,170 +1,127 @@
 <!--
-111652049 吳弘叡 第一次作業 9/25
-111652049 Hong-Ruei Wu The First Homework 9/25
+111652049 吳弘叡 第三次作業 11/1
+111652049 Hong-Ruei Wu The Third Homework 11/1
 -->
 <!DOCTYPE html>
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="resource/mylogo.png" type="image/png">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
     <title>我的主頁</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #016ce6;
-            color: white;
-            text-align: center;
-            padding: 1em;
-        }
-        nav {
-            text-align: center;
-            margin: 1em 0;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #050505;
-            
-        }
-        nav a:hover {
-            color: #016ce6;
-        }
-        main {
-            padding: 20px;
-            text-align: center;
-        }
-        footer {
-            text-align: center;
-            padding: 1em;
-            background-color: #016ce6;
-            color: rgb(37, 37, 37);
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-
-        /* container for images */
-        .slideshow-container {
-            position: relative;
-            max-width: 100%;
-            height: 500px; /* 根据需要调整高度 */
-            margin: auto;
-            overflow: hidden;
-        }
-
-        /* Each slide */
-        .slides {
-            position: absolute;
-            top: 25%;
-            left: 0%;
-            width: 100%;
-            height: 60%;
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            animation: slideAnimation 30s infinite;
-            z-index: 1; /* to make sure text box is on top */
-        }
-
-        /* 淡入淡出動畫 */
-        @keyframes slideAnimation {
-            0% { opacity: 0; }
-            20% { opacity: 1; }
-            40% { opacity: 1; }
-            60% { opacity: 0; }
-            100% { opacity: 0; }
-        }
-
-        /* 让每张幻灯片在不同时间显示 */
-        .slide1 {
-            background-image: url('resource/back1.jpg'); /* 替换为你的第一张图片路径 */
-            background-size: cover;
-            animation-delay: 0s;
-            
-            
-        }
-
-        .slide2 {
-            background-image: url('resource/back2.jpg'); /* 替换为你的第二张图片路径 */
-            background-position: bottom + 200px;
-            background-size: cover;
-            animation-delay: 10s;
-            
-            
-        }
-
-        .slide3 {
-            background-image: url('resource/back3.jpg'); /* 替换为你的第三张图片路径 */
-            background-size: cover;
-            animation-delay: 20s;
-            
-            
-        }
-
-        /* float text box */
-        .text-box {
-            position: absolute;
-            top: 25%;
-            left: 10%; 
-            background-color: rgba(0, 0, 0, 0.5); 
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 80%;
-            max-height: fit-content;
-            z-index: 2; /* to make sure text box is on top */
-        }
-
-        
-    </style>
+    
 </head>
 <body>
 
-<header>
-    <h1>Welcome to 弘叡's Home</h1>
-</header>
+    <header>
+        <h1>Welcome to 弘叡's Home</h1>
+    </header>
 
-<nav>
-    <a href="zh/sitemap_zh.html">網站導覽</a>
-    <a href="en/sitemap_en.html">Sitemap</a>
-    <a href="element.html">HTML & CSS Elements</a>
-</nav>
+    <nav>
+        <a class="guide noto-sans-tc-chinese" href="zh/sitemap_zh.html">網站導覽</a>
+        <a class="guide itim-regular" href="en/sitemap_en.html">Sitemap</a>
+        <a class="guide itim-regular" id="button">HTML & CSS Elements</a>
+    </nav>
 
-<main>
-    <div class="slideshow-container"></div>
-        <div class="slides slide1"></div>
-        <div class="slides slide2"></div>
-        <div class="slides slide3"></div>
-        <div class="slides slide4"></div>
+    <main>
+        <div class="slideshow-container">
+            <div class="text-box">
+                <h2>個人簡介</h2>
+                <p>我是吳弘叡，土生土長的臺中霧峰人。<br>
+                興趣是打排球，目前擔任本校應用數學系排球隊隊長。<br>
+                資工雙主修應數<br>
+                </p>
+                
+                <h2>我的系所</h2>
+                <p>轉系前: 陽明交大應數系，基礎扎實，課程多元，但東西有點太難了。<br>
+                目前: 陽明交大資工系，師資優良，資金充足，是做研究的好地方，然後我比較有興趣一點。</p>
+                
+                <h2>我的高中</h2>
+                <p>臺中二中，歷史悠久的校園，孕育我成長的收栽。</p>
+            </div>
+            <div class="slides slide1"></div>
+            <div class="slides slide2"></div>
+            <div class="slides slide3"></div>
+            <div class="slides slide4"></div>
 
-        <!-- 文字框 -->
-        <div class="text-box">
-            <h2>個人簡介</h2>
-            <p>我是吳弘叡，土生土長的臺中霧峰人。<br>
-            興趣是打排球，目前擔任本校應用數學系排球隊隊長。<br>
-            資工雙主修應數<br>
-            </p>
+            <!-- 文字框 -->
             
-            <h2>我的系所</h2>
-            <p>轉系前: 陽明交大應數系，基礎扎實，課程多元，但東西有點太難了。<br>
-            目前: 陽明交大資工系，師資優良，資金充足，是做研究的好地方，然後我比較有興趣一點。</p>
-            
-            <h2>我的高中</h2>
-            <p>臺中二中，歷史悠久的校園，孕育我成長的收栽。</p>
-    </div>
+        </div>
+        <div id="overlay"></div>
 
-    
-    
-</main>
+        <div id="popup">
+            <div class="close">X</div>
+            <h1>歡迎來到我的網站</h1>
+            <p>由於目前還在製作中，所以可能有些版面會跑掉，請見諒~</p>
+        </div>
 
-<footer>
-    <p>&copy; 2024 吳弘叡</p>
-</footer>
+        <div id="elements">
+            <div class="close">X</div>
+            <h1>Unique HTML Tags in Translated Documents</h1>
 
+            <div class="container">
+                <ul>
+                    <li>&lt;!DOCTYPE&gt;</li>
+                    <li>&lt;html&gt;</li>
+                    <li>&lt;head&gt;</li>
+                    <li>&lt;meta&gt;</li>
+                    <li>&lt;title&gt;</li>
+                    <li>&lt;link&gt;</li>
+                    <li>&lt;body&gt;</li>
+                    <li>&lt;header&gt;</li>
+                    <li>&lt;div&gt;</li>
+                    <li>&lt;h1&gt;</li>
+                    <li>&lt;a&gt;</li>
+                    <li>&lt;img&gt;</li>
+                    <li>&lt;p&gt;</li>
+                    <li>&lt;footer&gt;</li>
+                    <li>&lt;main&gt;</li>
+                    <li>&lt;section&gt;</li>
+                    <li>&lt;figure&gt;</li>
+                    <li>&lt;figcaption&gt;</li>
+                    <li>&lt;ul&gt;</li>
+                    <li>&lt;li&gt;</li>
+                    <li>&lt;input&gt;</li>
+                    <li>&lt;label&gt;</li>
+                </ul>
+            </div>
+
+            <h2>Unique CSS Elements in Translated Documents</h2>
+
+            <div class="container2">
+                <ul>
+                    <li>*</li>
+                    <li>.box</li>
+                    <li>.contact-container</li>
+                    <li>.container</li>
+                    <li>.content</li>
+                    <li>.headerIcon</li>
+                    <li>.hint</li>
+                    <li>.iconAbout</li>
+                    <li>.iconContact</li>
+                    <li>.iconHome</li>
+                    <li>.image-container</li>
+                    <li>.photo-wall</li>
+                    <li>.section</li>
+                    <li>.slide</li>
+                    <li>.slideshow-container</li>
+                    <li>.topic</li>
+                    <li>.topicContent</li>
+                </ul>
+            </div>
+        </div>
+
+        
+        
+    </main>
+
+    <script src="./script/index.js"></script>
 </body>
+<footer>
+    <p>&copy; 2024 弘叡's網站</p>
+</footer>
 </html>

@@ -1,0 +1,254 @@
+/*
+111652049 吳弘叡 第三次作業 11/1
+111652049 Hong-Ruei Wu The Third Homework 11/1
+*/
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #016ce6;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+nav {
+    text-align: center;
+    margin: 1em 0;
+}
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #050505;
+    
+}
+nav a:hover {
+    color: #016ce6;
+    cursor: pointer;
+}
+main {
+    text-align: center;
+}
+footer {
+    background-color: #016ce6;
+    color: white;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 2vh;
+    position: fixed;
+    width: 100vw;
+    height: 8vh;
+    bottom: 0%;
+    margin: 0;
+}
+
+/* container for images */
+.slideshow-container {
+    position: relative;
+    width: 100vw;
+    height: 60vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Each slide */
+.slides {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: slideAnimation 30s infinite;
+    z-index: 1; /* to make sure text box is on top */
+}
+
+/* 淡入淡出動畫 */
+@keyframes slideAnimation {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    40% { opacity: 1; }
+    60% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* 让每张幻灯片在不同时间显示 */
+.slide1 {
+    background-image: url('../resource/back1.jpg'); /* 替换为你的第一张图片路径 */
+    background-size: cover;
+    animation-delay: 0s;
+}
+
+.slide2 {
+    background-image: url('../resource/back2.jpg'); /* 替换为你的第二张图片路径 */
+    background-position: bottom + 200px;
+    background-size: cover;
+    animation-delay: 10s;
+    
+    
+}
+
+.slide3 {
+    background-image: url('../resource/back3.jpg'); /* 替换为你的第三张图片路径 */
+    background-size: cover;
+    animation-delay: 20s;
+    height: 100%;
+    
+    
+}
+
+/* float text box */
+.text-box {
+    position: relative;
+    top: 0%;
+    left: 0%;
+    max-width: 40vw;
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: white;
+    padding: 2vw;
+    border-radius: 10px;
+    z-index: 2; /* to make sure text box is on top */
+}
+.highlight {
+    display: inline-block;
+    animation: bounce 1.5s ease;
+    transition: color 0.3s ease;
+}
+
+@keyframes bounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(2.5);
+          color: yellow; }
+    100% { transform: scale(1);}
+}
+
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 200px;
+    color: white;
+    background-color: rgba(17, 100, 253, 0.8);
+    display: none;
+    z-index: 3;
+    overflow: hidden; /*unscrollable*/
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.noto-sans-tc-chinese {
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+.guide{
+    color: rgb(0, 0, 3);
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+.itim-regular {
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+  
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /*black with 50% opacity*/
+    display: none;
+    z-index: 2;
+}
+
+#elements {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+    height: 40vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: none;
+    z-index: 3;
+    overflow-y: auto;
+}
+#elements h1 {
+    font-size: 1.2em; /* 調整標題大小 */
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px; /* 減小 margin */
+}
+
+#elements .container,
+#elements .container2 {
+    width: 90%; /* 使用相對寬度適應小視窗 */
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 10px; /* 減小 padding */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 減弱陰影效果 */
+}
+
+#elements ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* 減少 margin 以節省空間 */
+}
+
+#elements li {
+    color: white;
+    padding: 8px; /* 減少 padding */
+    margin: 3px 0; /* 減少 margin */
+    border-radius: 5px;
+    font-size: 0.9em; /* 減小文字大小 */
+    transition: background-color 0.3s ease;
+    overflow: hidden; /* 避免溢出 */
+    text-overflow: ellipsis; /* 超出部分以省略號表示 */
+    white-space: nowrap; /* 單行顯示文字 */
+}
+
+#elements .container li{
+    background-color: rgb(87, 8, 255);
+}
+
+#elements .container2 li{
+    background-color: orange;
+}
+
+#elements li:hover {
+    background-color: #014a9e;
+}
+
+#elements h2 {
+    font-size: 1em; /* 減小標題大小 */
+    margin-top: 20px; /* 減少 margin */
+    text-align: center;
+}
+
+
+

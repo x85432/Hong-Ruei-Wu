@@ -1,3 +1,7 @@
+/*
+111652049 吳弘叡 第三次作業 11/1
+111652049 Hong-Ruei Wu The Third Homework 11/1
+*/
 body {
     margin: 0;
     padding: 0;
@@ -34,7 +38,7 @@ body a:hover {
 }
 
 body li {
-    list-style-type: "🥕";
+    list-style-type: none;
 }
 
 .headerIcon {
@@ -84,39 +88,117 @@ main {
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 20px;
-    position: relative;
+    position: static;
 }
-
-.topicContent {
-    margin-bottom: 100px;
+a {
+    cursor: pointer;
+}
+.tcGroup {
+    width: 40vw;
+    height: 40vh;
+    margin-top: 5vh;
 }
 .topic {
     background-color: lightgreen;
-    width: 510px;
-    height: 50px;
+    width: 100%;
+    height: auto;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     text-align: center;
-    font-size: 2em;   
+    font-size: 2.3vw;   
 }
 
 .content {
     background-color: rgba(224, 80, 54, 0.45);
-    width: 510px;
-    min-height: 100px;   
+    width: 100%;
+    min-height: 40%;
+    align-items: left; 
 }
 
 .content ul {
-    font-size: 2em;
+    font-size: 1.8vw;
     margin:0;
 }
 
+.carrot {
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.5s ease;
+}
+.carrot.hidden {
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 2s ease, opacity 2s ease;
+    pointer-events: none;
+}
+.draggable {
+    position: absolute;
+    font-size: 40px;
+    cursor: grab;
+}
+
+.dragzone {
+    width: auto;
+    height: 100%;
+    background-color: rgba(85, 48, 5, 0.1);
+    position: relative;
+    overflow: hidden;
+    pointer-events: none;
+}
 /*footer*/
 footer {
     background-color: #016ce6;
     color: white;
     text-align: center;
     padding: 1em;
-    position: relative;
-    bottom: 0;
+    position: static;
+    width: 100vw;
+    height: 10vh;
+    bottom: 0%;
+    margin: 0;
+}
+
+#timer {
+    position: fixed;
+    opacity: 1;
+    bottom: 20%;
+    right: 0%;
+    width: 100px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5); /*black with 50% opacity*/
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    transform: translate(-50%, -50%);
+    transition: opacity 1s
+}
+
+#timer.hidden {
+    opacity: 0;
+    transition: opacity 1s
+}
+
+#ad {
+    position: fixed;
+    bottom: 0%;
+    right: 0%;
+    width: 300px;
+    height: 200px;
+    background-color: rgba(224, 211, 211, 0.8);
+    display: none;
+    z-index: 2;
+    overflow: hidden; /*unscrollable*/
+    text-align: center;
+}
+#close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    cursor: pointer;
 }

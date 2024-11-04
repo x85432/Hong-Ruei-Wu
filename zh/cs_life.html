@@ -1,9 +1,14 @@
+<!--
+111652049 吳弘叡 第三次作業 11/1
+111652049 Hong-Ruei Wu The Third Homework 11/1
+-->
 <!DOCTYPE html>
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/life.css">
+    <link rel="icon" href="../resource/mylogo.png" type="image/png">
     <title>資工系生活</title>
 </head>
 <body>
@@ -37,20 +42,30 @@
     <main calss="container">
         <section class="photo-wall">
             <figure>
-                <img src="../resource/internship.jpg" alt="生活照片1">
+                <div class="spotlight">
+                    <img src="../resource/internship.jpg" alt="生活照片1">
+                </div>
                 <figcaption>中研院實習</figcaption>
             </figure>
             <figure>
-                <img src="../resource/ddl.jpg" alt="生活照片2">
+                <div class="spotlight">
+                    <img src="../resource/ddl.jpg" alt="生活照片2">
+                </div>
+                
                 <figcaption>被deadline輾過去</figcaption>
             </figure>
             <figure>
-                <img src="../resource/hackthon.jpg" alt="生活照片3">
+                <div class="spotlight">
+                    <img src="../resource/hackthon.jpg" alt="生活照片3">
+                </div>
                 <figcaption>台北通黑克松 in 台大</figcaption>
             </figure>
-            <figure>
-                <a href="https://github.com/kuwaai/genai-os">
-                    <img src="../resource/github.jpg" alt="生活照片4">
+            <figure class="clickable">
+                <a onclick="openGitHub()">
+                    <div class="spotlight">
+                        <img src="../resource/github.jpg" alt="生活照片4">
+                    </div>
+                    
                 </a>
                 <figcaption>第一次把作品丟到GitHub上</figcaption>
             </figure>
@@ -60,5 +75,14 @@
     <footer>
         <p>&copy; 2024 弘叡's網站</p>
     </footer>
+
+    <script src="../script/life.js"></script>
+    <script>
+        
+        function openGitHub() {
+            window.open("https://github.com/kuwaai/genai-os#user-content-----------kuwa-genai-os--", "_blank", "width=800, height=600");
+        }
+        
+    </script>
 </body>
 </html>

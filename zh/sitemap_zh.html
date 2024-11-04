@@ -1,9 +1,14 @@
+<!--
+111652049 吳弘叡 第三次作業 11/1
+111652049 Hong-Ruei Wu The Third Homework 11/1
+-->
 <!DOCTYPE html>
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/sitemap.css">
+    <link rel="icon" href="../resource/mylogo.png" type="image/png">
     <title>網站導覽</title>
     
 </head>
@@ -37,55 +42,65 @@
     </header>
     
     <main>
-        <div class="topicContent">
+        <div class="tcGroup">
             <div class="topic topic1">了解我</div>
             <div class="content content1">
                 
                     <ul>
-                        <li><a href="introMe.html">自我介紹</a></li>
+                        <li><span class="carrot">🥕</span><a onclick="openNewTab('introMe.html')">自我介紹</a></li>
                         
                     </ul>
                 
             </div>
         </div>
 
-        <div>
+        <div class="tcGroup">
             <div class="topic topic2">資訊工程學系</div>
             <div class="content content2">
                 <ul>
-                    <li><a href="nycuCS.html">系所介紹</li>
-                    <li><a href="cs_life.html">資工系生活</a></li>
+                    <li><span class="carrot">🥕</span><a onclick="openNewTab('nycuCS.html')">系所介紹</a></li>
+                    <li><span class="carrot">🥕</span><a onclick="openNewTab('cs_life.html')">資工系生活</a></li>
                 </ul>
             </div>
         </div>
         
 
-        <div>
+        <div class="tcGroup">
             <div class="topic topic3">應用數學系</div>
             <div class="content content3">
                 <ul>
-                    <li><a href="nycuAM.html">系所介紹</a></li>
-                    <li><a href="am_life.html">應數系生活</a></li>
+                    <li><span class="carrot">🥕</span><a onclick="openNewTab('nycuAM.html')">系所介紹</a></li>
+                    <li><span class="carrot">🥕</span><a onclick="openNewTab('am_life.html')">應數系生活</a></li>
                 </ul>
             </div>
         </div>
 
 
-       <div>
+       <div class="tcGroup">
             <div class="topic topic4">市立臺中第二高級中學</div>
             <div class="content content4">
                 
                     <ul>
-                        <li><a href="tcssh.html">我看到的二中</a></li>
-                        <li><a href="tcssh_life.html">開心高中生活</a></li>
+                        <li><span class="carrot">🥕</span><a onclick="openNewTab('tcssh.html')">我看到的二中</a></li>
+                        <li><span class="carrot">🥕</span><a onclick="openNewTab('tcssh_life.html')">開心高中生活</a></li>
                     </ul>
             </div>
         </div>
                
-        
+        <div id="timer">
+            0000.0s
+        </div>
+        <div id="ad">
+            <div id="close">X</div>
+            <h1>小知識</h1>
+            <p>在非洲過60秒等於在新竹過了1分鐘。</p>
+        </div>
+
     </main>
     <footer>
         <p>&copy; 2024 弘叡's網站</p>
     </footer>
+
+    <script src="../script/sitemap.js"></script>
 </body>
 </html>
