@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>排球打打報名</title>
+</head>
+<body>
+  <h1>排球打打報名@排憩館</h1>
+  
+  <p id="user-info">載入中...</p>
+
+  <form id="form">
+    <input type="text" id="name" placeholder="姓名" required><br>
+    <button type="submit">送出報名</button>
+  </form>
+
+  <h2>目前已報名名單</h2>
+  <ul id="list">載入中...</ul>
+
+  <script type="module">
+    import { auth, db, collection, addDoc, getDocs, query, orderBy, onAuthStateChanged } from "./firebase-init.js";
+
+    let currentUser = null;
+
+    // 監聽登入狀態
+    onAuthStateChanged(auth, async (user) => {
+      if (!user) {
+        alert("請先登入");
+        window.location.href = "login.html";
+      } else {
+        currentUser = user;
+        document.getElementById("user-info").innerText = `登入帳號：${user.email}`;
+
+        // 載入目前所有報名者名單
+        loadRegistrations();
+      }
+    });
+
+    // 表單送出
+    document.getElementById("form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (!currentUser) return;
+
+      const name = document.getElementById("name").value.trim();
+      const email = currentUser.email;
+
+      if (!name) {
+        alert("請輸入姓名！");
+        return;
+      }
+
+      try {
+        await addDoc(collection(db, "registrations"), {
+          name,
+          submittedBy: email, // 記錄是誰幫忙報名的
+          createdAt: new Date()
+        });
+        alert(`成功幫 ${name} 報名！`);
+        document.getElementById("form").reset();
+        loadRegistrations(); // 更新清單
+      } catch (err) {
+        console.error("寫入失敗：", err);
+        alert("報名失敗，請檢查權限或網路");
+      }
+    });
+
+    // 載入報名名單
+    async function loadRegistrations() {
+      const q = query(collection(db, "registrations"), orderBy("createdAt", "asc"));
+      const snapshot = await getDocs(q);
+
+      const ul = document.getElementById("list");
+      ul.innerHTML = "";
+
+      snapshot.forEach(doc => {
+        const data = doc.data();
+        const li = document.createElement("li");
+        li.textContent = data.name || "(未填姓名)";
+        ul.appendChild(li);
+      });
+
+      if (snapshot.empty) {
+        ul.innerHTML = "<li>目前還沒有人報名</li>";
+      }
+    }
+  </script>
+</body>
+</html>

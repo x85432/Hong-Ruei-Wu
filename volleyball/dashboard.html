@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>報名名單</title>
+</head>
+<body>
+  <h1>報名名單</h1>
+  <ul id="list">載入中...</ul>
+
+  <script type="module">
+    import { auth, db, collection, getDocs, query, orderBy, onAuthStateChanged } from "./firebase-init.js";
+
+    onAuthStateChanged(auth, async (user) => {
+      if (!user) {
+        alert("請先登入");
+        window.location.href = "login.html";
+        return;
+      }
+
+      const q = query(collection(db, "registrations"), orderBy("createdAt", "asc"));
+      const snapshot = await getDocs(q);
+
+      const ul = document.getElementById("list");
+      ul.innerHTML = ""; // 清空
+
+      snapshot.forEach(doc => {
+        const data = doc.data();
+        const li = document.createElement("li");
+        li.textContent = data.name || "(未填姓名)";
+        ul.appendChild(li);
+      });
+
+      if (snapshot.empty) {
+        ul.innerHTML = "<li>目前還沒有人報名</li>";
+      }
+    });
+  </script>
+</body>
+</html>

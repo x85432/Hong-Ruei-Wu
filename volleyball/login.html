@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>登入</title>
+</head>
+<body>
+  <h1>請先登入</h1>
+  <button id="login">用 Google 登入</button>
+
+  <script type="module">
+    import { auth, GoogleAuthProvider, signInWithPopup } from "./firebase-init.js";
+
+    document.getElementById("login").onclick = async () => {
+      const provider = new GoogleAuthProvider();
+      try {
+        const result = await signInWithPopup(auth, provider);
+        console.log("登入成功：", result.user.email);
+        window.location.href = "index.html"; // 成功後去報名頁
+      } catch (err) {
+        console.error("登入失敗：", err);
+        alert("登入失敗，請再試一次");
+      }
+    };
+  </script>
+</body>
+</html>
