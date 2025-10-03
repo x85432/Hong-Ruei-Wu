@@ -3,26 +3,122 @@
 <head>
   <meta charset="UTF-8">
   <title>排球打打報名</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #e3f2fd);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 40px;
+    }
+    .container {
+        background: white;
+        padding: 30px 40px;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        width: 100%;
+        max-width: 500px;
+        text-align: center; /* 置中標題與時間 */
+    }
+    .event-header h1 {
+        margin: 0;
+        font-size: 24px;
+        color: #333;
+    }
+    
+    .event-time {
+        margin-top: 8px;
+        font-size: 16px;
+        color: #555;
+        background: #f1f8ff;
+        padding: 6px 12px;
+        border-radius: 8px;
+        display: inline-block;
+    }
+    h1 {
+      margin-bottom: 10px;
+      color: #333;
+      text-align: center;
+    }
+    #user-info {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+    form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    button {
+      background-color: #1e88e5;
+      border: none;
+      color: white;
+      font-size: 16px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #1565c0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    h2 {
+      margin-top: 0;
+      font-size: 18px;
+      color: #333;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 5px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      padding: 8px 12px;
+      margin-bottom: 6px;
+      background: #f1f8ff;
+      border-radius: 8px;
+      font-size: 16px;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
-  <h1>排球打打報名@排憩館</h1>
-  
-  <p id="user-info">載入中...</p>
+    <div class="container">
+        <div class="event-header">
+            <h1>🏐 排球打打報名 @ 排憩館</h1>
+            <p class="event-time">📅 時間：10/10 (四) 中午 12:00 - 下午 3:00</p>
+        </div>
+        
+    <p id="user-info">載入中...</p>
 
-  <form id="form">
-    <input type="text" id="name" placeholder="姓名" required><br>
-    <button type="submit">送出報名</button>
-  </form>
+    <form id="form">
+      <input type="text" id="name" placeholder="輸入姓名" required>
+      <button type="submit">送出報名</button>
+    </form>
 
-  <h2>目前已報名名單</h2>
-  <ul id="list">載入中...</ul>
+    <h2>目前已報名名單</h2>
+    <ul id="list">載入中...</ul>
+  </div>
 
   <script type="module">
     import { auth, db, collection, addDoc, getDocs, query, orderBy, onAuthStateChanged } from "./firebase-init.js";
 
     let currentUser = null;
 
-    // 監聽登入狀態
     onAuthStateChanged(auth, async (user) => {
       if (!user) {
         alert("請先登入");
@@ -30,13 +126,10 @@
       } else {
         currentUser = user;
         document.getElementById("user-info").innerText = `登入帳號：${user.email}`;
-
-        // 載入目前所有報名者名單
         loadRegistrations();
       }
     });
 
-    // 表單送出
     document.getElementById("form").addEventListener("submit", async (e) => {
       e.preventDefault();
       if (!currentUser) return;
@@ -52,19 +145,18 @@
       try {
         await addDoc(collection(db, "registrations"), {
           name,
-          submittedBy: email, // 記錄是誰幫忙報名的
+          submittedBy: email,
           createdAt: new Date()
         });
         alert(`成功幫 ${name} 報名！`);
         document.getElementById("form").reset();
-        loadRegistrations(); // 更新清單
+        loadRegistrations();
       } catch (err) {
         console.error("寫入失敗：", err);
         alert("報名失敗，請檢查權限或網路");
       }
     });
 
-    // 載入報名名單
     async function loadRegistrations() {
       const q = query(collection(db, "registrations"), orderBy("createdAt", "asc"));
       const snapshot = await getDocs(q);

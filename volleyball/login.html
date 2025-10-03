@@ -2,11 +2,50 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>登入</title>
+  <title>登入 - 活動報名</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #e3f2fd);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+    .container {
+      text-align: center;
+      background: white;
+      padding: 40px 50px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    #login {
+      background-color: #1e88e5;
+      border: none;
+      color: white;
+      font-size: 18px;
+      padding: 12px 30px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    #login:hover {
+      background-color: #1565c0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+  </style>
 </head>
 <body>
-  <h1>請先登入</h1>
-  <button id="login">用 Google 登入</button>
+  <div class="container">
+    <h1>🏐 活動報名登入</h1>
+    <p>請先使用 Google 帳號登入後再進行報名</p>
+    <button id="login">用 Google 登入</button>
+  </div>
 
   <script type="module">
     import { auth, GoogleAuthProvider, signInWithPopup } from "./firebase-init.js";
