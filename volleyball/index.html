@@ -2,57 +2,65 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>排球打打報名</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #e0f7fa, #e3f2fd);
-      height: 100vh;
       margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding-top: 40px;
+      padding: 15px;
     }
     .container {
-        background: white;
-        padding: 30px 40px;
-        border-radius: 20px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        width: 100%;
-        max-width: 500px;
-        text-align: center; /* 置中標題與時間 */
+      max-width: 500px;
+      margin: auto;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
     }
     .event-header h1 {
-        margin: 0;
-        font-size: 24px;
-        color: #333;
-    }
-    
-    .event-time {
-        margin-top: 8px;
-        font-size: 16px;
-        color: #555;
-        background: #f1f8ff;
-        padding: 6px 12px;
-        border-radius: 8px;
-        display: inline-block;
-    }
-    h1 {
-      margin-bottom: 10px;
+      margin: 0;
+      font-size: 22px;
       color: #333;
       text-align: center;
+    }
+    .event-time {
+      margin-top: 10px;
+      font-size: 15px;
+      color: #555;
+      background: #f1f8ff;
+      padding: 6px 10px;
+      border-radius: 8px;
+      display: inline-block;
     }
     #user-info {
       text-align: center;
       font-size: 14px;
       color: #666;
-      margin-bottom: 20px;
+      margin: 10px 0 20px;
+    }
+    #cancel-button {
+        background-color: #f28b82; /* 淺紅色 */
+        border: none;
+        color: white;
+        font-size: 16px;
+        padding: 10px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    #cancel-button:hover {
+        background-color: #e53935; /* 深一點的紅色，hover 效果 */
     }
     form {
       display: flex;
       gap: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
     input[type="text"] {
       flex: 1;
@@ -66,21 +74,18 @@
       border: none;
       color: white;
       font-size: 16px;
-      padding: 10px 20px;
+      padding: 10px 16px;
       border-radius: 8px;
       cursor: pointer;
       transition: 0.3s;
     }
     button:hover {
       background-color: #1565c0;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
     h2 {
-      margin-top: 0;
       font-size: 18px;
       color: #333;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 5px;
+      margin: 10px 0;
     }
     ul {
       list-style: none;
@@ -91,34 +96,56 @@
       margin-bottom: 6px;
       background: #f1f8ff;
       border-radius: 8px;
-      font-size: 16px;
+      font-size: 15px;
       color: #333;
     }
   </style>
 </head>
 <body>
-    <div class="container">
-        <div class="event-header">
-            <h1>🏐 排球打打報名 @ 排憩館</h1>
-            <p class="event-time">📅 時間：10/10 (四) 中午 12:00 - 下午 3:00</p>
-        </div>
-        
-    <p id="user-info">載入中...</p>
+  <div class="container">
+    <!-- 活動資訊 -->
+    <div class="card event-header">
+      <h1>🏐 排球打打報名 @ 排憩館</h1>
+      <p class="event-time">📅 時間：10/10 (四) 中午 12:00 - 下午 3:00</p>
+      <p id="user-info">載入中...</p>
+    </div>
 
-    <form id="form">
-      <input type="text" id="name" placeholder="輸入姓名" required>
-      <button type="submit">送出報名</button>
-    </form>
+    <!-- 報名表單 -->
+    <div class="card">
+      <h2>我要報名</h2>
+      <form id="form">
+        <input type="text" id="name" placeholder="輸入姓名" required>
+        <button type="submit">送出</button>
+      </form>
+    </div>
 
-    <h2>目前已報名名單</h2>
-    <ul id="list">載入中...</ul>
+    <!-- 取消報名 -->
+    <div class="card">
+      <h2>取消報名</h2>
+      <form id="cancel-form">
+        <input type="text" id="cancel-name" placeholder="輸入要取消的姓名" required>
+        <button type="submit" id="cancel-button">取消</button>
+      </form>
+      <h3>你提交過的報名</h3>
+      <ul id="my-registrations">載入中...</ul>
+    </div>
+
+    <!-- 所有人名單 -->
+    <div class="card">
+      <h2>目前已報名名單</h2>
+      <ul id="list">載入中...</ul>
+    </div>
   </div>
 
   <script type="module">
-    import { auth, db, collection, addDoc, getDocs, query, orderBy, onAuthStateChanged } from "./firebase-init.js";
+    import { 
+      auth, db, collection, addDoc, getDocs, query, orderBy, where,
+      onAuthStateChanged, deleteDoc, doc
+    } from "./firebase-init.js";
 
     let currentUser = null;
 
+    // 監聽登入狀態
     onAuthStateChanged(auth, async (user) => {
       if (!user) {
         alert("請先登入");
@@ -127,9 +154,11 @@
         currentUser = user;
         document.getElementById("user-info").innerText = `登入帳號：${user.email}`;
         loadRegistrations();
+        loadMyRegistrations();
       }
     });
 
+    // 新增報名
     document.getElementById("form").addEventListener("submit", async (e) => {
       e.preventDefault();
       if (!currentUser) return;
@@ -151,12 +180,53 @@
         alert(`成功幫 ${name} 報名！`);
         document.getElementById("form").reset();
         loadRegistrations();
+        loadMyRegistrations();
       } catch (err) {
         console.error("寫入失敗：", err);
         alert("報名失敗，請檢查權限或網路");
       }
     });
 
+    // 取消報名
+    document.getElementById("cancel-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (!currentUser) return;
+
+      const cancelName = document.getElementById("cancel-name").value.trim();
+      if (!cancelName) {
+        alert("請輸入要取消的姓名！");
+        return;
+      }
+
+      try {
+        // 找出使用者自己提交的報名
+        const q = query(
+          collection(db, "registrations"),
+          where("submittedBy", "==", currentUser.email),
+          where("name", "==", cancelName)
+        );
+        const snapshot = await getDocs(q);
+
+        if (snapshot.empty) {
+          alert("查無符合的報名紀錄，請確認姓名是否正確！");
+          return;
+        }
+
+        for (const d of snapshot.docs) {
+          await deleteDoc(doc(db, "registrations", d.id));
+        }
+
+        alert(`已取消 ${cancelName} 的報名！`);
+        document.getElementById("cancel-form").reset();
+        loadRegistrations();
+        loadMyRegistrations();
+      } catch (err) {
+        console.error("刪除失敗：", err);
+        alert("取消報名失敗，請檢查權限或網路");
+      }
+    });
+
+    // 載入所有報名
     async function loadRegistrations() {
       const q = query(collection(db, "registrations"), orderBy("createdAt", "asc"));
       const snapshot = await getDocs(q);
@@ -173,6 +243,30 @@
 
       if (snapshot.empty) {
         ul.innerHTML = "<li>目前還沒有人報名</li>";
+      }
+    }
+
+    // 載入使用者自己的報名
+    async function loadMyRegistrations() {
+      const q = query(
+        collection(db, "registrations"),
+        where("submittedBy", "==", currentUser.email),
+        orderBy("createdAt", "asc")
+      );
+      const snapshot = await getDocs(q);
+
+      const ul = document.getElementById("my-registrations");
+      ul.innerHTML = "";
+
+      snapshot.forEach(doc => {
+        const data = doc.data();
+        const li = document.createElement("li");
+        li.textContent = data.name;
+        ul.appendChild(li);
+      });
+
+      if (snapshot.empty) {
+        ul.innerHTML = "<li>你還沒有幫任何人報名</li>";
       }
     }
   </script>
