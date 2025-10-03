@@ -118,6 +118,11 @@
       <h2>我要報名</h2>
       <form id="form">
         <input type="text" id="name" placeholder="輸入姓名" required>
+        <div style="margin: 10px 0; font-size: 15px; color: #333;">
+        性別：
+            <label><input type="radio" name="gender" value="男" required> 男</label>
+            <label style="margin-left: 10px;"><input type="radio" name="gender" value="女" required> 女</label>
+        </div>
         <button type="submit">送出</button>
       </form>
     </div>
@@ -163,31 +168,37 @@
 
     // 新增報名
     document.getElementById("form").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      if (!currentUser) return;
+        e.preventDefault();
+        if (!currentUser) return;
 
-      const name = document.getElementById("name").value.trim();
-      const email = currentUser.email;
+        const name = document.getElementById("name").value.trim();
+        const gender = document.querySelector('input[name="gender"]:checked')?.value;
+        const email = currentUser.email;
 
-      if (!name) {
-        alert("請輸入姓名！");
-        return;
-      }
+        if (!name) {
+            alert("請輸入姓名！");
+            return;
+        }
+        if (!gender) {
+            alert("請選擇性別！");
+            return;
+        }
 
-      try {
-        await addDoc(collection(db, "registrations"), {
-          name,
-          submittedBy: email,
-          createdAt: new Date()
-        });
-        alert(`成功幫 ${name} 報名！`);
-        document.getElementById("form").reset();
-        loadRegistrations();
-        loadMyRegistrations();
-      } catch (err) {
-        console.error("寫入失敗：", err);
-        alert("報名失敗，請檢查權限或網路");
-      }
+        try {
+            await addDoc(collection(db, "registrations"), {
+            name,
+            gender,
+            submittedBy: email,
+            createdAt: new Date()
+            });
+            alert(`成功幫 ${name} (${gender}) 報名！`);
+            document.getElementById("form").reset();
+            loadRegistrations();
+            loadMyRegistrations();
+        } catch (err) {
+            console.error("寫入失敗：", err);
+            alert("報名失敗，請檢查權限或網路");
+        }
     });
 
     // 取消報名
@@ -231,22 +242,35 @@
 
     // 載入所有報名
     async function loadRegistrations() {
-      const q = query(collection(db, "registrations"), orderBy("createdAt", "asc"));
-      const snapshot = await getDocs(q);
+    const q = query(collection(db, "registrations"), orderBy("createdAt", "asc"));
+    const snapshot = await getDocs(q);
 
-      const ul = document.getElementById("list");
-      ul.innerHTML = "";
+    const ul = document.getElementById("list");
+    ul.innerHTML = "";
 
-      snapshot.forEach(doc => {
+    snapshot.forEach(doc => {
         const data = doc.data();
         const li = document.createElement("li");
-        li.textContent = data.name || "(未填姓名)";
+        li.textContent = `${data.name} (${data.gender || "未選"})`;
         ul.appendChild(li);
-      });
+    });
 
-      if (snapshot.empty) {
+    if (snapshot.empty) {
         ul.innerHTML = "<li>目前還沒有人報名</li>";
-      }
+        return;
+    }
+
+    // === 計算男女數量 ===
+    let textContent = ul.innerText; // 直接拿目前顯示的名單文字
+    let maleCount = (textContent.match(/男/g) || []).length;
+    let femaleCount = (textContent.match(/女/g) || []).length;
+
+    // 新增一行顯示統計
+    const summary = document.createElement("li");
+    summary.style.background = "#fffbe6";
+    summary.style.fontWeight = "bold";
+    summary.textContent = `統計：男 ${maleCount} 人，女 ${femaleCount} 人`;
+    ul.appendChild(summary);
     }
 
     // 載入使用者自己的報名
