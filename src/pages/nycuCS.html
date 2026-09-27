@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="{{t:common:html.lang}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{t:meta.title}}</title>
+    <meta name="description" content="{{t:meta.description}}">
+    <meta property="og:title" content="{{t:meta.title}}">
+    <meta property="og:description" content="{{t:meta.description}}">
+    {{> head}}
+    <link rel="stylesheet" href="{{root}}css/dept.css">
+    {{! 標記 JS 可用：.reveal 只在有 JS 時才預先隱藏，避免 JS 失效時內容永久看不見 }}
+    <script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="dept dept--cs">
+    {{> header}}
+
+    <main id="main">
+        <div class="dept-banner">
+            <div class="container">
+                <h1 class="dept-banner__title">{{t:nycu-department-of-computer-2}}</h1>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="card-grid dept-grid">
+                <div class="card">
+                    <h3 class="card__title">{{t:common:dept.history}}</h3>
+                    <p class="card__body">{{t:the-nycu-department-of}}</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="card__title">{{t:common:dept.faculty}}</h3>
+                    <p class="card__body">{{t:the-department-consists-of}}</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="card__title">{{t:common:dept.research-areas}}</h3>
+                    <p class="card__body">{{t:research-areas-cover-artificial}}</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="card__title">{{t:common:dept.achievements}}</h3>
+                    <p class="card__body">{{t:many-alumni-hold-key}}</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {{> footer}}
+
+    <script src="{{root}}script/site.js"></script>
+</body>
+</html>

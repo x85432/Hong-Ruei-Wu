@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="{{t:common:html.lang}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{t:meta.title}}</title>
+    <meta name="description" content="{{t:meta.description}}">
+    <meta property="og:title" content="{{t:meta.title}}">
+    <meta property="og:description" content="{{t:meta.description}}">
+    {{> head}}
+    <link rel="stylesheet" href="{{root}}css/gallery.css">
+    <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+    {{> header}}
+
+    <main id="main">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-header__title">{{t:life-at-the-department-2}}</h1>
+                <p class="page-header__lead">{{t:a-record-of-my}}</p>
+            </div>
+
+            <section class="photo-wall" data-lightbox>
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="{{root}}resource/win.webp" alt="{{t:alt.commemorative-photo-for-winning}}" width="737" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>
+                    {{t:as-the-planner-won}}
+                    </figcaption>
+                </figure>
+
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="{{root}}resource/tomyuan.webp" alt="{{t:alt.group-photo-at-the}}" width="675" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>{{t:the-tangyuan-gathering-held}}</figcaption>
+                </figure>
+
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="{{root}}resource/bigmath.webp" alt="{{t:alt.competing-in-the-2024}}" width="687" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>{{t:2024-big-math-cup}}</figcaption>
+                </figure>
+
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="{{root}}resource/graduate.webp" alt="{{t:alt.group-photo-with-graduating}}" width="675" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>{{t:the-second-year-master}}</figcaption>
+                </figure>
+            </section>
+        </div>
+    </main>
+
+    {{> footer}}
+
+    <script src="{{root}}script/site.js"></script>
+</body>
+</html>

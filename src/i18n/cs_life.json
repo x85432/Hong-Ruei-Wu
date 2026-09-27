@@ -1,0 +1,50 @@
+{
+  "meta.title": {
+    "zh": "資工系生活 — 吳弘叡",
+    "en": "Computer Science Life — Hong-Ruei Wu"
+  },
+  "meta.description": {
+    "zh": "吳弘叡在陽明交大資訊工程系的實習、黑客松與寫程式生活紀錄。",
+    "en": "A record of Hong-Ruei Wu's internships, hackathons, and coding life in NYCU's Department of Computer Science."
+  },
+  "computer-science-life": {
+    "zh": "資工系生活",
+    "en": "Computer Science Life"
+  },
+  "internships-hackathons-and-days": {
+    "zh": "實習、黑客松，還有被 deadline 輾過去的日子。",
+    "en": "Internships, hackathons, and days run over by deadlines."
+  },
+  "alt.work-photo-from-an": {
+    "zh": "中研院實習期間的工作照",
+    "en": "Work photo from an internship at Academia Sinica"
+  },
+  "academia-sinica-internship": {
+    "zh": "中研院實習",
+    "en": "Academia Sinica Internship"
+  },
+  "alt.a-late-night-desk": {
+    "zh": "趕作業到深夜的桌面",
+    "en": "A late-night desk while racing a deadline"
+  },
+  "crushed-by-deadlines": {
+    "zh": "被deadline輾過去",
+    "en": "Crushed by deadlines"
+  },
+  "alt.competing-at-the-taipei": {
+    "zh": "台北通黑客松在台大的參賽現場",
+    "en": "Competing at the Taipei Pass Hackathon at NTU"
+  },
+  "taipei-hackathon-at-ntu": {
+    "zh": "台北通黑克松 in 台大",
+    "en": "Taipei Hackathon at NTU"
+  },
+  "alt.the-moment-of-pushing": {
+    "zh": "第一次把作品推上 GitHub 的畫面",
+    "en": "The moment of pushing a first project to GitHub"
+  },
+  "first-project-uploaded-to": {
+    "zh": "第一次把作品丟到<a href=\"https://github.com/kuwaai/genai-os#user-content-----------kuwa-genai-os--\" target=\"_blank\" rel=\"noopener\">GitHub</a>上",
+    "en": "First project uploaded to <a href=\"https://github.com/kuwaai/genai-os#user-content-----------kuwa-genai-os--\" target=\"_blank\" rel=\"noopener\">GitHub</a>"
+  }
+}

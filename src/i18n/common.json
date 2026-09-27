@@ -1,0 +1,98 @@
+{
+  "html.lang": {
+    "zh": "zh-Hant",
+    "en": "en"
+  },
+  "og.locale": {
+    "zh": "zh_TW",
+    "en": "en_US"
+  },
+  "og.locale-alternate": {
+    "zh": "en_US",
+    "en": "zh_TW"
+  },
+  "a11y.skip-link": {
+    "zh": "跳到主要內容",
+    "en": "Skip to main content"
+  },
+  "a11y.toggle-menu": {
+    "zh": "開關選單",
+    "en": "Toggle menu"
+  },
+  "a11y.main-nav": {
+    "zh": "主要導覽",
+    "en": "Main navigation"
+  },
+  "site.name": {
+    "zh": "吳弘叡",
+    "en": "Hong-Ruei Wu"
+  },
+  "site.copyright": {
+    "zh": "&copy; 2024–2026 吳弘叡",
+    "en": "&copy; 2024–2026 Hong-Ruei Wu"
+  },
+  "nav.home": {
+    "zh": "首頁",
+    "en": "Home"
+  },
+  "nav.sitemap": {
+    "zh": "網站導覽",
+    "en": "Sitemap"
+  },
+  "nav.about-me": {
+    "zh": "自我介紹",
+    "en": "About Me"
+  },
+  "nav.contact": {
+    "zh": "聯絡我",
+    "en": "Contact"
+  },
+  "lang-switch.lang": {
+    "zh": "en",
+    "en": "zh-Hant"
+  },
+  "lang-switch.label": {
+    "zh": "EN",
+    "en": "中"
+  },
+  "school.dept-intro": {
+    "zh": "系所介紹",
+    "en": "Department Introduction"
+  },
+  "school.cs-life": {
+    "zh": "資工系生活",
+    "en": "CS Life"
+  },
+  "school.nycu-am": {
+    "zh": "陽明交大應用數學系",
+    "en": "NYCU Department of Applied Mathematics"
+  },
+  "school.am-life": {
+    "zh": "應數系生活",
+    "en": "AM Life"
+  },
+  "school.tcssh-intro": {
+    "zh": "我看到的二中",
+    "en": "My View of TCSSH"
+  },
+  "school.tcssh-life": {
+    "zh": "開心高中生活",
+    "en": "Happy High School Life"
+  },
+  "dept.history": {
+    "zh": "歷史沿革",
+    "en": "History"
+  },
+  "dept.faculty": {
+    "zh": "人員組成",
+    "en": "Faculty"
+  },
+  "dept.research-areas": {
+    "zh": "研究領域",
+    "en": "Research Areas"
+  },
+  "dept.achievements": {
+    "zh": "傑出成就",
+    "en": "Achievements"
+  }
+}

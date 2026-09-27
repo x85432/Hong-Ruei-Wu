@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="{{t:common:html.lang}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{t:meta.title}}</title>
+    <meta name="description" content="{{t:meta.description}}">
+    <meta property="og:title" content="{{t:meta.title}}">
+    <meta property="og:description" content="{{t:meta.description}}">
+    {{> head}}
+    <link rel="stylesheet" href="{{root}}css/profile.css">
+    {{! 標記 JS 可用：.reveal 只在有 JS 時才預先隱藏，避免 JS 失效時內容永久看不見 }}
+    <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+    {{> header}}
+
+    <main id="main">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-header__title">{{t:common:nav.about-me}}</h1>
+                <p class="page-header__lead">{{t:from-wufeng-to-nycu}}</p>
+            </div>
+
+            <ol class="timeline">
+                <li class="timeline__item reveal">
+                    <div class="timeline__marker" aria-hidden="true">{{t:introduction}}</div>
+                    <div class="timeline__body">
+                        <div class="card">
+                            <h2>{{t:who-am-i}}</h2>
+                            <img src="{{root}}resource/intro-portrait.webp" class="timeline__photo timeline__photo--portrait" alt="{{t:alt.hong-ruei-wu-s}}" width="900" height="1200" loading="lazy" decoding="async">
+                            <p>
+                                {{t:rabbitlover-entj-volleyballlover-singing}}
+                            </p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="timeline__item reveal">
+                    <div class="timeline__marker" aria-hidden="true">{{t:interests}}</div>
+                    <div class="timeline__body">
+                        <div class="card">
+                            <h2>{{t:volleyball}}</h2>
+                            <p>
+                            {{t:since-junior-high-playing}}
+
+                            </p>
+                        </div>
+                        <div class="card">
+                            <h2>{{t:singing}}</h2>
+                            <p>
+                            {{t:my-father-taught-us}}
+                            </p>
+                            <ul>
+                                <li><a href="https://music.youtube.com/watch?v=b1SRjGmgA54" target="_blank" rel="noopener">{{t:richie-jen-heartbroken-pacific}}</a></li>
+                                <li><a href="https://music.youtube.com/watch?v=Mi66yGSqydM" target="_blank" rel="noopener">{{t:phil-chang-the-rain}}</a></li>
+                                <li><a href="https://music.youtube.com/watch?v=wcb21ldLdNg" target="_blank" rel="noopener">{{t:dave-wong-her-silhouette}}</a></li>
+                                <li><a href="https://music.youtube.com/watch?v=RIq7Tz9nYD8" target="_blank" rel="noopener">{{t:eason-chan-transfer-of}}</a></li>
+                            </ul>
+                            <p>
+                            {{t:since-most-of-these}}
+                            </p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="timeline__item reveal">
+                    <div class="timeline__marker" aria-hidden="true">{{t:learning-journey}}</div>
+                    <div class="timeline__body">
+                        <div class="card">
+                            <h2>{{t:english-vs-math-never}}</h2>
+                            <p>
+                                {{t:born-in-march-2004}}
+                            </p>
+                            <h3>{{t:elementary-school}}</h3>
+                            <p>
+                                {{t:i-attended-wufu-elementary}}
+                            </p>
+                        </div>
+                        <div class="card">
+                            <h3>{{t:junior-senior-high-school}}</h3>
+                            <p>
+                                {{t:in-junior-high-i}}
+                            </p>
+                            <h3>{{t:university}}</h3>
+                            <p>
+                                {{t:so-i-resolutely-enrolled}}
+                            </p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="timeline__item reveal">
+                    <div class="timeline__marker" aria-hidden="true">{{t:learning-journey}}</div>
+                    <div class="timeline__body">
+                        <div class="card">
+                            <h2>Programming</h2>
+                            <h3>{{t:the-enlightenment}}</h3>
+                            <p>{{t:in-elementary-and-junior}}</p>
+                            <p>{{t:wanting-to-become-a}}</p>
+                            <h3>{{t:the-renaissance}}</h3>
+                            <p>{{t:after-the-junior-high}}</p>
+                        </div>
+                        <div class="card">
+                            <h3>{{t:the-baroque-period}}</h3>
+                            <p>{{t:in-high-school-i}}</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="timeline__item reveal">
+                    <div class="timeline__marker" aria-hidden="true">{{t:looking-ahead}}</div>
+                    <div class="timeline__body">
+                        <div class="card">
+                            <h2>{{t:spreading-my-wings}}</h2>
+                            <ul>
+                                <li>{{t:never-forget-where-i}}</li>
+                                <li>{{t:embrace-change-while-remembering}}</li>
+                                <li>{{t:keep-moving-forward-when}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </main>
+
+    {{> footer}}
+
+    <script src="{{root}}script/site.js"></script>
+</body>
+</html>

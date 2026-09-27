@@ -1,0 +1,66 @@
+{
+  "meta.title": {
+    "zh": "吳弘叡 — 個人網站",
+    "en": "Hong-Ruei Wu — Personal Website"
+  },
+  "meta.description": {
+    "zh": "陽明交大資訊工程系學生、應數系排球隊隊長吳弘叡的個人網站。",
+    "en": "Personal website of Hong-Ruei Wu, a Computer Science student at NYCU and captain of the Applied Mathematics volleyball team."
+  },
+  "welcome-to-hong-ruei": {
+    "zh": "Welcome to 弘叡's Home",
+    "en": "Welcome to Hong-Ruei's Home"
+  },
+  "nycu-computer-science-applied": {
+    "zh": "陽明交大資訊工程系・應數系排球隊隊長",
+    "en": "NYCU Computer Science · Captain of the Applied Mathematics volleyball team"
+  },
+  "get-to-know-me": {
+    "zh": "認識我",
+    "en": "Get to Know Me"
+  },
+  "about-me-2": {
+    "zh": "個人簡介",
+    "en": "About Me"
+  },
+  "i-m-hong-ruei": {
+    "zh": "我是<mark class=\"kw\">吳弘叡</mark>，土生土長的臺中霧峰人。",
+    "en": "I'm <mark class=\"kw\">Hong-Ruei Wu</mark>, born and raised in Wufeng, Taichung."
+  },
+  "i-love-playing-volleyball": {
+    "zh": "興趣是打<mark class=\"kw\">排球</mark>，目前擔任本校應用數學系排球隊<mark class=\"kw\">隊長</mark>。",
+    "en": "I love playing <mark class=\"kw\">volleyball</mark> and currently serve as <mark class=\"kw\">captain</mark> of our Department of Applied Mathematics volleyball team."
+  },
+  "my-departments": {
+    "zh": "我的系所",
+    "en": "My Departments"
+  },
+  "before-transferring-applied-mathematics": {
+    "zh": "<mark class=\"kw\">轉系</mark>前: <mark class=\"kw\">陽明交大</mark>應數系，基礎扎實，課程多元，但東西有點太難了。",
+    "en": "Before <mark class=\"kw\">transferring</mark>: Applied Mathematics at <mark class=\"kw\">NYCU</mark> — a solid foundation and a diverse curriculum, though the material was a bit too hard."
+  },
+  "now-computer-science-at": {
+    "zh": "目前: 陽明交大資工系，師資優良，資金充足，是做研究的好地方，然後我比較有興趣一點。",
+    "en": "Now: Computer Science at NYCU — excellent faculty and ample funding make it a great place for research, and it's what I'm more interested in."
+  },
+  "my-high-school": {
+    "zh": "我的高中",
+    "en": "My High School"
+  },
+  "taichung-second-senior-high": {
+    "zh": "<mark class=\"kw\">臺中二中</mark>，歷史悠久的校園，孕育我成長的收栽。",
+    "en": "<mark class=\"kw\">Taichung Second Senior High School</mark> — a campus with a long history and the cradle where I grew up."
+  },
+  "education": {
+    "zh": "求學歷程",
+    "en": "Education"
+  },
+  "nycu-department-of-computer": {
+    "zh": "陽明交大資訊工程系",
+    "en": "NYCU Department of Computer Science"
+  },
+  "taichung-municipal-second-senior": {
+    "zh": "市立臺中第二高級中學",
+    "en": "Taichung Municipal Second Senior High School"
+  }
+}
