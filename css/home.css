@@ -210,3 +210,28 @@
         grid-column: 1;
     }
 }
+
+/* 求學歷程卡片：左邊校徽、右邊系所名稱 */
+.edu-card__head {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-2);
+}
+
+.edu-card__logo {
+    flex: none;
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+}
+
+.edu-card__head .card__title {
+    margin: 0;
+}
+
+/* nycu_icon.png 原圖四周約有 20% 留白，放大補正；換成裁切好的 logo 後可移除這個 class */
+.edu-card__logo--padded {
+    transform: scale(1.45);
+}

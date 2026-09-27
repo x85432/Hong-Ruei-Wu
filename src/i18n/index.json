@@ -67,32 +67,44 @@
     "zh": "大一、大二",
     "en": "1st–2nd year"
   },
-  "my-high-school": {
-    "zh": "我的高中",
-    "en": "My High School"
+  "edu.highschool": {
+    "zh": "高中",
+    "en": "High School"
   },
-  "taichung-second-senior-high": {
-    "zh": "臺中二中",
-    "en": "Taichung Second Senior High School"
+  "edu.tcssh.school": {
+    "zh": "臺中市立臺中第二高級中學",
+    "en": "Taichung Municipal Taichung Second Senior High School"
   },
   "education": {
     "zh": "求學歷程",
     "en": "Education"
   },
-  "nycu-grad-cs": {
-    "zh": "國立陽明交通大學資訊科學與工程研究所",
-    "en": "NYCU Institute of Computer Science and Engineering"
+  "card.grad": {
+    "zh": "資訊科學與工程研究所",
+    "en": "Institute of Computer Science and Engineering"
   },
-  "nycu-grad-cs.status": {
+  "card.grad.status": {
     "zh": "碩士班一年級（就讀中）",
     "en": "First-year master's student (current)"
   },
-  "nycu-department-of-computer": {
-    "zh": "陽明交大資訊工程系",
-    "en": "NYCU Department of Computer Science"
+  "card.cs": {
+    "zh": "資訊工程學系",
+    "en": "Department of Computer Science"
   },
-  "taichung-municipal-second-senior": {
-    "zh": "市立臺中第二高級中學",
-    "en": "Taichung Municipal Second Senior High School"
+  "card.am": {
+    "zh": "應用數學系",
+    "en": "Department of Applied Mathematics"
+  },
+  "card.tcssh": {
+    "zh": "臺中二中",
+    "en": "Taichung Second Senior High School"
+  },
+  "card.nycu-logo-alt": {
+    "zh": "國立陽明交通大學校徽",
+    "en": "NYCU emblem"
+  },
+  "card.tcssh-logo-alt": {
+    "zh": "臺中二中校徽",
+    "en": "TCSSH emblem"
   }
 }
