@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="page.am_life.title">應數系生活 — 吳弘叡</title>
+    <meta name="description" data-i18n-content="page.am_life.desc" content="吳弘叡在應用數學系兩年的活動紀錄，包含大數盃、系聚會與校運會。">
+    <meta property="og:title" data-i18n-content="page.am_life.title" content="應數系生活 — 吳弘叡">
+    <meta property="og:description" data-i18n-content="page.am_life.desc" content="吳弘叡在應用數學系兩年的活動紀錄，包含大數盃、系聚會與校運會。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="resource/mylogo.png">
+    <link rel="icon" href="resource/mylogo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="i18n/common.js"></script>
+    <script src="i18n/am_life.js"></script>
+    <script src="script/i18n.js"></script>
+</head>
+<body>
+    <a class="skip-link" href="#main" data-i18n="common.skip">跳到主要內容</a>
+
+    <header class="site-header">
+        <div class="site-header__inner container">
+            <a class="brand" href="index.html">
+                <img class="brand__mark" src="resource/mylogo.png" alt="" width="32" height="32">
+                <span class="brand__name" data-i18n="common.brand.name">吳弘叡</span>
+            </a>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="sr-only" data-i18n="common.nav.toggle">開關選單</span>
+            </button>
+
+            <nav class="site-nav" id="site-nav" data-i18n-aria-label="common.nav.aria" aria-label="主要導覽">
+                <ul class="site-nav__list">
+                    <li><a class="nav-link" href="index.html" data-i18n="common.nav.home">首頁</a></li>
+                    <li><a class="nav-link" href="sitemap.html" data-i18n="common.nav.sitemap">網站導覽</a></li>
+                    <li><a class="nav-link" href="introMe.html" data-i18n="common.nav.introMe">自我介紹</a></li>
+                    <li><a class="nav-link" href="contact.html" data-i18n="common.nav.contact">聯絡我</a></li>
+                </ul>
+                <a class="lang-switch" data-lang-switch>EN</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-header__title" data-i18n="am_life.header.title">應數系生活</h1>
+                <p class="page-header__lead" data-i18n="am_life.header.lead">大學前兩年在應數系留下的紀錄。</p>
+            </div>
+
+            <section class="photo-wall" data-lightbox>
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="resource/win.webp" data-i18n-alt="am_life.photo.win.alt" alt="校運會進場策畫獲得最佳驚喜獎的紀念照" width="737" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption data-i18n-html="am_life.photo.win.caption">作為策畫，校運會進場獲得<br>「最佳驚喜獎」。<br><br>可惜沒有影片了</figcaption>
+                </figure>
+
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="resource/tomyuan.webp" data-i18n-alt="am_life.photo.tomyuan.alt" alt="應數系冬至湯圓聚會的合照" width="675" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption data-i18n="am_life.photo.tomyuan.caption">應數系每年冬至的湯圓聚會，有鹹有甜，大家都會抽空前來聊天吃湯圓。</figcaption>
+                </figure>
+
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="resource/bigmath.webp" data-i18n-alt="am_life.photo.bigmath.alt" alt="2024大數盃比賽出賽時的照片" width="687" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption data-i18n="am_life.photo.bigmath.caption">2024大數盃，這次作為副隊長出賽，主打欄中，可惜那輪對手是本次的亞軍、季軍。</figcaption>
+                </figure>
+
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="resource/graduate.webp" data-i18n-alt="am_life.photo.graduate.alt" alt="與畢業的碩士班學長合照" width="675" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption data-i18n="am_life.photo.graduate.caption">碩二學長畢業了，與他們合照，現在當排球隊隊長需要一直諮詢他們。</figcaption>
+                </figure>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <p class="site-footer__copy">&copy; 2024–2026 <span data-i18n="common.brand.name">吳弘叡</span></p>
+            <ul class="site-footer__links">
+                <li><a href="sitemap.html" data-i18n="common.nav.sitemap">網站導覽</a></li>
+                <li><a href="introMe.html" data-i18n="common.nav.introMe">自我介紹</a></li>
+                <li><a href="contact.html" data-i18n="common.nav.contact">聯絡我</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script/site.js"></script>
+</body>
+</html>
