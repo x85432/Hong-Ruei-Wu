@@ -9,6 +9,13 @@
     var carrots = document.querySelectorAll(".carrot");
     if (!carrots.length) return;
 
+    // 依 <html lang> 切換 aria-label，英文頁與中文頁共用同一支 sitemap.js
+    var isEnglish = (document.documentElement.lang || "").toLowerCase().indexOf("en") === 0;
+    var LABEL_PULL = isEnglish ? "Pull a carrot" : "拔一根蘿蔔";
+    var LABEL_EMPTY = isEnglish
+        ? "Carrot pulled — drag it back here to replant it"
+        : "蘿蔔已經拔起，可以拖曳蘿蔔回來種下";
+
     var reduceMotion = !!(
         window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches
     );
@@ -103,7 +110,7 @@
         if (landed) {
             landed.textContent = "🥕";
             landed.classList.remove("is-empty");
-            landed.setAttribute("aria-label", "拔一根蘿蔔");
+            landed.setAttribute("aria-label", LABEL_PULL);
             drag.remove();
         } else {
             fallToBottom(drag);
@@ -131,7 +138,7 @@
     function spawnCarrot(originBtn) {
         originBtn.textContent = "🕳️";
         originBtn.classList.add("is-empty");
-        originBtn.setAttribute("aria-label", "蘿蔔已經拔起，可以拖曳蘿蔔回來種下");
+        originBtn.setAttribute("aria-label", LABEL_EMPTY);
 
         var rect = originBtn.getBoundingClientRect();
 

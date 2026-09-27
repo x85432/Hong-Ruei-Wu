@@ -16,7 +16,7 @@
     min-height: clamp(420px, 62vh, 620px);
     overflow: hidden;
     color: var(--text-invert);
-    background-image: url("resource/hero-1.webp");
+    background-image: url("../resource/hero-1.webp");
     background-size: cover;
     background-position: center 38%;
 }
@@ -31,17 +31,17 @@
 }
 
 .hero__slide--1 {
-    background-image: url("resource/hero-1.webp");
+    background-image: url("../resource/hero-1.webp");
     animation-delay: 0s;
 }
 
 .hero__slide--2 {
-    background-image: url("resource/hero-2.webp");
+    background-image: url("../resource/hero-2.webp");
     animation-delay: 5s;
 }
 
 .hero__slide--3 {
-    background-image: url("resource/hero-3.webp");
+    background-image: url("../resource/hero-3.webp");
     animation-delay: 10s;
 }
 
