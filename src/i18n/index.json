@@ -4,16 +4,16 @@
     "en": "Hong-Ruei Wu — Personal Website"
   },
   "meta.description": {
-    "zh": "陽明交大資訊科學與工程研究所碩一學生、曾任應數系排球隊隊長吳弘叡的個人網站。",
-    "en": "Personal website of Hong-Ruei Wu, a first-year master's student at NYCU's Institute of Computer Science and Engineering and former captain of the Applied Mathematics volleyball team."
+    "zh": "吳弘叡的個人網站。",
+    "en": "Personal website of Hong-Ruei Wu."
   },
   "welcome-to-hong-ruei": {
     "zh": "Welcome to 弘叡's Home",
     "en": "Welcome to Hong-Ruei's Home"
   },
   "hero.lead": {
-    "zh": "陽明交大資訊科學與工程研究所碩一・曾任應數系排球隊隊長",
-    "en": "First-year master's student, NYCU Institute of Computer Science and Engineering · Former captain of the Applied Mathematics volleyball team"
+    "zh": "歡迎在這邊認識我",
+    "en": "Welcome — get to know me here"
   },
   "get-to-know-me": {
     "zh": "認識我",
@@ -28,32 +28,52 @@
     "en": "I'm <mark class=\"kw\">Hong-Ruei Wu</mark>, born and raised in Wufeng, Taichung."
   },
   "i-love-playing-volleyball": {
-    "zh": "興趣是打<mark class=\"kw\">排球</mark>，曾任本校應用數學系排球隊<mark class=\"kw\">隊長</mark>。",
-    "en": "I love playing <mark class=\"kw\">volleyball</mark> and previously served as <mark class=\"kw\">captain</mark> of our Department of Applied Mathematics volleyball team."
+    "zh": "興趣是打<mark class=\"kw\">排球</mark>，曾任本校應用數學系排球隊<mark class=\"kw\">隊長</mark>。現於資工系排擔任小小隊員。",
+    "en": "I love playing <mark class=\"kw\">volleyball</mark> and previously served as <mark class=\"kw\">captain</mark> of our Department of Applied Mathematics volleyball team. Now I'm just a humble member of the Computer Science volleyball team."
   },
-  "my-departments": {
-    "zh": "我的系所",
-    "en": "My Departments"
+  "edu.heading": {
+    "zh": "學習經歷",
+    "en": "Academic Background"
   },
-  "before-transferring-applied-mathematics": {
-    "zh": "<mark class=\"kw\">轉系</mark>前: <mark class=\"kw\">陽明交大</mark>應數系，基礎扎實，課程多元，但東西有點太難了。",
-    "en": "Before <mark class=\"kw\">transferring</mark>: Applied Mathematics at <mark class=\"kw\">NYCU</mark> — a solid foundation and a diverse curriculum, though the material was a bit too hard."
+  "edu.now": {
+    "zh": "目前",
+    "en": "Now"
   },
-  "undergrad-cs": {
-    "zh": "大學: 陽明交大資工系，師資優良，資金充足，是做研究的好地方，然後我比較有興趣一點。",
-    "en": "Undergraduate: Computer Science at NYCU — excellent faculty and ample funding make it a great place for research, and it's what I'm more interested in."
+  "edu.grad.school": {
+    "zh": "國立陽明交通大學 資訊科學與工程研究所",
+    "en": "National Yang Ming Chiao Tung University — Institute of Computer Science and Engineering"
   },
-  "now-grad": {
-    "zh": "目前: 國立陽明交通大學<mark class=\"kw\">資訊科學與工程研究所</mark>碩一。",
-    "en": "Now: first-year master's student at NYCU's <mark class=\"kw\">Institute of Computer Science and Engineering</mark>."
+  "edu.grad.year": {
+    "zh": "碩一",
+    "en": "1st-year M.S."
+  },
+  "edu.undergrad": {
+    "zh": "大學",
+    "en": "Undergraduate"
+  },
+  "edu.cs.school": {
+    "zh": "國立陽明交通大學 資訊工程學系",
+    "en": "National Yang Ming Chiao Tung University — Department of Computer Science"
+  },
+  "edu.cs.years": {
+    "zh": "大三、大四",
+    "en": "3rd–4th year"
+  },
+  "edu.am.school": {
+    "zh": "國立陽明交通大學 應用數學系",
+    "en": "National Yang Ming Chiao Tung University — Department of Applied Mathematics"
+  },
+  "edu.am.years": {
+    "zh": "大一、大二",
+    "en": "1st–2nd year"
   },
   "my-high-school": {
     "zh": "我的高中",
     "en": "My High School"
   },
   "taichung-second-senior-high": {
-    "zh": "<mark class=\"kw\">臺中二中</mark>，歷史悠久的校園，孕育我成長的收栽。",
-    "en": "<mark class=\"kw\">Taichung Second Senior High School</mark> — a campus with a long history and the cradle where I grew up."
+    "zh": "臺中二中",
+    "en": "Taichung Second Senior High School"
   },
   "education": {
     "zh": "求學歷程",
