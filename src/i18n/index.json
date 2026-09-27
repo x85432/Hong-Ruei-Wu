@@ -4,16 +4,16 @@
     "en": "Hong-Ruei Wu — Personal Website"
   },
   "meta.description": {
-    "zh": "陽明交大資訊科學與工程研究所碩一學生、應數系排球隊隊長吳弘叡的個人網站。",
-    "en": "Personal website of Hong-Ruei Wu, a first-year master's student at NYCU's Institute of Computer Science and Engineering and captain of the Applied Mathematics volleyball team."
+    "zh": "陽明交大資訊科學與工程研究所碩一學生、曾任應數系排球隊隊長吳弘叡的個人網站。",
+    "en": "Personal website of Hong-Ruei Wu, a first-year master's student at NYCU's Institute of Computer Science and Engineering and former captain of the Applied Mathematics volleyball team."
   },
   "welcome-to-hong-ruei": {
     "zh": "Welcome to 弘叡's Home",
     "en": "Welcome to Hong-Ruei's Home"
   },
   "hero.lead": {
-    "zh": "陽明交大資訊科學與工程研究所碩一・應數系排球隊隊長",
-    "en": "First-year master's student, NYCU Institute of Computer Science and Engineering · Captain of the Applied Mathematics volleyball team"
+    "zh": "陽明交大資訊科學與工程研究所碩一・曾任應數系排球隊隊長",
+    "en": "First-year master's student, NYCU Institute of Computer Science and Engineering · Former captain of the Applied Mathematics volleyball team"
   },
   "get-to-know-me": {
     "zh": "認識我",
@@ -28,8 +28,8 @@
     "en": "I'm <mark class=\"kw\">Hong-Ruei Wu</mark>, born and raised in Wufeng, Taichung."
   },
   "i-love-playing-volleyball": {
-    "zh": "興趣是打<mark class=\"kw\">排球</mark>，目前擔任本校應用數學系排球隊<mark class=\"kw\">隊長</mark>。",
-    "en": "I love playing <mark class=\"kw\">volleyball</mark> and currently serve as <mark class=\"kw\">captain</mark> of our Department of Applied Mathematics volleyball team."
+    "zh": "興趣是打<mark class=\"kw\">排球</mark>，曾任本校應用數學系排球隊<mark class=\"kw\">隊長</mark>。",
+    "en": "I love playing <mark class=\"kw\">volleyball</mark> and previously served as <mark class=\"kw\">captain</mark> of our Department of Applied Mathematics volleyball team."
   },
   "my-departments": {
     "zh": "我的系所",
