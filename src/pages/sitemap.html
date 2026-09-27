@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="{{t:common:html.lang}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{t:meta.title}}</title>
+    <meta name="description" content="{{t:meta.description}}">
+    <meta property="og:title" content="{{t:meta.title}}">
+    <meta property="og:description" content="{{t:meta.description}}">
+    {{> head}}
+    <link rel="stylesheet" href="{{root}}css/sitemap.css">
+    {{! 標記 JS 可用：.reveal 只在有 JS 時才預先隱藏，避免 JS 失效時內容永久看不見 }}
+    <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+    {{> header}}
+
+    <main id="main">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-header__title">{{t:common:nav.sitemap}}</h1>
+                <p class="page-header__lead">{{t:every-page-on-this}}</p>
+            </div>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h2 class="card__title">{{t:about-me-2}}</h2>
+                    <ul class="sitemap-list">
+                        <li>
+                            <a href="{{link:introMe}}">{{t:personal-introduction}}</a>
+                            <button class="carrot" type="button" aria-label="{{t:label.pull-a-carrot}}">🥕</button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2 class="card__title">{{t:department-of-computer-science}}</h2>
+                    <ul class="sitemap-list">
+                        <li>
+                            <a href="{{link:nycuCS}}">{{t:common:school.dept-intro}}</a>
+                            <button class="carrot" type="button" aria-label="{{t:label.pull-a-carrot}}">🥕</button>
+                        </li>
+                        <li>
+                            <a href="{{link:cs_life}}">{{t:common:school.cs-life}}</a>
+                            <button class="carrot" type="button" aria-label="{{t:label.pull-a-carrot}}">🥕</button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2 class="card__title">{{t:department-of-applied-mathematics}}</h2>
+                    <ul class="sitemap-list">
+                        <li>
+                            <a href="{{link:nycuAM}}">{{t:common:school.dept-intro}}</a>
+                            <button class="carrot" type="button" aria-label="{{t:label.pull-a-carrot}}">🥕</button>
+                        </li>
+                        <li>
+                            <a href="{{link:am_life}}">{{t:common:school.am-life}}</a>
+                            <button class="carrot" type="button" aria-label="{{t:label.pull-a-carrot}}">🥕</button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2 class="card__title">{{t:taichung-second-senior-high}}</h2>
+                    <ul class="sitemap-list">
+                        <li>
+                            <a href="{{link:tcssh}}">{{t:common:school.tcssh-intro}}</a>
+                            <button class="carrot" type="button" aria-label="{{t:label.pull-a-carrot}}">🥕</button>
+                        </li>
+                        <li>
+                            <a href="{{link:tcssh_life}}">{{t:common:school.tcssh-life}}</a>
+                            <button class="carrot" type="button" aria-label="{{t:label.pull-a-carrot}}">🥕</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {{> footer}}
+
+    <script src="{{root}}script/site.js"></script>
+    <script src="{{root}}script/sitemap.js"></script>
+</body>
+</html>

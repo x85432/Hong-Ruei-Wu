@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="{{t:common:html.lang}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{t:meta.title}}</title>
+    <meta name="description" content="{{t:meta.description}}">
+    <meta property="og:title" content="{{t:meta.title}}">
+    <meta property="og:description" content="{{t:meta.description}}">
+    {{> head}}
+    <link rel="stylesheet" href="{{root}}css/gallery.css">
+    <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+    {{> header}}
+
+    <main id="main">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-header__title">{{t:life-at-tcssh}}</h1>
+                <p class="page-header__lead">{{t:relay-races-class-volleyball}}</p>
+            </div>
+
+            <section class="photo-wall" data-lightbox>
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="{{root}}resource/relay-race.webp" alt="{{t:alt.photo-from-the-1st}}" width="691" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>{{t:1st-year-relay-race}}</figcaption>
+                </figure>
+
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="{{root}}resource/volleyball-class.webp" alt="{{t:alt.team-photo-from-the}}" width="695" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>{{t:volleyball-class-runner-up}}</figcaption>
+                </figure>
+
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="{{root}}resource/mess.webp" alt="{{t:alt.visiting-the-art-teacher}}" width="675" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>{{t:visited-the-art-teacher}}</figcaption>
+                </figure>
+
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="{{root}}resource/uniform-day.webp" alt="{{t:alt.photo-with-classmates-on}}" width="708" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>{{t:last-year-s-uniform}}</figcaption>
+                </figure>
+            </section>
+        </div>
+    </main>
+
+    {{> footer}}
+
+    <script src="{{root}}script/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+{
+  "meta.title": {
+    "zh": "自我介紹 — 吳弘叡",
+    "en": "Personal Introduction — Hong-Ruei Wu"
+  },
+  "meta.description": {
+    "zh": "吳弘叡的自我介紹：從霧峰到交大的成長歷程、興趣愛好與程式學習經驗。",
+    "en": "Hong-Ruei Wu's personal introduction: growing up from Wufeng to NYCU, interests and hobbies, and learning to program."
+  },
+  "from-wufeng-to-nycu": {
+    "zh": "從霧峰到交大——興趣、學習歷程，以及接下來想做的事。",
+    "en": "From Wufeng to NYCU — my interests, my learning journey, and what I want to do next."
+  },
+  "introduction": {
+    "zh": "簡介",
+    "en": "Introduction"
+  },
+  "who-am-i": {
+    "zh": "我是誰",
+    "en": "Who Am I"
+  },
+  "alt.hong-ruei-wu-s": {
+    "zh": "吳弘叡的個人照",
+    "en": "Hong-Ruei Wu's personal photo"
+  },
+  "rabbitlover-entj-volleyballlover-singing": {
+    "zh": "<img src=\"{{root}}resource/signature.webp\" class=\"timeline__photo timeline__signature\" alt=\"吳弘叡的手寫簽名\" width=\"480\" height=\"197\" loading=\"lazy\" decoding=\"async\"><br> #兔子愛好者 #ENTJ #排球癡 #唱歌 <br> #數學不太好 #臺中人 #鄉下人<br><br> 嗨，歡迎來到我的個人簡介<br> 希望接下來的內容能讓你更了解我！",
+    "en": "<img src=\"{{root}}resource/signature.webp\" class=\"timeline__photo timeline__signature\" alt=\"Hong-Ruei Wu's handwritten signature\" width=\"480\" height=\"197\" loading=\"lazy\" decoding=\"async\"><br> #RabbitLover #ENTJ #VolleyballLover #Singing<br> #NotGreatAtMath #FromTaichung #CountryBoy<br><br> Hi, welcome to my personal introduction page.<br> I hope the following content will help you get to know me better!"
+  },
+  "interests": {
+    "zh": "興趣",
+    "en": "Interests"
+  },
+  "volleyball": {
+    "zh": "排球",
+    "en": "Volleyball"
+  },
+  "since-junior-high-playing": {
+    "zh": "自國中起，閒暇時我最喜歡做的事情就是去打排球。<br> 大二時擔任應數系排球隊的副隊長，大三轉為隊長。<br> <img src=\"{{root}}resource/spike.webp\" class=\"timeline__photo timeline__photo--spike\" alt=\"在排球場上跳起扣球\" width=\"1200\" height=\"800\" loading=\"lazy\" decoding=\"async\">",
+    "en": "Since junior high, playing volleyball has been my favorite pastime.<br> I served as the vice-captain of the Department of Applied Mathematics volleyball team in my second year and became the captain in my third year.<br> <img src=\"{{root}}resource/spike.webp\" class=\"timeline__photo timeline__photo--spike\" alt=\"Spiking a volleyball on the court\" width=\"1200\" height=\"800\" loading=\"lazy\" decoding=\"async\">"
+  },
+  "singing": {
+    "zh": "唱歌",
+    "en": "Singing"
+  },
+  "my-father-taught-us": {
+    "zh": "由於父親從小就教我們唱歌，讓我練就一身好歌喉。<br> 代表曲目:",
+    "en": "My father taught us how to sing from a young age, helping me develop a good voice.<br> Signature Songs:"
+  },
+  "richie-jen-heartbroken-pacific": {
+    "zh": "任賢齊 《傷心太平洋》",
+    "en": "Richie Jen - \"Heartbroken Pacific\""
+  },
+  "phil-chang-the-rain": {
+    "zh": "張宇 《雨一直下》",
+    "en": "Phil Chang - \"The Rain Keeps Falling\""
+  },
+  "dave-wong-her-silhouette": {
+    "zh": "王傑 《她的背影》",
+    "en": "Dave Wong - \"Her Silhouette\""
+  },
+  "eason-chan-transfer-of": {
+    "zh": "陳奕迅 《愛情轉移》",
+    "en": "Eason Chan - \"Transfer of Love\""
+  },
+  "since-most-of-these": {
+    "zh": "因為太多老歌了，我也開始學習唱新歌。<br> 目前<a href=\"https://music.youtube.com/watch?v=9_068Ekk_fs\" target=\"_blank\" rel=\"noopener\">理想混蛋 《不是因為天氣晴朗才愛你》</a>我能詮釋得比較好！",
+    "en": "Since most of these are oldies, I've started learning newer songs too.<br> Right now, <a href=\"https://music.youtube.com/watch?v=9_068Ekk_fs\" target=\"_blank\" rel=\"noopener\">Ideal Idiot - \"I Love You Not Because It's Sunny\"</a> is the one I can perform best!"
+  },
+  "learning-journey": {
+    "zh": "學習歷程",
+    "en": "Learning Journey"
+  },
+  "english-vs-math-never": {
+    "zh": "自古英數不兩立",
+    "en": "English vs. Math: Never the Twain Shall Meet"
+  },
+  "born-in-march-2004": {
+    "zh": "出生民國93年3月，長於台中市霧峰區。<br>",
+    "en": "Born in March 2004 and raised in Wufeng District, Taichung.<br>"
+  },
+  "elementary-school": {
+    "zh": "小學",
+    "en": "Elementary School"
+  },
+  "i-attended-wufu-elementary": {
+    "zh": "進入我家旁邊的五福國小就讀，只有一班17人，在國小三年級之前沒有得過班上的第一名。<br><br> 直到立志未來想當工程師以及某一次英文段考只得了48分，於是問媽媽能不能讓我去補英文，因此英文成為我求學歷程最好的科目沒有之一。<br><br>",
+    "en": "I attended Wufu Elementary School right next to my home — just one class of 17 students — and I never ranked first in my class before third grade.<br><br> Then I set my heart on becoming an engineer, and after scoring only 48 on an English midterm, I asked my mom if I could take English cram classes. English went on to become, without question, my best subject throughout school.<br><br>"
+  },
+  "junior-senior-high-school": {
+    "zh": "國高中",
+    "en": "Junior &amp; Senior High School"
+  },
+  "in-junior-high-i": {
+    "zh": "而在國中時期發現我對於數學的領悟並沒有那麼好，希望能複製英文的成功經驗，於是開始補習數學。<br> 很可惜不是事事如願，了解到數學為工程師的先要條件，令我非常焦慮，直到分科測驗(類似指考)結束，依舊沒有改善<br> (學測數學前標、分科數學均標)。",
+    "en": "In junior high, I found that math didn't come as naturally to me, so I hoped to repeat my English success by taking math cram classes too.<br> Unfortunately, things didn't go as planned. Realizing that math is a prerequisite for becoming an engineer made me very anxious, and nothing had improved by the time the Advanced Subjects Test (similar to the old Department Required Test) was over<br> (GSAT math: top 25%; Advanced Subjects Test math: average)."
+  },
+  "university": {
+    "zh": "大學",
+    "en": "University"
+  },
+  "so-i-resolutely-enrolled": {
+    "zh": "於是毅然決然踏入交大應數，希望能彌補自己唯一的短板。<br> 周周轉轉，在大三順利進入交大資工系就讀，希望能在未來嶄露頭角。<br>",
+    "en": "So I resolutely enrolled in NYCU's Department of Applied Mathematics, hoping to shore up my only weak spot.<br> After some twists and turns, I transferred into NYCU's Department of Computer Science in my third year, hoping to make my mark in the future.<br>"
+  },
+  "graduate-school": {
+    "zh": "研究所",
+    "en": "Graduate School"
+  },
+  "graduate-school.body": {
+    "zh": "大學畢業後，我繼續在國立陽明交通大學資訊科學與工程研究所攻讀碩士，目前就讀碩一。",
+    "en": "After graduating, I went on to pursue a master's degree at NYCU's Institute of Computer Science and Engineering, where I'm now in my first year."
+  },
+  "the-enlightenment": {
+    "zh": "啟蒙運動",
+    "en": "The Enlightenment"
+  },
+  "in-elementary-and-junior": {
+    "zh": "國小國中<a href=\"https://www.minecraft.net/en-us\" target=\"_blank\" rel=\"noopener\">Minecraft</a>是大家口中炙熱的火球，我也為之著迷。",
+    "en": "In elementary and junior high, <a href=\"https://www.minecraft.net/en-us\" target=\"_blank\" rel=\"noopener\">Minecraft</a> was the hottest thing around, and I was hooked too."
+  },
+  "wanting-to-become-a": {
+    "zh": "因為想要從根部成為真正的造物主，Java，成為我的Coding起跑線。<br> 雖然那時大部分的程式碼是public class static void、sysytem.println()...",
+    "en": "Wanting to become a true creator from the ground up, Java became my coding starting line.<br> Although back then most of my code was just public class static void, System.out.println()..."
+  },
+  "the-renaissance": {
+    "zh": "文藝復興",
+    "en": "The Renaissance"
+  },
+  "after-the-junior-high": {
+    "zh": "國中會考結束之後，Python紅透天，讓我意識到寫這個東西好像真的很賺錢，我開始跑到Youtube學習Python， 甚至我還記得那時的<a href=\"https://www.youtube.com/watch?v=wqRlKVRUV_k&list=PL-g0fdC5RMboYEyt6QS2iLb_1m7QcgfHk\" target=\"_blank\" rel=\"noopener\">播放列表</a> ，以及授課老師回覆我的留言。",
+    "en": "After the junior high Comprehensive Assessment Program exam, Python was all the rage, and I realized coding might actually pay well. I started learning Python on YouTube — I still remember that <a href=\"https://www.youtube.com/watch?v=wqRlKVRUV_k&list=PL-g0fdC5RMboYEyt6QS2iLb_1m7QcgfHk\" target=\"_blank\" rel=\"noopener\">playlist</a>, and how the instructor replied to my comment."
+  },
+  "the-baroque-period": {
+    "zh": "巴洛克時期",
+    "en": "The Baroque Period"
+  },
+  "in-high-school-i": {
+    "zh": "高中發現有能力競賽，參加並且使用Python得到佳作，進入培訓後老師讓我開始學習C/C++，一個很討厭的程式語言，什麼都要宣告清清楚楚。<br> 然而我卻開始自己去Youtube找影片學習，並且到Online Judge上測試自己的能力。 大學的計概、轉系考，迫使我將Python與C++的能力提升到一個新的高度。",
+    "en": "In high school I discovered programming competitions, entered one using Python and won an honorable mention. In the training program that followed, my teacher had me learn C/C++ — an annoying language where you have to declare everything explicitly.<br> Yet I started finding YouTube videos to learn from on my own, and tested my skills on Online Judges. Intro to Computer Science and the department transfer exam in university pushed my Python and C++ skills to a whole new level."
+  },
+  "looking-ahead": {
+    "zh": "未來展望",
+    "en": "Looking Ahead"
+  },
+  "spreading-my-wings": {
+    "zh": "展翅翱翔",
+    "en": "Spreading My Wings"
+  },
+  "never-forget-where-i": {
+    "zh": "莫忘初衷，自國小的工程師之夢，我為自己舖足了一條紅磚大道。",
+    "en": "Never forget where I started: ever since my elementary-school dream of becoming an engineer, I've been paving a solid road for myself."
+  },
+  "embrace-change-while-remembering": {
+    "zh": "接受改變，儘管我們要記得初衷，但不要侷限自己一定要走哪一條道路，要堅信自己都能夠做的很好。",
+    "en": "Embrace change: while remembering where we started, we shouldn't limit ourselves to one particular path — believe that you can do well whichever way you go."
+  },
+  "keep-moving-forward-when": {
+    "zh": "勇往直前，面對陌生人、陌生領域，只要自己肯開口就有機會，放大機會、抓住機會，我想這是我非常需要的能力。",
+    "en": "Keep moving forward: when facing strangers and unfamiliar fields, opportunities come as long as you're willing to speak up. Enlarging and seizing opportunities is, I think, the ability I need most."
+  }
+}

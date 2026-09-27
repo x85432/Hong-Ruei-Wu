@@ -1,0 +1,38 @@
+{
+  "meta.title": {
+    "zh": "網站導覽 — 吳弘叡",
+    "en": "Sitemap — Hong-Ruei Wu"
+  },
+  "meta.description": {
+    "zh": "吳弘叡個人網站的完整頁面索引，快速找到自我介紹、系所介紹與生活紀錄等所有頁面。",
+    "en": "Full page index of Hong-Ruei Wu's personal website — find About Me, department introductions, and life-record pages."
+  },
+  "every-page-on-this": {
+    "zh": "這個站的所有頁面都在這裡。",
+    "en": "Every page on this site, all in one place."
+  },
+  "about-me-2": {
+    "zh": "了解我",
+    "en": "About Me"
+  },
+  "personal-introduction": {
+    "zh": "自我介紹",
+    "en": "Personal Introduction"
+  },
+  "label.pull-a-carrot": {
+    "zh": "拔一根蘿蔔",
+    "en": "Pull a carrot"
+  },
+  "department-of-computer-science": {
+    "zh": "資訊工程學系",
+    "en": "Department of Computer Science"
+  },
+  "department-of-applied-mathematics": {
+    "zh": "應用數學系",
+    "en": "Department of Applied Mathematics"
+  },
+  "taichung-second-senior-high": {
+    "zh": "市立臺中第二高級中學",
+    "en": "Taichung Second Senior High School"
+  }
+}

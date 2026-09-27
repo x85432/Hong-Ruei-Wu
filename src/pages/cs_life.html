@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="{{t:common:html.lang}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{t:meta.title}}</title>
+    <meta name="description" content="{{t:meta.description}}">
+    <meta property="og:title" content="{{t:meta.title}}">
+    <meta property="og:description" content="{{t:meta.description}}">
+    {{> head}}
+    <link rel="stylesheet" href="{{root}}css/gallery.css">
+    <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+    {{> header}}
+
+    <main id="main">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-header__title">{{t:computer-science-life}}</h1>
+                <p class="page-header__lead">{{t:internships-hackathons-and-days}}</p>
+            </div>
+
+            <section class="photo-wall" data-lightbox>
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="{{root}}resource/internship.webp" alt="{{t:alt.work-photo-from-an}}" width="701" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>{{t:academia-sinica-internship}}</figcaption>
+                </figure>
+
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="{{root}}resource/ddl.webp" alt="{{t:alt.a-late-night-desk}}" width="554" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>{{t:crushed-by-deadlines}}</figcaption>
+                </figure>
+
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="{{root}}resource/hackathon.webp" alt="{{t:alt.competing-at-the-taipei}}" width="675" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>{{t:taipei-hackathon-at-ntu}}</figcaption>
+                </figure>
+
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="{{root}}resource/github-commit.webp" alt="{{t:alt.the-moment-of-pushing}}" width="675" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>{{t:first-project-uploaded-to}}</figcaption>
+                </figure>
+            </section>
+        </div>
+    </main>
+
+    {{> footer}}
+
+    <script src="{{root}}script/site.js"></script>
+</body>
+</html>

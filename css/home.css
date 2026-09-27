@@ -16,7 +16,7 @@
     min-height: clamp(420px, 62vh, 620px);
     overflow: hidden;
     color: var(--text-invert);
-    background-image: url("resource/hero-1.webp");
+    background-image: url("../resource/hero-1.webp");
     background-size: cover;
     background-position: center 38%;
 }
@@ -31,17 +31,17 @@
 }
 
 .hero__slide--1 {
-    background-image: url("resource/hero-1.webp");
+    background-image: url("../resource/hero-1.webp");
     animation-delay: 0s;
 }
 
 .hero__slide--2 {
-    background-image: url("resource/hero-2.webp");
+    background-image: url("../resource/hero-2.webp");
     animation-delay: 5s;
 }
 
 .hero__slide--3 {
-    background-image: url("resource/hero-3.webp");
+    background-image: url("../resource/hero-3.webp");
     animation-delay: 10s;
 }
 
@@ -147,6 +147,13 @@
     padding-block: 0 var(--space-16);
 }
 
+/* 四張卡片：寬螢幕排成 2×2，避免 3+1 留下一張孤零零的卡片 */
+@media (min-width: 640px) {
+    .education-section .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 .card__links {
     list-style: none;
     margin: var(--space-2) 0 0;
@@ -154,4 +161,77 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
+}
+
+/* ==========================================================================
+   學習經歷列表（個人簡介區）
+   左欄是階段（目前／大學），右欄是學校系所＋年級；窄螢幕改成上下排列。
+   ========================================================================== */
+.edu-list {
+    margin: var(--space-4) 0 0;
+    border-top: 1px solid var(--border);
+}
+
+.edu-list__row {
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    gap: var(--space-2) var(--space-4);
+    padding-block: var(--space-4);
+    border-bottom: 1px solid var(--border);
+}
+
+.edu-list__term {
+    font-weight: 600;
+    color: var(--brand-dark);
+}
+
+.edu-list__item {
+    grid-column: 2;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0 var(--space-4);
+}
+
+.edu-list__years {
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    white-space: nowrap;
+}
+
+@media (max-width: 559px) {
+    .edu-list__row {
+        grid-template-columns: 1fr;
+    }
+
+    .edu-list__item {
+        grid-column: 1;
+    }
+}
+
+/* 求學歷程卡片：左邊校徽、右邊系所名稱 */
+.edu-card__head {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-2);
+}
+
+.edu-card__logo {
+    flex: none;
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+}
+
+.edu-card__head .card__title {
+    margin: 0;
+}
+
+/* nycu_icon.png 原圖四周約有 20% 留白，放大補正；換成裁切好的 logo 後可移除這個 class */
+.edu-card__logo--padded {
+    transform: scale(1.45);
 }

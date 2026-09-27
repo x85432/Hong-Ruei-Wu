@@ -131,7 +131,7 @@
             closeButton = document.createElement("button");
             closeButton.type = "button";
             closeButton.className = "lightbox__close";
-            closeButton.innerHTML = '<span aria-hidden="true">&times;</span><span class="sr-only">關閉</span>';
+            closeButton.innerHTML = '<span aria-hidden="true">&times;</span><span class="sr-only">' + (isEnglish ? "Close" : "關閉") + '</span>';
             closeButton.addEventListener("click", closeLightbox);
 
             figure.appendChild(closeButton);

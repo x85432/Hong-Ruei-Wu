@@ -1,0 +1,16 @@
+name: i18n check
+
+# 確認 index.html、zh/、en/ 都是由 src/ 建置出來的最新版本，且每個字串都有中英翻譯
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node build.mjs --check

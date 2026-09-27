@@ -1,14 +1,20 @@
 <!DOCTYPE html>
+<!-- 此檔由 build.mjs 自動產生：請修改 src/ 後執行 node build.mjs，不要直接編輯 -->
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>吳弘叡 — 個人網站</title>
-    <meta name="description" content="陽明交大資訊工程系與應用數學系雙主修、應數系排球隊隊長吳弘叡的個人網站。">
+    <meta name="description" content="吳弘叡的個人網站。">
     <meta property="og:title" content="吳弘叡 — 個人網站">
-    <meta property="og:description" content="陽明交大資訊工程系與應用數學系雙主修、應數系排球隊隊長吳弘叡的個人網站。">
-    <meta property="og:type" content="website">
+    <meta property="og:description" content="吳弘叡的個人網站。">
+        <meta property="og:type" content="website">
     <meta property="og:image" content="resource/mylogo.png">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:locale:alternate" content="en_US">
+    <link rel="alternate" hreflang="zh-Hant" href="index.html">
+    <link rel="alternate" hreflang="en" href="en/index_en.html">
+    <link rel="alternate" hreflang="x-default" href="index.html">
     <link rel="icon" href="resource/mylogo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,11 +23,10 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/home.css">
-    <!-- 標記 JS 可用：.reveal 只在有 JS 時才預先隱藏，避免 JS 失效時內容永久看不見 -->
     <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-    <a class="skip-link" href="#main">跳到主要內容</a>
+        <a class="skip-link" href="#main">跳到主要內容</a>
 
     <header class="site-header">
         <div class="site-header__inner container">
@@ -44,7 +49,7 @@
                     <li><a class="nav-link" href="zh/introMe.html">自我介紹</a></li>
                     <li><a class="nav-link" href="zh/contact.html">聯絡我</a></li>
                 </ul>
-                <a class="lang-switch" href="en/sitemap_en.html" hreflang="en" lang="en">EN</a>
+                <a class="lang-switch" href="en/index_en.html" hreflang="en" lang="en">EN</a>
             </nav>
         </div>
     </header>
@@ -60,7 +65,7 @@
                 <div class="hero__content">
                     <p class="hero__eyebrow">Welcome to 弘叡's Home</p>
                     <h1>吳弘叡</h1>
-                    <p class="hero__lead">陽明交大資訊工程系 × 應用數學系雙主修・應數系排球隊隊長</p>
+                    <p class="hero__lead">歡迎在這邊認識我</p>
                     <div class="hero__actions">
                         <a class="btn" href="zh/introMe.html">認識我</a>
                         <a class="btn btn--ghost" href="zh/sitemap_zh.html">網站導覽</a>
@@ -72,36 +77,72 @@
         <section class="intro-section container container--narrow">
             <h2>個人簡介</h2>
             <p>我是<mark class="kw">吳弘叡</mark>，土生土長的臺中霧峰人。</p>
-            <p>興趣是打<mark class="kw">排球</mark>，目前擔任本校應用數學系排球隊<mark class="kw">隊長</mark>。</p>
-            <p><mark class="kw">資工</mark><mark class="kw">雙主修</mark><mark class="kw">應數</mark></p>
+            <p>興趣是打<mark class="kw">排球</mark>，曾任本校應用數學系排球隊<mark class="kw">隊長</mark>。現於資工系排擔任小小隊員。</p>
 
-            <h2>我的系所</h2>
-            <p><mark class="kw">轉系</mark>前: <mark class="kw">陽明交大</mark>應數系，基礎扎實，課程多元，但東西有點太難了。</p>
-            <p>目前: 陽明交大資工系，師資優良，資金充足，是做研究的好地方，然後我比較有興趣一點。</p>
-
-            <h2>我的高中</h2>
-            <p><mark class="kw">臺中二中</mark>，歷史悠久的校園，孕育我成長的收栽。</p>
+            <h2>學習經歷</h2>
+            <dl class="edu-list">
+                <div class="edu-list__row">
+                    <dt class="edu-list__term">目前</dt>
+                    <dd class="edu-list__item">
+                        <span class="edu-list__school">國立陽明交通大學 資訊科學與工程研究所</span>
+                        <span class="edu-list__years">碩一</span>
+                    </dd>
+                </div>
+                <div class="edu-list__row">
+                    <dt class="edu-list__term">大學</dt>
+                    <dd class="edu-list__item">
+                        <span class="edu-list__school">國立陽明交通大學 資訊工程學系</span>
+                        <span class="edu-list__years">大三、大四</span>
+                    </dd>
+                    <dd class="edu-list__item">
+                        <span class="edu-list__school">國立陽明交通大學 應用數學系</span>
+                        <span class="edu-list__years">大一、大二</span>
+                    </dd>
+                </div>
+                <div class="edu-list__row">
+                    <dt class="edu-list__term">高中</dt>
+                    <dd class="edu-list__item">
+                        <span class="edu-list__school">臺中市立臺中第二高級中學</span>
+                    </dd>
+                </div>
+            </dl>
         </section>
 
         <section class="education-section container">
             <h2>求學歷程</h2>
             <div class="card-grid">
-                <div class="card">
-                    <h3 class="card__title">陽明交大資訊工程系</h3>
+                <div class="card edu-card">
+                    <div class="edu-card__head">
+                        <img class="edu-card__logo edu-card__logo--padded" src="resource/nycu_icon.png" alt="國立陽明交通大學校徽" width="56" height="56" loading="lazy" decoding="async">
+                        <h3 class="card__title">資訊科學與工程研究所</h3>
+                    </div>
+                    <p class="card__body">碩士班一年級（就讀中）</p>
+                </div>
+                <div class="card edu-card">
+                    <div class="edu-card__head">
+                        <img class="edu-card__logo edu-card__logo--padded" src="resource/nycu_icon.png" alt="國立陽明交通大學校徽" width="56" height="56" loading="lazy" decoding="async">
+                        <h3 class="card__title">資訊工程學系</h3>
+                    </div>
                     <ul class="card__links">
                         <li><a href="zh/nycuCS.html">系所介紹</a></li>
                         <li><a href="zh/cs_life.html">資工系生活</a></li>
                     </ul>
                 </div>
-                <div class="card">
-                    <h3 class="card__title">陽明交大應用數學系</h3>
+                <div class="card edu-card">
+                    <div class="edu-card__head">
+                        <img class="edu-card__logo edu-card__logo--padded" src="resource/nycu_icon.png" alt="國立陽明交通大學校徽" width="56" height="56" loading="lazy" decoding="async">
+                        <h3 class="card__title">應用數學系</h3>
+                    </div>
                     <ul class="card__links">
                         <li><a href="zh/nycuAM.html">系所介紹</a></li>
                         <li><a href="zh/am_life.html">應數系生活</a></li>
                     </ul>
                 </div>
-                <div class="card">
-                    <h3 class="card__title">市立臺中第二高級中學</h3>
+                <div class="card edu-card">
+                    <div class="edu-card__head">
+                        <img class="edu-card__logo" src="resource/tcssh-logo.webp" alt="臺中二中校徽" width="56" height="56" loading="lazy" decoding="async">
+                        <h3 class="card__title">臺中二中</h3>
+                    </div>
                     <ul class="card__links">
                         <li><a href="zh/tcssh.html">我看到的二中</a></li>
                         <li><a href="zh/tcssh_life.html">開心高中生活</a></li>
@@ -111,7 +152,7 @@
         </section>
     </main>
 
-    <footer class="site-footer">
+        <footer class="site-footer">
         <div class="container site-footer__inner">
             <p class="site-footer__copy">&copy; 2024–2026 吳弘叡</p>
             <ul class="site-footer__links">

@@ -1,0 +1,110 @@
+{
+  "meta.title": {
+    "zh": "吳弘叡 — 個人網站",
+    "en": "Hong-Ruei Wu — Personal Website"
+  },
+  "meta.description": {
+    "zh": "吳弘叡的個人網站。",
+    "en": "Personal website of Hong-Ruei Wu."
+  },
+  "welcome-to-hong-ruei": {
+    "zh": "Welcome to 弘叡's Home",
+    "en": "Welcome to Hong-Ruei's Home"
+  },
+  "hero.lead": {
+    "zh": "歡迎在這邊認識我",
+    "en": "Welcome — get to know me here"
+  },
+  "get-to-know-me": {
+    "zh": "認識我",
+    "en": "Get to Know Me"
+  },
+  "about-me-2": {
+    "zh": "個人簡介",
+    "en": "About Me"
+  },
+  "i-m-hong-ruei": {
+    "zh": "我是<mark class=\"kw\">吳弘叡</mark>，土生土長的臺中霧峰人。",
+    "en": "I'm <mark class=\"kw\">Hong-Ruei Wu</mark>, born and raised in Wufeng, Taichung."
+  },
+  "i-love-playing-volleyball": {
+    "zh": "興趣是打<mark class=\"kw\">排球</mark>，曾任本校應用數學系排球隊<mark class=\"kw\">隊長</mark>。現於資工系排擔任小小隊員。",
+    "en": "I love playing <mark class=\"kw\">volleyball</mark> and previously served as <mark class=\"kw\">captain</mark> of our Department of Applied Mathematics volleyball team. Now I'm just a humble member of the Computer Science volleyball team."
+  },
+  "edu.heading": {
+    "zh": "學習經歷",
+    "en": "Academic Background"
+  },
+  "edu.now": {
+    "zh": "目前",
+    "en": "Now"
+  },
+  "edu.grad.school": {
+    "zh": "國立陽明交通大學 資訊科學與工程研究所",
+    "en": "National Yang Ming Chiao Tung University — Institute of Computer Science and Engineering"
+  },
+  "edu.grad.year": {
+    "zh": "碩一",
+    "en": "1st-year M.S."
+  },
+  "edu.undergrad": {
+    "zh": "大學",
+    "en": "Undergraduate"
+  },
+  "edu.cs.school": {
+    "zh": "國立陽明交通大學 資訊工程學系",
+    "en": "National Yang Ming Chiao Tung University — Department of Computer Science"
+  },
+  "edu.cs.years": {
+    "zh": "大三、大四",
+    "en": "3rd–4th year"
+  },
+  "edu.am.school": {
+    "zh": "國立陽明交通大學 應用數學系",
+    "en": "National Yang Ming Chiao Tung University — Department of Applied Mathematics"
+  },
+  "edu.am.years": {
+    "zh": "大一、大二",
+    "en": "1st–2nd year"
+  },
+  "edu.highschool": {
+    "zh": "高中",
+    "en": "High School"
+  },
+  "edu.tcssh.school": {
+    "zh": "臺中市立臺中第二高級中學",
+    "en": "Taichung Municipal Taichung Second Senior High School"
+  },
+  "education": {
+    "zh": "求學歷程",
+    "en": "Education"
+  },
+  "card.grad": {
+    "zh": "資訊科學與工程研究所",
+    "en": "Institute of Computer Science and Engineering"
+  },
+  "card.grad.status": {
+    "zh": "碩士班一年級（就讀中）",
+    "en": "First-year master's student (current)"
+  },
+  "card.cs": {
+    "zh": "資訊工程學系",
+    "en": "Department of Computer Science"
+  },
+  "card.am": {
+    "zh": "應用數學系",
+    "en": "Department of Applied Mathematics"
+  },
+  "card.tcssh": {
+    "zh": "臺中二中",
+    "en": "Taichung Second Senior High School"
+  },
+  "card.nycu-logo-alt": {
+    "zh": "國立陽明交通大學校徽",
+    "en": "NYCU emblem"
+  },
+  "card.tcssh-logo-alt": {
+    "zh": "臺中二中校徽",
+    "en": "TCSSH emblem"
+  }
+}

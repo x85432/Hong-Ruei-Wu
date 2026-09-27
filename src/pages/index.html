@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="{{t:common:html.lang}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{t:meta.title}}</title>
+    <meta name="description" content="{{t:meta.description}}">
+    <meta property="og:title" content="{{t:meta.title}}">
+    <meta property="og:description" content="{{t:meta.description}}">
+    {{> head}}
+    <link rel="stylesheet" href="{{root}}css/home.css">
+    {{! 標記 JS 可用：.reveal 只在有 JS 時才預先隱藏，避免 JS 失效時內容永久看不見 }}
+    <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+    {{> header}}
+
+    <main id="main">
+        <section class="hero">
+            <div class="hero__slide hero__slide--1"></div>
+            <div class="hero__slide hero__slide--2"></div>
+            <div class="hero__slide hero__slide--3"></div>
+            <div class="hero__scrim"></div>
+
+            <div class="container">
+                <div class="hero__content">
+                    <p class="hero__eyebrow">{{t:welcome-to-hong-ruei}}</p>
+                    <h1>{{t:common:site.name}}</h1>
+                    <p class="hero__lead">{{t:hero.lead}}</p>
+                    <div class="hero__actions">
+                        <a class="btn" href="{{link:introMe}}">{{t:get-to-know-me}}</a>
+                        <a class="btn btn--ghost" href="{{link:sitemap}}">{{t:common:nav.sitemap}}</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="intro-section container container--narrow">
+            <h2>{{t:about-me-2}}</h2>
+            <p>{{t:i-m-hong-ruei}}</p>
+            <p>{{t:i-love-playing-volleyball}}</p>
+
+            <h2>{{t:edu.heading}}</h2>
+            <dl class="edu-list">
+                <div class="edu-list__row">
+                    <dt class="edu-list__term">{{t:edu.now}}</dt>
+                    <dd class="edu-list__item">
+                        <span class="edu-list__school">{{t:edu.grad.school}}</span>
+                        <span class="edu-list__years">{{t:edu.grad.year}}</span>
+                    </dd>
+                </div>
+                <div class="edu-list__row">
+                    <dt class="edu-list__term">{{t:edu.undergrad}}</dt>
+                    <dd class="edu-list__item">
+                        <span class="edu-list__school">{{t:edu.cs.school}}</span>
+                        <span class="edu-list__years">{{t:edu.cs.years}}</span>
+                    </dd>
+                    <dd class="edu-list__item">
+                        <span class="edu-list__school">{{t:edu.am.school}}</span>
+                        <span class="edu-list__years">{{t:edu.am.years}}</span>
+                    </dd>
+                </div>
+                <div class="edu-list__row">
+                    <dt class="edu-list__term">{{t:edu.highschool}}</dt>
+                    <dd class="edu-list__item">
+                        <span class="edu-list__school">{{t:edu.tcssh.school}}</span>
+                    </dd>
+                </div>
+            </dl>
+        </section>
+
+        <section class="education-section container">
+            <h2>{{t:education}}</h2>
+            <div class="card-grid">
+                <div class="card edu-card">
+                    <div class="edu-card__head">
+                        <img class="edu-card__logo edu-card__logo--padded" src="{{root}}resource/nycu_icon.png" alt="{{t:card.nycu-logo-alt}}" width="56" height="56" loading="lazy" decoding="async">
+                        <h3 class="card__title">{{t:card.grad}}</h3>
+                    </div>
+                    <p class="card__body">{{t:card.grad.status}}</p>
+                </div>
+                <div class="card edu-card">
+                    <div class="edu-card__head">
+                        <img class="edu-card__logo edu-card__logo--padded" src="{{root}}resource/nycu_icon.png" alt="{{t:card.nycu-logo-alt}}" width="56" height="56" loading="lazy" decoding="async">
+                        <h3 class="card__title">{{t:card.cs}}</h3>
+                    </div>
+                    <ul class="card__links">
+                        <li><a href="{{link:nycuCS}}">{{t:common:school.dept-intro}}</a></li>
+                        <li><a href="{{link:cs_life}}">{{t:common:school.cs-life}}</a></li>
+                    </ul>
+                </div>
+                <div class="card edu-card">
+                    <div class="edu-card__head">
+                        <img class="edu-card__logo edu-card__logo--padded" src="{{root}}resource/nycu_icon.png" alt="{{t:card.nycu-logo-alt}}" width="56" height="56" loading="lazy" decoding="async">
+                        <h3 class="card__title">{{t:card.am}}</h3>
+                    </div>
+                    <ul class="card__links">
+                        <li><a href="{{link:nycuAM}}">{{t:common:school.dept-intro}}</a></li>
+                        <li><a href="{{link:am_life}}">{{t:common:school.am-life}}</a></li>
+                    </ul>
+                </div>
+                <div class="card edu-card">
+                    <div class="edu-card__head">
+                        <img class="edu-card__logo" src="{{root}}resource/tcssh-logo.webp" alt="{{t:card.tcssh-logo-alt}}" width="56" height="56" loading="lazy" decoding="async">
+                        <h3 class="card__title">{{t:card.tcssh}}</h3>
+                    </div>
+                    <ul class="card__links">
+                        <li><a href="{{link:tcssh}}">{{t:common:school.tcssh-intro}}</a></li>
+                        <li><a href="{{link:tcssh_life}}">{{t:common:school.tcssh-life}}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    {{> footer}}
+
+    <script src="{{root}}script/site.js"></script>
+</body>
+</html>

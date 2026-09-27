@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- 此檔由 build.mjs 自動產生：請修改 src/ 後執行 node build.mjs，不要直接編輯 -->
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
@@ -7,8 +8,13 @@
     <meta name="description" content="吳弘叡的聯絡方式，包含 Email、LinkedIn、Instagram、Facebook 與 Line。">
     <meta property="og:title" content="聯絡我 — 吳弘叡">
     <meta property="og:description" content="吳弘叡的聯絡方式，包含 Email、LinkedIn、Instagram、Facebook 與 Line。">
-    <meta property="og:type" content="website">
+        <meta property="og:type" content="website">
     <meta property="og:image" content="../resource/mylogo.png">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:locale:alternate" content="en_US">
+    <link rel="alternate" hreflang="zh-Hant" href="contact.html">
+    <link rel="alternate" hreflang="en" href="../en/contact_en.html">
+    <link rel="alternate" hreflang="x-default" href="contact.html">
     <link rel="icon" href="../resource/mylogo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,11 +23,10 @@
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/layout.css">
     <link rel="stylesheet" href="../css/contact.css">
-    <!-- 標記 JS 可用：.reveal 只在有 JS 時才預先隱藏，避免 JS 失效時內容永久看不見 -->
     <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-    <a class="skip-link" href="#main">跳到主要內容</a>
+        <a class="skip-link" href="#main">跳到主要內容</a>
 
     <header class="site-header">
         <div class="site-header__inner container">
@@ -58,16 +63,16 @@
 
             <ul class="contact-list">
                 <li>
-                    <a class="card card--link contact-card" href="mailto:x85432.sc11@nycu.edu.tw">
+                    <a class="card card--link contact-card" href="mailto:redwu.cs15@nycu.edu.tw">
                         <img class="contact-card__icon" src="../resource/icon-mail.webp" alt="" width="40" height="40">
                         <span class="contact-card__text">
                             <span class="contact-card__name">Email</span>
-                            <span class="contact-card__handle">x85432.sc11@nycu.edu.tw</span>
+                            <span class="contact-card__handle">redwu.cs15@nycu.edu.tw</span>
                         </span>
                     </a>
                 </li>
                 <li>
-                    <a class="card card--link contact-card" href="https://www.linkedin.com/in/hung-ruei-wu-021a90323">
+                    <a class="card card--link contact-card" href="https://www.linkedin.com/in/hung-ruei-wu-021a90323" target="_blank" rel="noopener">
                         <img class="contact-card__icon" src="../resource/icon-linkedin.webp" alt="" width="40" height="40">
                         <span class="contact-card__text">
                             <span class="contact-card__name">LinkedIn</span>
@@ -76,7 +81,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="card card--link contact-card" href="https://www.instagram.com/x85432/">
+                    <a class="card card--link contact-card" href="https://www.instagram.com/x85432/" target="_blank" rel="noopener">
                         <img class="contact-card__icon" src="../resource/icon-instagram.webp" alt="" width="40" height="40">
                         <span class="contact-card__text">
                             <span class="contact-card__name">Instagram</span>
@@ -85,7 +90,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="card card--link contact-card" href="https://www.facebook.com/profile.php?viewas=100000686899395&id=100013736884142">
+                    <a class="card card--link contact-card" href="https://www.facebook.com/profile.php?viewas=100000686899395&id=100013736884142" target="_blank" rel="noopener">
                         <img class="contact-card__icon" src="../resource/icon-facebook.webp" alt="" width="40" height="40">
                         <span class="contact-card__text">
                             <span class="contact-card__name">Facebook</span>
@@ -94,7 +99,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="card card--link contact-card" href="https://line.me/ti/p/JHONyck_tl">
+                    <a class="card card--link contact-card" href="https://line.me/ti/p/JHONyck_tl" target="_blank" rel="noopener">
                         <img class="contact-card__icon" src="../resource/icon-line.webp" alt="" width="40" height="40">
                         <span class="contact-card__text">
                             <span class="contact-card__name">Line</span>
@@ -106,7 +111,7 @@
         </div>
     </main>
 
-    <footer class="site-footer">
+        <footer class="site-footer">
         <div class="container site-footer__inner">
             <p class="site-footer__copy">&copy; 2024–2026 吳弘叡</p>
             <ul class="site-footer__links">
