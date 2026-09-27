@@ -1,75 +1,97 @@
-<!--
-111652049 吳弘叡 第三次作業 11/1
-111652049 Hong-Ruei Wu The Third Homework 11/1
--->
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>陽明交大應用數學系</title>
-    <link rel="stylesheet" href="../css/amStyle.css">
+    <title>陽明交大應用數學系 — 吳弘叡</title>
+    <meta name="description" content="吳弘叡個人網站中，陽明交大應用數學系的系所介紹頁面，收錄歷史沿革、人員組成與研究領域。">
+    <meta property="og:title" content="陽明交大應用數學系 — 吳弘叡">
+    <meta property="og:description" content="吳弘叡個人網站中，陽明交大應用數學系的系所介紹頁面，收錄歷史沿革、人員組成與研究領域。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../resource/mylogo.png">
     <link rel="icon" href="../resource/mylogo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/tokens.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/dept.css">
+    <!-- 標記 JS 可用：.reveal 只在有 JS 時才預先隱藏，避免 JS 失效時內容永久看不見 -->
+    <script>document.documentElement.classList.add('js');</script>
 </head>
-<body>
-    <header>
-        <div>
-            <h1>陽明交大應用數學系</h1>
-        </div>
-    
-        <div class="headerIcon iconHome">
-            <a href="../index.html">
-                <img src="../resource/home.png" alt="首頁" width="50" height="50"><img>
-            </a>
-            <p>主頁</p>
-        </div>
+<body class="dept dept--am">
+    <a class="skip-link" href="#main">跳到主要內容</a>
 
-        <div class="headerIcon iconAbout">
-            <a href="sitemap_zh.html">
-                <img src="../resource/bunny_icon.png" alt="網站導覽" width="50" height="50"><img>
+    <header class="site-header">
+        <div class="site-header__inner container">
+            <a class="brand" href="../index.html">
+                <img class="brand__mark" src="../resource/mylogo.png" alt="" width="32" height="32">
+                <span class="brand__name">吳弘叡</span>
             </a>
-            <p>網站導覽</p>
-        </div>
-        <div class="headerIcon iconContact">
-            <a href="contact.html">
-                <img src="../resource/contact_icon.png" alt="聯絡資訊" width="50" height="50"><img>
-            </a>
-            <p>聯絡資訊</p>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="sr-only">開關選單</span>
+            </button>
+
+            <nav class="site-nav" id="site-nav" aria-label="主要導覽">
+                <ul class="site-nav__list">
+                    <li><a class="nav-link" href="../index.html">首頁</a></li>
+                    <li><a class="nav-link" href="sitemap_zh.html">網站導覽</a></li>
+                    <li><a class="nav-link" href="introMe.html">自我介紹</a></li>
+                    <li><a class="nav-link" href="contact.html">聯絡我</a></li>
+                </ul>
+                <a class="lang-switch" href="../en/nycuAM_en.html" hreflang="en" lang="en">EN</a>
+            </nav>
         </div>
     </header>
 
-    <div class="container">
-        <div class="box">
-            <h3>歷史沿革</h3>
-            <div class="content">
-                <p>陽明交大應用數學系成立於1994年，致力於培養具備數學基礎及應用能力的學生，並推動跨學科的合作與創新。</p>
+    <main id="main">
+        <div class="dept-banner">
+            <div class="container">
+                <h1 class="dept-banner__title">陽明交大應用數學系</h1>
             </div>
         </div>
 
-        <div class="box">
-            <h3>人員組成</h3>
-            <div class="content">
-                <p>本系擁有30多位專任教授，涵蓋純數學、應用數學、計算數學等多領域，並積極參與國際合作與學術交流。</p>
+        <div class="container">
+            <div class="card-grid dept-grid">
+                <div class="card">
+                    <h3 class="card__title">歷史沿革</h3>
+                    <p class="card__body">陽明交大應用數學系成立於1994年，致力於培養具備數學基礎及應用能力的學生，並推動跨學科的合作與創新。</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="card__title">人員組成</h3>
+                    <p class="card__body">本系擁有30多位專任教授，涵蓋純數學、應用數學、計算數學等多領域，並積極參與國際合作與學術交流。</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="card__title">研究領域</h3>
+                    <p class="card__body">本系研究涵蓋離散數學、數據科學、統計學、數值分析、優化理論等多個領域，與多個國際頂尖大學保持緊密合作。</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="card__title">傑出成就</h3>
+                    <p class="card__body">本系畢業生廣泛分佈於學術界與工業界，其中多位校友於國際知名企業及研究機構擔任重要職務，並在數學與科技領域取得卓越成就。</p>
+                </div>
             </div>
         </div>
+    </main>
 
-        <div class="box">
-            <h3>研究領域</h3>
-            <div class="content">
-                <p>本系研究涵蓋離散數學、數據科學、統計學、數值分析、優化理論等多個領域，與多個國際頂尖大學保持緊密合作。</p>
-            </div>
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <p class="site-footer__copy">&copy; 2024–2026 吳弘叡</p>
+            <ul class="site-footer__links">
+                <li><a href="sitemap_zh.html">網站導覽</a></li>
+                <li><a href="introMe.html">自我介紹</a></li>
+                <li><a href="contact.html">聯絡我</a></li>
+            </ul>
         </div>
-
-        <div class="box">
-            <h3>傑出成就</h3>
-            <div class="content">
-                <p>本系畢業生廣泛分佈於學術界與工業界，其中多位校友於國際知名企業及研究機構擔任重要職務，並在數學與科技領域取得卓越成就。</p>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 弘叡's網站</p>
     </footer>
+
+    <script src="../script/site.js"></script>
 </body>
 </html>

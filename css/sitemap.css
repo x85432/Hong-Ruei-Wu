@@ -1,204 +1,89 @@
-/*
-111652049 吳弘叡 第三次作業 11/1
-111652049 Hong-Ruei Wu The Third Homework 11/1
-*/
-body {
+/* ==========================================================================
+   sitemap.css — 網站導覽頁專屬樣式
+   只放這頁獨有的東西：連結清單排版、拔蘿蔔互動。
+   header / nav / footer / card 一律沿用 layout.css，不在此重複定義。
+   ========================================================================== */
+
+.sitemap-list {
+    list-style: none;
     margin: 0;
     padding: 0;
-    display:flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-header {
-    background-color: #016ce6;
-    padding:1em;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
     display: flex;
-}
-header p {
-    margin: 0;
-    
-}
-
-header div h1{
-    color: white;
-    font-size: 1.5em;
-    margin-right: 0%;
-}
-
-body a{
-    color: black;
-    text-decoration: none;
-    
-}
-
-body a:hover {
-    color: white;
-    text-decoration: underline;
-}
-
-body li {
-    list-style-type: none;
-}
-
-.headerIcon {
-    color: white;
-    display:flex;
     flex-direction: column;
+    gap: var(--space-3);
+}
+
+.sitemap-list li {
+    display: flex;
     align-items: center;
-    /*for icon and text*/
-    position: relative;
-}
-.headerIcon img {
-    display: block;
-    filter: drop-shadow(-5px -5px 10px rgba(0, 0, 0, 0.8));
-    transition: transform 0.3s ease, filter 0.3s ease;
-    transform: translateY(-5px);
-    
-}
-.headerIcon img:hover {
-    filter: none;
-    transform: translateY(0);
-}
-
-.headerIcon p {
-    position: relative;
-    margin-top: 10px;
-    display: block;
-    color: white;
-    font-size: 0.8em;
-}
-
-.iconHome {
-    position: absolute;
-    right: 250px;
-}
-.iconAbout {
-    position: absolute;
-    right: 150px;
-}
-.iconContact {
-    position: absolute;
-    right: 50px;
-}
-/*main*/
-main {
-    flex-grow: 1; /* 讓 main 區域擴展，佔據剩餘空間 */
-    display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    padding: 20px;
-    position: static;
-}
-a {
-    cursor: pointer;
-}
-.tcGroup {
-    width: 40vw;
-    height: 40vh;
-    margin-top: 5vh;
-}
-.topic {
-    background-color: lightgreen;
-    width: 100%;
-    height: auto;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    text-align: center;
-    font-size: 2.3vw;   
+    gap: var(--space-3);
 }
 
-.content {
-    background-color: rgba(224, 80, 54, 0.45);
-    width: 100%;
-    min-height: 40%;
-    align-items: left; 
+.sitemap-list a {
+    font-size: var(--text-base);
 }
 
-.content ul {
-    font-size: 1.8vw;
-    margin:0;
-}
-
+/* --- 拔蘿蔔：留在洞裡的按鈕 --------------------------------------------------- */
 .carrot {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0;
+    border: 0;
+    border-radius: var(--radius-sm);
+    background: none;
+    font-size: var(--text-xl);
+    line-height: 1;
     cursor: pointer;
-    display: inline-block;
-    transition: transform 0.5s ease;
-}
-.carrot.hidden {
-    transform: scale(0);
-    opacity: 0;
-    transition: transform 2s ease, opacity 2s ease;
-    pointer-events: none;
-}
-.draggable {
-    position: absolute;
-    font-size: 40px;
-    cursor: grab;
+    transition: transform var(--dur) var(--ease);
 }
 
-.dragzone {
-    width: auto;
-    height: 100%;
-    background-color: rgba(85, 48, 5, 0.1);
-    position: relative;
-    overflow: hidden;
-    pointer-events: none;
-}
-/*footer*/
-footer {
-    background-color: #016ce6;
-    color: white;
-    text-align: center;
-    padding: 1em;
-    position: static;
-    width: 100vw;
-    height: 10vh;
-    bottom: 0%;
-    margin: 0;
+.carrot:hover {
+    transform: scale(1.15);
 }
 
-#timer {
+/* 蘿蔔被拔走後，原本的按鈕變成可以放回去的洞 */
+.carrot.is-empty {
+    cursor: default;
+    opacity: 0.55;
+}
+
+.carrot.is-empty:hover {
+    transform: none;
+}
+
+/* --- 拔蘿蔔：拖曳中的蘿蔔（動態附加在 body 上） ------------------------------- */
+.carrot-drag {
     position: fixed;
-    opacity: 1;
-    bottom: 20%;
-    right: 0%;
-    width: 100px;
-    height: 50px;
-    background-color: rgba(0, 0, 0, 0.5); /*black with 50% opacity*/
-    color: white;
-    text-align: center;
-    line-height: 50px;
-    font-size: 20px;
-    transform: translate(-50%, -50%);
-    transition: opacity 1s
-}
-
-#timer.hidden {
-    opacity: 0;
-    transition: opacity 1s
-}
-
-#ad {
-    position: fixed;
-    bottom: 0%;
-    right: 0%;
-    width: 300px;
-    height: 200px;
-    background-color: rgba(224, 211, 211, 0.8);
-    display: none;
-    z-index: 2;
-    overflow: hidden; /*unscrollable*/
-    text-align: center;
-}
-#close {
-    position: absolute;
+    left: 0;
     top: 0;
-    right: 0;
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    color: white;
-    text-align: center;
-    cursor: pointer;
+    z-index: 60;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    background: none;
+    font-size: var(--text-xl);
+    line-height: 1;
+    cursor: grab;
+    /* 讓瀏覽器把觸控手勢完全交給 JS 處理，才能用 Pointer Events 拖曳 */
+    touch-action: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.carrot-drag.is-dragging {
+    cursor: grabbing;
+}
+
+@media (max-width: 480px) {
+    .sitemap-list li {
+        flex-wrap: wrap;
+    }
 }

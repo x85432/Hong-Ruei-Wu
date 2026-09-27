@@ -1,0 +1,61 @@
+/* ==========================================================================
+   dept.css — 系所頁共用樣式（zh/nycuCS.html、zh/nycuAM.html）
+   header / nav / footer / card / container 一律來自 layout.css，
+   這裡只放系所 banner 與版面間距等本頁獨有規則。
+   兩頁差異只有 banner 背景圖，用 body 的 class 區分：
+   .dept--cs / .dept--am。
+   ========================================================================== */
+
+.dept-banner {
+    position: relative;
+    display: grid;
+    align-items: end;
+    min-height: clamp(180px, 28vh, 320px);
+    background-color: var(--surface-sunken);
+    background-size: cover;
+    background-position: center;
+}
+
+.dept-banner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--scrim-strong), transparent 70%);
+}
+
+.dept--cs .dept-banner {
+    background-image: url('../resource/cs-college.webp');
+}
+
+.dept--am .dept-banner {
+    background-image: url('../resource/am-college.webp');
+}
+
+.dept-banner .container {
+    position: relative;
+    z-index: 1;
+    padding-block-end: var(--space-6);
+}
+
+.dept-banner__title {
+    margin: 0;
+    color: var(--text-invert);
+}
+
+/* 系所卡片區塊的上下留白（取代原本 page-header 的間距） */
+.dept-grid {
+    padding-block: var(--space-10) var(--space-16);
+}
+
+/* ==========================================================================
+   響應式
+   ========================================================================== */
+@media (max-width: 767px) {
+    .dept-banner__title {
+        font-size: var(--text-3xl);
+    }
+
+    .dept-grid {
+        padding-block: var(--space-8) var(--space-12);
+    }
+}

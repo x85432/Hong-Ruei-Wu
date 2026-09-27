@@ -1,36 +1,122 @@
-<!--
-111652049 吳弘叡 第三次作業 11/1
-111652049 Hong-Ruei Wu The Third Homework 11/1
--->
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>聯絡我</title>
-    <link rel="stylesheet" href="../css/contact.css">
+    <title>聯絡我 — 吳弘叡</title>
+    <meta name="description" content="吳弘叡的聯絡方式，包含 Email、LinkedIn、Instagram、Facebook 與 Line。">
+    <meta property="og:title" content="聯絡我 — 吳弘叡">
+    <meta property="og:description" content="吳弘叡的聯絡方式，包含 Email、LinkedIn、Instagram、Facebook 與 Line。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../resource/mylogo.png">
     <link rel="icon" href="../resource/mylogo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/tokens.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <!-- 標記 JS 可用：.reveal 只在有 JS 時才預先隱藏，避免 JS 失效時內容永久看不見 -->
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-    <div class="contact-container">
-        <h1>聯絡我</h1>
-        <div class="contact-icons">
-            <a href="mailto:x85432.sc11@nycu.edu.tw" target="_blank">
-                <img src="../resource/mail.jpg" alt="Email">
+    <a class="skip-link" href="#main">跳到主要內容</a>
+
+    <header class="site-header">
+        <div class="site-header__inner container">
+            <a class="brand" href="../index.html">
+                <img class="brand__mark" src="../resource/mylogo.png" alt="" width="32" height="32">
+                <span class="brand__name">吳弘叡</span>
             </a>
-            <a href="https://www.linkedin.com/in/hung-ruei-wu-021a90323" target="_blank">
-                <img src="../resource/linkin.jpg" alt="LinkedIn">
-            </a>
-            <a href="https://www.instagram.com/x85432/" target="_blank">
-                <img src="../resource/ig.jpg" alt="Instagram">
-            </a>
-            <a href="https://www.facebook.com/profile.php?viewas=100000686899395&id=100013736884142" target="_blank">
-                <img src="../resource/fb.png" alt="Facebook">
-            </a>
-            <a href="https://line.me/ti/p/JHONyck_tl" target="_blank">
-                <img src="../resource/line.png" alt="Line">
-            </a>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="sr-only">開關選單</span>
+            </button>
+
+            <nav class="site-nav" id="site-nav" aria-label="主要導覽">
+                <ul class="site-nav__list">
+                    <li><a class="nav-link" href="../index.html">首頁</a></li>
+                    <li><a class="nav-link" href="sitemap_zh.html">網站導覽</a></li>
+                    <li><a class="nav-link" href="introMe.html">自我介紹</a></li>
+                    <li><a class="nav-link" href="contact.html" aria-current="page">聯絡我</a></li>
+                </ul>
+                <a class="lang-switch" href="../en/contact_en.html" hreflang="en" lang="en">EN</a>
+            </nav>
         </div>
-    </div>
+    </header>
+
+    <main id="main">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-header__title">聯絡我</h1>
+                <p class="page-header__lead">歡迎用任何方式找我。</p>
+            </div>
+
+            <ul class="contact-list">
+                <li>
+                    <a class="card card--link contact-card" href="mailto:x85432.sc11@nycu.edu.tw">
+                        <img class="contact-card__icon" src="../resource/icon-mail.webp" alt="" width="40" height="40">
+                        <span class="contact-card__text">
+                            <span class="contact-card__name">Email</span>
+                            <span class="contact-card__handle">x85432.sc11@nycu.edu.tw</span>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a class="card card--link contact-card" href="https://www.linkedin.com/in/hung-ruei-wu-021a90323" target="_blank" rel="noopener">
+                        <img class="contact-card__icon" src="../resource/icon-linkedin.webp" alt="" width="40" height="40">
+                        <span class="contact-card__text">
+                            <span class="contact-card__name">LinkedIn</span>
+                            <span class="contact-card__handle">Hung-Ruei Wu</span>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a class="card card--link contact-card" href="https://www.instagram.com/x85432/" target="_blank" rel="noopener">
+                        <img class="contact-card__icon" src="../resource/icon-instagram.webp" alt="" width="40" height="40">
+                        <span class="contact-card__text">
+                            <span class="contact-card__name">Instagram</span>
+                            <span class="contact-card__handle">@x85432</span>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a class="card card--link contact-card" href="https://www.facebook.com/profile.php?viewas=100000686899395&id=100013736884142" target="_blank" rel="noopener">
+                        <img class="contact-card__icon" src="../resource/icon-facebook.webp" alt="" width="40" height="40">
+                        <span class="contact-card__text">
+                            <span class="contact-card__name">Facebook</span>
+                            <span class="contact-card__handle">吳弘叡</span>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a class="card card--link contact-card" href="https://line.me/ti/p/JHONyck_tl" target="_blank" rel="noopener">
+                        <img class="contact-card__icon" src="../resource/icon-line.webp" alt="" width="40" height="40">
+                        <span class="contact-card__text">
+                            <span class="contact-card__name">Line</span>
+                            <span class="contact-card__handle">加我好友</span>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <p class="site-footer__copy">&copy; 2024–2026 吳弘叡</p>
+            <ul class="site-footer__links">
+                <li><a href="sitemap_zh.html">網站導覽</a></li>
+                <li><a href="introMe.html">自我介紹</a></li>
+                <li><a href="contact.html">聯絡我</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="../script/site.js"></script>
 </body>
 </html>

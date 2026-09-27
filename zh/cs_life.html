@@ -1,88 +1,103 @@
-<!--
-111652049 吳弘叡 第三次作業 11/1
-111652049 Hong-Ruei Wu The Third Homework 11/1
--->
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/life.css">
+    <title>資工系生活 — 吳弘叡</title>
+    <meta name="description" content="吳弘叡在陽明交大資訊工程系的實習、黑客松與寫程式生活紀錄。">
+    <meta property="og:title" content="資工系生活 — 吳弘叡">
+    <meta property="og:description" content="吳弘叡在陽明交大資訊工程系的實習、黑客松與寫程式生活紀錄。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../resource/mylogo.png">
     <link rel="icon" href="../resource/mylogo.png" type="image/png">
-    <title>資工系生活</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/tokens.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/gallery.css">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-    <header>
-        <div>
-            <h1>資工系生活</h1>
-        </div>
+    <a class="skip-link" href="#main">跳到主要內容</a>
 
-        <div class="headerIcon iconHome">
-            <a href="../index.html">
-                <img src="../resource/home.png" alt="首頁" width="50" height="50">
+    <header class="site-header">
+        <div class="site-header__inner container">
+            <a class="brand" href="../index.html">
+                <img class="brand__mark" src="../resource/mylogo.png" alt="" width="32" height="32">
+                <span class="brand__name">吳弘叡</span>
             </a>
-            <p>主頁</p>
-        </div>
 
-        <div class="headerIcon iconAbout">
-            <a href="sitemap_zh.html">
-                <img src="../resource/bunny_icon.png" alt="網站導覽" width="50" height="50">
-            </a>
-            <p>網頁導覽</p>
-        </div>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="sr-only">開關選單</span>
+            </button>
 
-        <div class="headerIcon iconContact">
-            <a href="contact.html">
-                <img src="../resource/contact_icon.png" alt="聯絡資訊" width="50" height="50">
-            </a>
-            <p>聯絡資訊</p>
+            <nav class="site-nav" id="site-nav" aria-label="主要導覽">
+                <ul class="site-nav__list">
+                    <li><a class="nav-link" href="../index.html">首頁</a></li>
+                    <li><a class="nav-link" href="sitemap_zh.html">網站導覽</a></li>
+                    <li><a class="nav-link" href="introMe.html">自我介紹</a></li>
+                    <li><a class="nav-link" href="contact.html">聯絡我</a></li>
+                </ul>
+                <a class="lang-switch" href="../en/cs_life_en.html" hreflang="en" lang="en">EN</a>
+            </nav>
         </div>
     </header>
 
-    <main calss="container">
-        <section class="photo-wall">
-            <figure>
-                <div class="spotlight">
-                    <img src="../resource/internship.jpg" alt="生活照片1">
-                </div>
-                <figcaption>中研院實習</figcaption>
-            </figure>
-            <figure>
-                <div class="spotlight">
-                    <img src="../resource/ddl.jpg" alt="生活照片2">
-                </div>
-                
-                <figcaption>被deadline輾過去</figcaption>
-            </figure>
-            <figure>
-                <div class="spotlight">
-                    <img src="../resource/hackthon.jpg" alt="生活照片3">
-                </div>
-                <figcaption>台北通黑克松 in 台大</figcaption>
-            </figure>
-            <figure class="clickable">
-                <a onclick="openGitHub()">
-                    <div class="spotlight">
-                        <img src="../resource/github.jpg" alt="生活照片4">
-                    </div>
-                    
-                </a>
-                <figcaption>第一次把作品丟到GitHub上</figcaption>
-            </figure>
-        </section>
+    <main id="main">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-header__title">資工系生活</h1>
+                <p class="page-header__lead">實習、黑客松，還有被 deadline 輾過去的日子。</p>
+            </div>
+
+            <section class="photo-wall" data-lightbox>
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="../resource/internship.webp" alt="中研院實習期間的工作照" width="701" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>中研院實習</figcaption>
+                </figure>
+
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="../resource/ddl.webp" alt="趕作業到深夜的桌面" width="554" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>被deadline輾過去</figcaption>
+                </figure>
+
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="../resource/hackathon.webp" alt="台北通黑客松在台大的參賽現場" width="675" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>台北通黑克松 in 台大</figcaption>
+                </figure>
+
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="../resource/github-commit.webp" alt="第一次把作品推上 GitHub 的畫面" width="675" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>第一次把作品丟到<a href="https://github.com/kuwaai/genai-os#user-content-----------kuwa-genai-os--" target="_blank" rel="noopener">GitHub</a>上</figcaption>
+                </figure>
+            </section>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2024 弘叡's網站</p>
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <p class="site-footer__copy">&copy; 2024–2026 吳弘叡</p>
+            <ul class="site-footer__links">
+                <li><a href="sitemap_zh.html">網站導覽</a></li>
+                <li><a href="introMe.html">自我介紹</a></li>
+                <li><a href="contact.html">聯絡我</a></li>
+            </ul>
+        </div>
     </footer>
 
-    <script src="../script/life.js"></script>
-    <script>
-        
-        function openGitHub() {
-            window.open("https://github.com/kuwaai/genai-os#user-content-----------kuwa-genai-os--", "_blank", "width=800, height=600");
-        }
-        
-    </script>
+    <script src="../script/site.js"></script>
 </body>
 </html>

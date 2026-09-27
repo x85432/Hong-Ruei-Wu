@@ -1,103 +1,131 @@
-<!--
-111652049 吳弘叡 第三次作業 11/1
-111652049 Hong-Ruei Wu The Third Homework 11/1
--->
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>台中二中介紹</title>
-    <link rel="stylesheet" href="../css/tcsshStyle.css">
+    <title>臺中二中介紹 — 吳弘叡</title>
+    <meta name="description" content="吳弘叡介紹母校臺中二中的校門、制服與百年校慶，共四張輪播照片。">
+    <meta property="og:title" content="臺中二中介紹 — 吳弘叡">
+    <meta property="og:description" content="吳弘叡介紹母校臺中二中的校門、制服與百年校慶，共四張輪播照片。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../resource/mylogo.png">
     <link rel="icon" href="../resource/mylogo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/tokens.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/school.css">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-    <header>
-        <div>
-            <h1>臺中二中介紹</h1>
-        </div>
-    
-        <div class="headerIcon iconHome">
-            <a href="../index.html">
-                <img src="../resource/home.png" alt="首頁" width="50" height="50"><img>
-            </a>
-            <p>主頁</p>
-        </div>
+    <a class="skip-link" href="#main">跳到主要內容</a>
 
-        <div class="headerIcon iconAbout">
-            <a href="sitemap_zh.html">
-               
-                <img src="../resource/bunny_icon.png" alt="網站導覽" width="50" height="50"><img>
+    <header class="site-header">
+        <div class="site-header__inner container">
+            <a class="brand" href="../index.html">
+                <img class="brand__mark" src="../resource/mylogo.png" alt="" width="32" height="32">
+                <span class="brand__name">吳弘叡</span>
             </a>
-            <p>網站導覽</p>
-        </div>
-        <div class="headerIcon iconContact">
-            <a href="contact.html">
-                <img src="../resource/contact_icon.png" alt="聯絡資訊" width="50" height="50"><img>
-            </a>
-            <p>聯絡資訊</p>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="sr-only">開關選單</span>
+            </button>
+
+            <nav class="site-nav" id="site-nav" aria-label="主要導覽">
+                <ul class="site-nav__list">
+                    <li><a class="nav-link" href="../index.html">首頁</a></li>
+                    <li><a class="nav-link" href="sitemap_zh.html">網站導覽</a></li>
+                    <li><a class="nav-link" href="introMe.html">自我介紹</a></li>
+                    <li><a class="nav-link" href="contact.html">聯絡我</a></li>
+                </ul>
+                <a class="lang-switch" href="../en/tcssh_en.html" hreflang="en" lang="en">EN</a>
+            </nav>
         </div>
     </header>
-    <div class="slideshow-container">
-        <!-- 第一張圖片 -->
-        <input type="radio" name="slideshow" id="slide1" checked>
-        <label for="slide2" class="slide">
-            <div class="slide-content">
-                <h1>臺中市立第二高級中等學校</h1>
-                <div class="image-container">
-                    <img src="../resource/二中校門.jpg" alt="二中校門" class="main-image">
-                    <a href="https://tcssh.tc.edu.tw/">
-                        <img src="../resource/tcssh_icon.png" alt="二中 Logo" class="logo">
-                    </a>
-                </div>
-                <p>台中二中創校於1922年，起源於日治時期的台中中學校，中二中為台中四省中一員，現為中部五校聯盟。</p>
+
+    <main id="main">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-header__title">臺中二中介紹</h1>
+                <p class="page-header__lead">創校於 1922 年的校園。</p>
             </div>
-        </label>
 
+            <div class="carousel" data-carousel>
+                <input class="sr-only carousel__radio" type="radio" name="slideshow" id="slide1" aria-label="第 1 張，共 4 張" checked>
+                <input class="sr-only carousel__radio" type="radio" name="slideshow" id="slide2" aria-label="第 2 張，共 4 張">
+                <input class="sr-only carousel__radio" type="radio" name="slideshow" id="slide3" aria-label="第 3 張，共 4 張">
+                <input class="sr-only carousel__radio" type="radio" name="slideshow" id="slide4" aria-label="第 4 張，共 4 張">
 
-        <!-- 第二張圖片 -->
-        <input type="radio" name="slideshow" id="slide2">
-        <label for="slide3" class="slide">
-            <div class="slide-content">
-                <h1>身為一名二中生的配件</h1>
-                <div class="image-container">
-                    <img src="../resource/二中衫.jpg" alt="配件們" class="main-image">
-                    <img src="../resource/二中褲.jpg" alt="配件們" class="short">
-                    <img src="../resource/二中書包.jpg" alt="配件們" class="bag">
+                <div class="carousel__viewport">
+                    <div class="carousel__track">
+                        <div class="carousel__slide">
+                            <h2>臺中市立第二高級中等學校</h2>
+                            <div class="carousel__frame">
+                                <img class="carousel__photo" src="../resource/tcssh-gate.webp" alt="臺中二中校門" width="1600" height="1200" loading="lazy" decoding="async">
+                                <a class="carousel__badge carousel__badge--logo" href="https://tcssh.tc.edu.tw/" target="_blank" rel="noopener">
+                                    <img src="../resource/tcssh-logo.webp" alt="臺中二中校徽，連結至學校官網" width="480" height="432" loading="lazy" decoding="async">
+                                </a>
+                            </div>
+                            <p>台中二中創校於1922年，起源於日治時期的台中中學校，中二中為台中四省中一員，現為中部五校聯盟。</p>
+                        </div>
+
+                        <div class="carousel__slide">
+                            <h2>身為一名二中生的配件</h2>
+                            <div class="carousel__frame">
+                                <img class="carousel__photo" src="../resource/tcssh-shirt.webp" alt="臺中二中制服上衣" width="474" height="474" loading="lazy" decoding="async">
+                                <img class="carousel__badge carousel__badge--pants" src="../resource/tcssh-pants.webp" alt="臺中二中制服長褲" width="474" height="266" loading="lazy" decoding="async">
+                                <img class="carousel__badge carousel__badge--bag" src="../resource/tcssh-bag.webp" alt="臺中二中書包" width="330" height="248" loading="lazy" decoding="async">
+                            </div>
+                            <p>二中T、二中褲、書包</p>
+                        </div>
+
+                        <div class="carousel__slide">
+                            <h2>有一名智慧的二中教師曾云:<br>「你們唯一穿制服的時間應該是大學的制服日」</h2>
+                            <div class="carousel__frame">
+                                <img class="carousel__photo" src="../resource/uniform-day-joint.webp" alt="第一屆清交聯合制服日活動照" width="1600" height="1064" loading="lazy" decoding="async">
+                            </div>
+                            <p>但是我發現到交大的學長都蠻懶惰的，於是我跟我清大的朋友興辦了第一屆的清交聯合中二中制服日。</p>
+                        </div>
+
+                        <div class="carousel__slide">
+                            <h2>臺中二中已經100歲了</h2>
+                            <div class="carousel__frame">
+                                <img class="carousel__photo" src="../resource/centennial.gif" alt="臺中二中百年校慶活動動畫" width="900" height="584" loading="lazy" decoding="async">
+                            </div>
+                            <p>剛好是我高中畢業隔一年，交大作業還扛的住的時候有回到母校找老師。</p>
+                        </div>
+                    </div>
                 </div>
-                <p>二中T、二中褲、書包</p>
-            </div>
-            
-        </label>
 
-        <!-- 第三張圖片 -->
-        <input type="radio" name="slideshow" id="slide3">
-        <label for="slide4" class="slide">
-            <div class="slide-content">
-                <h1>有一名智慧的二中教師曾云:<br>「你們唯一穿制服的時間應該是大學的制服日」</h1>
-                <div class="image-container">
-                    <img src="../resource/清交聯合制服日-第一屆.jpg">
+                <div class="carousel__dots" role="group" aria-label="輪播導覽">
+                    <label class="carousel__dot" for="slide1" aria-label="第 1 張，共 4 張"></label>
+                    <label class="carousel__dot" for="slide2" aria-label="第 2 張，共 4 張"></label>
+                    <label class="carousel__dot" for="slide3" aria-label="第 3 張，共 4 張"></label>
+                    <label class="carousel__dot" for="slide4" aria-label="第 4 張，共 4 張"></label>
                 </div>
-                <p>但是我發現到交大的學長都蠻懶惰的，於是我跟我清大的朋友興辦了第一屆的清交聯合中二中制服日。</p>
             </div>
-        </label>
 
-        <input type="radio" name="slideshow" id="slide4">
-        <label for="slide1" class="slide">
-            <div class="slide-content">
-                <h1>臺中二中已經100歲了</h1>
-                <div class="image-container">
-                    <img src="../resource/百年校慶.gif">
-                </div>
-                <p>剛好是我高中畢業隔一年，交大作業還扛的住的時候有回到母校找老師。</p>
-            </div>
-        </label>
-    </div>
+            <p class="hint">使用下方圓點或左右方向鍵切換</p>
+        </div>
+    </main>
 
-    <!-- 使用者提示 -->
-    <p class="hint">點擊圖片以切換到下一張</p>
-    <footer>
-        <p>&copy; 2024 弘叡's網站</p>
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <p class="site-footer__copy">&copy; 2024–2026 吳弘叡</p>
+            <ul class="site-footer__links">
+                <li><a href="sitemap_zh.html">網站導覽</a></li>
+                <li><a href="introMe.html">自我介紹</a></li>
+                <li><a href="contact.html">聯絡我</a></li>
+            </ul>
+        </div>
     </footer>
+
+    <script src="../script/site.js"></script>
+    <script src="../script/school.js"></script>
 </body>
 </html>

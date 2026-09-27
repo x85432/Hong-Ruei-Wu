@@ -1,0 +1,130 @@
+/* ==========================================================================
+   profile.css — 自我介紹頁（zh/introMe.html）獨有樣式
+   header / nav / footer / card / container 一律來自 layout.css，
+   這裡只放時間軸（.timeline）與頁面內照片的樣式。
+   ========================================================================== */
+
+/* ==========================================================================
+   時間軸
+   ========================================================================== */
+.timeline {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 90px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border-strong);
+}
+
+.timeline__item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    align-items: start;
+    gap: var(--space-6);
+    margin-bottom: var(--space-12);
+}
+
+.timeline__item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline__marker {
+    position: relative;
+    z-index: 1;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: var(--brand-soft);
+    color: var(--brand-dark);
+    font-weight: 600;
+    font-size: var(--text-base);
+    text-align: center;
+}
+
+.timeline__body {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+/* 每個時間軸區塊內可能有多張 .card（原本各自獨立的 .content） */
+.timeline__body .card > :first-child {
+    margin-top: 0;
+}
+
+.timeline__body .card > :last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   頁面內照片
+   ========================================================================== */
+.timeline__photo {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    margin-inline: auto;
+}
+
+.timeline__photo--portrait {
+    display: block;
+    max-height: 480px;
+    width: auto;
+    margin-block-end: var(--space-4);
+}
+
+.timeline__photo--spike {
+    display: block;
+    /* min() 保留基底 .timeline__photo 的 100% 上限，避免手機窄卡片被 360px 撐出橫向捲軸 */
+    max-width: min(360px, 100%);
+    margin-block: var(--space-3);
+}
+
+.timeline__signature {
+    display: block;
+    max-width: min(220px, 100%);
+    margin-block-end: var(--space-2);
+}
+
+/* ==========================================================================
+   響應式：手機把線移到左側，marker 縮小成標籤
+   ========================================================================== */
+@media (max-width: 767px) {
+    .timeline {
+        padding-left: calc(var(--space-4) + 8px);
+    }
+
+    .timeline::before {
+        left: var(--space-4);
+    }
+
+    .timeline__item {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+    }
+
+    .timeline__marker {
+        justify-self: start;
+        width: auto;
+        height: auto;
+        min-width: 44px;
+        min-height: 28px;
+        padding: var(--space-1) var(--space-3);
+        border-radius: var(--radius-sm);
+        font-size: var(--text-xs);
+    }
+}

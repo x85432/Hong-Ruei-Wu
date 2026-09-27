@@ -1,245 +1,107 @@
-<!--
-111652049 吳弘叡 第三次作業 11/1
-111652049 Hong-Ruei Wu The Third Homework 11/1
--->
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/life.css">
+    <title>應數系生活 — 吳弘叡</title>
+    <meta name="description" content="吳弘叡在應用數學系兩年的活動紀錄，包含大數盃、系聚會與校運會。">
+    <meta property="og:title" content="應數系生活 — 吳弘叡">
+    <meta property="og:description" content="吳弘叡在應用數學系兩年的活動紀錄，包含大數盃、系聚會與校運會。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../resource/mylogo.png">
     <link rel="icon" href="../resource/mylogo.png" type="image/png">
-    <title>應數系生活</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        header {
-            background-color: #016ce6;
-            padding: 1em;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-            display: flex;
-        }
-
-        header p {
-            margin: 0;
-        }
-
-        header div h1 {
-            color: white;
-            font-size: 1.5em;
-        }
-
-        body a {
-            color: black;
-            text-decoration: none;
-        }
-
-        body a:hover {
-            color: white;
-            text-decoration: underline;
-        }
-
-        body li {
-            list-style-type: "🥕";
-        }
-
-        .headerIcon {
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-        }
-
-        .headerIcon img {
-            display: block;
-            filter: drop-shadow(-5px -5px 10px rgba(0, 0, 0, 0.8));
-            transition: transform 0.3s ease, filter 0.3s ease;
-            transform: translateY(-5px);
-        }
-
-        .headerIcon img:hover {
-            filter: none;
-            transform: translateY(0);
-        }
-
-        .headerIcon p {
-            position: relative;
-            margin-top: 10px;
-            display: block;
-            color: white;
-            font-size: 0.8em;
-        }
-
-        .iconHome {
-            position: absolute;
-            right: 250px;
-        }
-
-        .iconAbout {
-            position: absolute;
-            right: 150px;
-        }
-
-        .iconContact {
-            position: absolute;
-            right: 50px;
-        }
-
-        /* main */
-        main {
-            flex-grow: 1; /* 讓 main 區域擴展，佔據剩餘空間 */
-            padding: 20px;
-            position: relative;
-        }
-
-        /* 照片牆佈局 */
-        .photo-wall {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            grid-gap: 20px;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        figure {
-            margin: 0;
-            position: relative;
-            opacity: 0;
-            animation: fadeIn 1s ease-in forwards;
-        }
-
-        figure:nth-child(1) {
-            animation-delay: 0.3s;
-        }
-
-        figure:nth-child(2) {
-            animation-delay: 0.6s;
-        }
-
-        figure:nth-child(3) {
-            animation-delay: 0.9s;
-        }
-
-        figure:nth-child(4) {
-            animation-delay: 1.2s;
-        }
-
-        section img {
-            width: 100%;
-            border-radius: 10px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        figcaption {
-            text-align: center;
-            margin-top: 10px;
-            font-size: 16px;
-        }
-
-        /* 懸浮圖片放大效果 */
-        figure:hover img {
-            transform: scale(1.1);
-        }
-
-        /* 滑入效果 */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* footer */
-        footer {
-            background-color: #016ce6;
-            color: white;
-            text-align: center;
-            padding: 1em;
-            position: relative;
-            bottom: 0;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/tokens.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/gallery.css">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-    <header>
-        <div>
-            <h1>應數系生活</h1>
-        </div>
+    <a class="skip-link" href="#main">跳到主要內容</a>
 
-        <div class="headerIcon iconHome">
-            <a href="../index.html">
-                <img src="../resource/home.png" alt="首頁" width="50" height="50">
+    <header class="site-header">
+        <div class="site-header__inner container">
+            <a class="brand" href="../index.html">
+                <img class="brand__mark" src="../resource/mylogo.png" alt="" width="32" height="32">
+                <span class="brand__name">吳弘叡</span>
             </a>
-            <p>主頁</p>
-        </div>
 
-        <div class="headerIcon iconAbout">
-            <a href="sitemap_zh.html">
-                <img src="../resource/bunny_icon.png" alt="網站導覽" width="50" height="50">
-            </a>
-            <p>網頁導覽</p>
-        </div>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="sr-only">開關選單</span>
+            </button>
 
-        <div class="headerIcon iconContact">
-            <a href="contact.html">
-                <img src="../resource/contact_icon.png" alt="聯絡資訊" width="50" height="50">
-            </a>
-            <p>聯絡資訊</p>
+            <nav class="site-nav" id="site-nav" aria-label="主要導覽">
+                <ul class="site-nav__list">
+                    <li><a class="nav-link" href="../index.html">首頁</a></li>
+                    <li><a class="nav-link" href="sitemap_zh.html">網站導覽</a></li>
+                    <li><a class="nav-link" href="introMe.html">自我介紹</a></li>
+                    <li><a class="nav-link" href="contact.html">聯絡我</a></li>
+                </ul>
+                <a class="lang-switch" href="../en/am_life_en.html" hreflang="en" lang="en">EN</a>
+            </nav>
         </div>
     </header>
 
-    <main calss="container">
-        <section class="photo-wall">
-            <figure>
-                <div class="spotlight">
-                    <img src="../resource/win.jpg" alt="生活照片1">
-                </div>
-                <figcaption>
-                作為策畫，校運會進場獲得<br>
-                「最佳驚喜獎」。<br><br>
-                可惜沒有影片了
-                </figcaption>
-            </figure>
-            <figure>
-                <div class="spotlight">
-                    <img src="../resource/tomyuan.jpg" alt="生活照片2">
-                </div>
-                
-                <figcaption>應數系每年冬至的湯圓聚會，有鹹有甜，大家都會抽空前來聊天吃湯圓。</figcaption>
-            </figure>
-            <figure>
-                <div class="spotlight">
-                    <img src="../resource/bigmath.jpg" alt="生活照片3">
-                </div>
-                
-                <figcaption>2024大數盃，這次作為副隊長出賽，主打欄中，可惜那輪對手是本次的亞軍、季軍。</figcaption>
-            </figure>
-            <figure>
-                <div class="spotlight">
-                    <img src="../resource/graduate.jpg" alt="生活照片4">
-                </div>
-                
-                <figcaption>碩二學長畢業了，與他們合照，現在當排球隊隊長需要一直諮詢他們。</figcaption>
-            </figure>
-        </section>
+    <main id="main">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-header__title">應數系生活</h1>
+                <p class="page-header__lead">大學前兩年在應數系留下的紀錄。</p>
+            </div>
+
+            <section class="photo-wall" data-lightbox>
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="../resource/win.webp" alt="校運會進場策畫獲得最佳驚喜獎的紀念照" width="737" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>
+                    作為策畫，校運會進場獲得<br>
+                    「最佳驚喜獎」。<br><br>
+                    可惜沒有影片了
+                    </figcaption>
+                </figure>
+
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="../resource/tomyuan.webp" alt="應數系冬至湯圓聚會的合照" width="675" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>應數系每年冬至的湯圓聚會，有鹹有甜，大家都會抽空前來聊天吃湯圓。</figcaption>
+                </figure>
+
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="../resource/bigmath.webp" alt="2024大數盃比賽出賽時的照片" width="687" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>2024大數盃，這次作為副隊長出賽，主打欄中，可惜那輪對手是本次的亞軍、季軍。</figcaption>
+                </figure>
+
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="../resource/graduate.webp" alt="與畢業的碩士班學長合照" width="675" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>碩二學長畢業了，與他們合照，現在當排球隊隊長需要一直諮詢他們。</figcaption>
+                </figure>
+            </section>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2024 弘叡's網站</p>
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <p class="site-footer__copy">&copy; 2024–2026 吳弘叡</p>
+            <ul class="site-footer__links">
+                <li><a href="sitemap_zh.html">網站導覽</a></li>
+                <li><a href="introMe.html">自我介紹</a></li>
+                <li><a href="contact.html">聯絡我</a></li>
+            </ul>
+        </div>
     </footer>
 
-    <script src="../script/life.js"></script>
+    <script src="../script/site.js"></script>
 </body>
 </html>

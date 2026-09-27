@@ -1,0 +1,38 @@
+/* ==========================================================================
+   gallery.css — 照片牆（cs_life / am_life / tcssh_life 共用）
+   取代 life.css。lightbox 觸發鈕與遮罩樣式已在 layout.css，這裡只放
+   這三頁獨有的相片牆排版。
+   ========================================================================== */
+
+.photo-wall {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-6);
+    margin-bottom: var(--space-12);
+}
+
+.photo-card {
+    margin: 0;
+}
+
+.photo-card figcaption {
+    margin-top: var(--space-3);
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+    text-align: center;
+}
+
+.photo-card figcaption a {
+    color: var(--brand);
+}
+
+.photo-card figcaption a:hover {
+    color: var(--brand-dark);
+}
+
+@media (max-width: 480px) {
+    .photo-wall {
+        grid-template-columns: 1fr;
+    }
+}

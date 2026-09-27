@@ -1,81 +1,97 @@
-<!--
-111652049 吳弘叡 第三次作業 11/1
-111652049 Hong-Ruei Wu The Third Homework 11/1
--->
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>陽明交大資訊工程學系</title>
-    <link rel="stylesheet" href="../css/csStyle.css">
+    <title>陽明交大資訊工程學系 — 吳弘叡</title>
+    <meta name="description" content="吳弘叡個人網站中，陽明交大資訊工程學系的系所介紹頁面，收錄歷史沿革、人員組成與研究領域。">
+    <meta property="og:title" content="陽明交大資訊工程學系 — 吳弘叡">
+    <meta property="og:description" content="吳弘叡個人網站中，陽明交大資訊工程學系的系所介紹頁面，收錄歷史沿革、人員組成與研究領域。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../resource/mylogo.png">
     <link rel="icon" href="../resource/mylogo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/tokens.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/dept.css">
+    <!-- 標記 JS 可用：.reveal 只在有 JS 時才預先隱藏，避免 JS 失效時內容永久看不見 -->
+    <script>document.documentElement.classList.add('js');</script>
 </head>
-<body>
-    <header>
-        <div>
-            <h1>陽明交大資訊工程學系</h1>
-        </div>
-    
-            
-        <div class="headerIcon iconHome">
-            
-            <a href="../index.html">
-                <img src="../resource/home.png" alt="首頁" width="50" height="50"><img>
-            </a>
-            <p>主頁</p>
-            
-        </div>
+<body class="dept dept--cs">
+    <a class="skip-link" href="#main">跳到主要內容</a>
 
-        <div class="headerIcon iconAbout">
-            <a href="sitemap_zh.html">
-                <img src="../resource/bunny_icon.png" alt="網站導覽" width="50" height="50"><img>
+    <header class="site-header">
+        <div class="site-header__inner container">
+            <a class="brand" href="../index.html">
+                <img class="brand__mark" src="../resource/mylogo.png" alt="" width="32" height="32">
+                <span class="brand__name">吳弘叡</span>
             </a>
-            <p>網站導覽</p>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="sr-only">開關選單</span>
+            </button>
+
+            <nav class="site-nav" id="site-nav" aria-label="主要導覽">
+                <ul class="site-nav__list">
+                    <li><a class="nav-link" href="../index.html">首頁</a></li>
+                    <li><a class="nav-link" href="sitemap_zh.html">網站導覽</a></li>
+                    <li><a class="nav-link" href="introMe.html">自我介紹</a></li>
+                    <li><a class="nav-link" href="contact.html">聯絡我</a></li>
+                </ul>
+                <a class="lang-switch" href="../en/nycuCS_en.html" hreflang="en" lang="en">EN</a>
+            </nav>
         </div>
-        <div class="headerIcon iconContact">
-            <a href="contact.html">
-                <img src="../resource/contact_icon.png" alt="聯絡資訊" width="50" height="50"><img>
-            </a>
-            <p>聯絡資訊</p>
-        </div>
-        
     </header>
-    <div class="container">
-        <div class="box">
-            
-            <h3>歷史沿革</h3>
-            <div class="content">
-                <p>陽明交大資訊工程學系成立於1970年，經歷多次改革與技術進步，是台灣頂尖的資工系之一。</p>
+
+    <main id="main">
+        <div class="dept-banner">
+            <div class="container">
+                <h1 class="dept-banner__title">陽明交大資訊工程學系</h1>
             </div>
         </div>
 
-        <div class="box">
-            
-            <h3>人員組成</h3>
-            <div class="content">
-                <p>系上擁有50多位教授與研究員，致力於各領域的研究與教學，提供學生優質學習環境。</p>
-            </div>
-        </div>
+        <div class="container">
+            <div class="card-grid dept-grid">
+                <div class="card">
+                    <h3 class="card__title">歷史沿革</h3>
+                    <p class="card__body">陽明交大資訊工程學系成立於1970年，經歷多次改革與技術進步，是台灣頂尖的資工系之一。</p>
+                </div>
 
-        <div class="box">
-            
-            <h3>研究領域</h3>
-            <div class="content">
-                <p>涵蓋人工智慧、數據科學、嵌入式系統等多個前沿研究領域，持續引領技術創新。</p>
-            </div>
-        </div>
+                <div class="card">
+                    <h3 class="card__title">人員組成</h3>
+                    <p class="card__body">系上擁有50多位教授與研究員，致力於各領域的研究與教學，提供學生優質學習環境。</p>
+                </div>
 
-        <div class="box">
-            
-            <h3>傑出成就</h3>
-            <div class="content">
-                <p>多名校友在國際科技公司擔任要職，並在國際學術領域上取得重大突破與貢獻。</p>
+                <div class="card">
+                    <h3 class="card__title">研究領域</h3>
+                    <p class="card__body">涵蓋人工智慧、數據科學、嵌入式系統等多個前沿研究領域，持續引領技術創新。</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="card__title">傑出成就</h3>
+                    <p class="card__body">多名校友在國際科技公司擔任要職，並在國際學術領域上取得重大突破與貢獻。</p>
+                </div>
             </div>
         </div>
-    </div>
-    <footer>
-        <p>&copy; 2024 弘叡's網站</p>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <p class="site-footer__copy">&copy; 2024–2026 吳弘叡</p>
+            <ul class="site-footer__links">
+                <li><a href="sitemap_zh.html">網站導覽</a></li>
+                <li><a href="introMe.html">自我介紹</a></li>
+                <li><a href="contact.html">聯絡我</a></li>
+            </ul>
+        </div>
     </footer>
+
+    <script src="../script/site.js"></script>
 </body>
 </html>

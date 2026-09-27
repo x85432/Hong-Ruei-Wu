@@ -1,81 +1,103 @@
-<!--
-111652049 吳弘叡 第三次作業 11/1
-111652049 Hong-Ruei Wu The Third Homework 11/1
--->
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/life.css">
+    <title>二中生活 — 吳弘叡</title>
+    <meta name="description" content="吳弘叡在臺中二中的大隊接力、班際排球與制服日回憶紀錄。">
+    <meta property="og:title" content="二中生活 — 吳弘叡">
+    <meta property="og:description" content="吳弘叡在臺中二中的大隊接力、班際排球與制服日回憶紀錄。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../resource/mylogo.png">
     <link rel="icon" href="../resource/mylogo.png" type="image/png">
-    <title>二中生活</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/tokens.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/gallery.css">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-    <header>
-        <div>
-            <h1>二中生活</h1>
-        </div>
+    <a class="skip-link" href="#main">跳到主要內容</a>
 
-        <div class="headerIcon iconHome">
-            <a href="../index.html">
-                <img src="../resource/home.png" alt="首頁" width="50" height="50">
+    <header class="site-header">
+        <div class="site-header__inner container">
+            <a class="brand" href="../index.html">
+                <img class="brand__mark" src="../resource/mylogo.png" alt="" width="32" height="32">
+                <span class="brand__name">吳弘叡</span>
             </a>
-            <p>主頁</p>
-        </div>
 
-        <div class="headerIcon iconAbout">
-            <a href="sitemap_zh.html">
-                <img src="../resource/bunny_icon.png" alt="網站導覽" width="50" height="50">
-            </a>
-            <p>網頁導覽</p>
-        </div>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="sr-only">開關選單</span>
+            </button>
 
-        <div class="headerIcon iconContact">
-            <a href="contact.html">
-                <img src="../resource/contact_icon.png" alt="聯絡資訊" width="50" height="50">
-            </a>
-            <p>聯絡資訊</p>
+            <nav class="site-nav" id="site-nav" aria-label="主要導覽">
+                <ul class="site-nav__list">
+                    <li><a class="nav-link" href="../index.html">首頁</a></li>
+                    <li><a class="nav-link" href="sitemap_zh.html">網站導覽</a></li>
+                    <li><a class="nav-link" href="introMe.html">自我介紹</a></li>
+                    <li><a class="nav-link" href="contact.html">聯絡我</a></li>
+                </ul>
+                <a class="lang-switch" href="../en/tcssh_life_en.html" hreflang="en" lang="en">EN</a>
+            </nav>
         </div>
     </header>
 
-    <main calss="container">
-        <section class="photo-wall">
-            <figure>
-                <div class="spotlight">
-                    <img src="../resource/105水啦.jpg" alt="生活照片1">
-                </div>
-                
-                <figcaption>高一大隊接力，忘了得第幾名了</figcaption>
-            </figure>
-            <figure>
-                <div class="spotlight">
-                    <img src="../resource/volleyball_class.jpg" alt="生活照片2">
-                </div>
-                
-                <figcaption>班際排球亞軍，沒有任何一個隊員是校隊的，雖然沒有得冠軍有點可惜。</figcaption>
-            </figure>
-            <figure>
-                <div class="spotlight">
-                    <img src="../resource/mess.jpg" alt="生活照片3">
-                </div>
-                
-                <figcaption>回二中找對我們班很好的美術老師。</figcaption>
-            </figure>
-            <figure>
-                <div class="spotlight">
-                    <img src="../resource/最新制服日.jpg" alt="生活照片4">
-                </div>
-                
-                <figcaption>去年的制服日，都是男生QQ @浩然前面</figcaption>
-            </figure>
-        </section>
+    <main id="main">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-header__title">二中生活</h1>
+                <p class="page-header__lead">大隊接力、班際排球，還有那些制服日。</p>
+            </div>
+
+            <section class="photo-wall" data-lightbox>
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="../resource/relay-race.webp" alt="高一大隊接力的比賽照" width="691" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>高一大隊接力，忘了得第幾名了</figcaption>
+                </figure>
+
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="../resource/volleyball-class.webp" alt="班際排球比賽的隊伍合照" width="695" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>班際排球亞軍，沒有任何一個隊員是校隊的，雖然沒有得冠軍有點可惜。</figcaption>
+                </figure>
+
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="../resource/mess.webp" alt="回二中拜訪美術老師的合照" width="675" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>回二中找對我們班很好的美術老師。</figcaption>
+                </figure>
+
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="../resource/uniform-day.webp" alt="制服日與同學的合照" width="708" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>去年的制服日，都是男生QQ @浩然前面</figcaption>
+                </figure>
+            </section>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2024 弘叡's網站</p>
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <p class="site-footer__copy">&copy; 2024–2026 吳弘叡</p>
+            <ul class="site-footer__links">
+                <li><a href="sitemap_zh.html">網站導覽</a></li>
+                <li><a href="introMe.html">自我介紹</a></li>
+                <li><a href="contact.html">聯絡我</a></li>
+            </ul>
+        </div>
     </footer>
 
-    <script src="../script/life.js"></script>
+    <script src="../script/site.js"></script>
 </body>
 </html>

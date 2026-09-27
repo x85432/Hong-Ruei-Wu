@@ -1,0 +1,176 @@
+/* ==========================================================================
+   school.css — 臺中二中介紹頁的輪播（取代 tcsshStyle.css）
+   input[type=radio] 用 .sr-only 保持可聚焦；label[for] 指向自己那一張；
+   .carousel__dots 是圓點指示器。滑動用 :checked ~ 兄弟選擇器控制 transform，
+   不依賴 JS 也能切換；script/school.js 只負責補上方向鍵與 aria-current。
+   ========================================================================== */
+
+.carousel {
+    margin-bottom: var(--space-8);
+}
+
+/* --- 輪播主體 --------------------------------------------------------------- */
+.carousel__viewport {
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+}
+
+.carousel__track {
+    display: flex;
+    width: 400%;
+    transition: transform var(--dur-slow) var(--ease);
+}
+
+.carousel__slide {
+    width: 25%;
+    flex: 0 0 25%;
+    padding: var(--space-8) var(--space-6);
+    text-align: center;
+    background: var(--surface-alt);
+}
+
+.carousel__slide h2 {
+    margin-top: 0;
+    font-size: var(--text-2xl);
+}
+
+.carousel__slide p {
+    margin-inline: auto;
+    color: var(--text-muted);
+}
+
+/* 四張分別對應的位移量：track 寬 400%，每張是 track 的 25% */
+#slide1:checked ~ .carousel__viewport .carousel__track { transform: translateX(0%); }
+#slide2:checked ~ .carousel__viewport .carousel__track { transform: translateX(-25%); }
+#slide3:checked ~ .carousel__viewport .carousel__track { transform: translateX(-50%); }
+#slide4:checked ~ .carousel__viewport .carousel__track { transform: translateX(-75%); }
+
+/* --- 相片框與疊圖（相對容器的百分比，手機不會疊出畫面） ------------------------- */
+.carousel__frame {
+    position: relative;
+    max-width: 640px;
+    margin-inline: auto;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+}
+
+.carousel__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel__badge {
+    position: absolute;
+    display: block;
+    filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.35));
+}
+
+.carousel__badge img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.carousel__badge--logo {
+    top: 5%;
+    left: 50%;
+    width: 26%;
+    transform: translateX(-50%);
+}
+
+.carousel__badge--pants {
+    top: 4%;
+    left: 5%;
+    width: 40%;
+}
+
+.carousel__badge--bag {
+    bottom: 5%;
+    right: 5%;
+    width: 32%;
+}
+
+/* Hover 放大只在有滑鼠的桌機上做，觸控裝置不做（避免點一下卡在放大狀態） */
+@media (hover: hover) and (min-width: 768px) {
+    .carousel__badge {
+        transition: transform var(--dur) var(--ease);
+    }
+
+    .carousel__badge--logo:hover,
+    .carousel__badge--logo:focus-visible {
+        transform: translateX(-50%) scale(1.15);
+    }
+
+    .carousel__badge--pants:hover,
+    .carousel__badge--bag:hover {
+        transform: scale(1.15);
+    }
+}
+
+/* --- 圓點指示器（≥44×44 觸控區） --------------------------------------------- */
+.carousel__dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-2);
+    margin-top: var(--space-6);
+}
+
+.carousel__dot {
+    position: relative;
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    border-radius: var(--radius-full);
+}
+
+.carousel__dot::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 12px;
+    height: 12px;
+    border-radius: var(--radius-full);
+    background: var(--border-strong);
+    transition: background var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+
+.carousel__dot:hover::before {
+    background: var(--brand-dark);
+}
+
+#slide1:checked ~ .carousel__dots label[for="slide1"]::before,
+#slide2:checked ~ .carousel__dots label[for="slide2"]::before,
+#slide3:checked ~ .carousel__dots label[for="slide3"]::before,
+#slide4:checked ~ .carousel__dots label[for="slide4"]::before {
+    background: var(--brand);
+    transform: scale(1.2);
+}
+
+/* 目前聚焦在哪個（隱藏的）radio，就把焦點框顯示到對應的圓點上 */
+#slide1:focus-visible ~ .carousel__dots label[for="slide1"],
+#slide2:focus-visible ~ .carousel__dots label[for="slide2"],
+#slide3:focus-visible ~ .carousel__dots label[for="slide3"],
+#slide4:focus-visible ~ .carousel__dots label[for="slide4"] {
+    outline: 3px solid var(--brand-ring);
+    outline-offset: 2px;
+}
+
+/* --- 操作提示 --------------------------------------------------------------- */
+.hint {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    margin-top: var(--space-3);
+}
+
+@media (max-width: 480px) {
+    .carousel__slide {
+        padding: var(--space-6) var(--space-4);
+    }
+}

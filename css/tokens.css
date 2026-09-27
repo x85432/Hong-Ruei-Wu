@@ -1,0 +1,89 @@
+/* ==========================================================================
+   tokens.css — 全站設計變數（單一來源）
+   顏色改這裡就好，不要在個別頁面樣式裡寫死色碼。
+   ========================================================================== */
+
+:root {
+    /* --- 品牌色 ------------------------------------------------------------
+       #016ce6 對白字對比 4.90:1，達 WCAG AA。 */
+    --brand: #016ce6;
+    --brand-dark: #0160cf;          /* hover / pressed */
+    --brand-soft: #e9f1fd;          /* 淺色底、tag */
+    --brand-ring: rgba(1, 108, 230, 0.35);
+
+    /* --- 文字 --- */
+    --text: #14181f;
+    --text-muted: #5b6472;          /* 白底 5.98:1 */
+    --text-invert: #ffffff;
+
+    /* --- 表面與邊框 --- */
+    --surface: #ffffff;
+    --surface-alt: #f7f8fa;
+    --surface-sunken: #eef0f4;
+    --border: #e4e7ec;
+    --border-strong: #cfd4dc;
+
+    /* --- 照片上的遮罩 --- */
+    --scrim: rgba(10, 14, 20, 0.55);
+    --scrim-strong: rgba(10, 14, 20, 0.72);
+
+    /* --- 字型 --- */
+    --font-sans: Inter, "Noto Sans TC", -apple-system, BlinkMacSystemFont,
+                 "Segoe UI", "Helvetica Neue", "PingFang TC", sans-serif;
+
+    /* --- 字級（clamp：手機不會過小，桌機不會過大） --- */
+    --text-xs: 0.8125rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: clamp(1.0625rem, 0.3vw + 1rem, 1.125rem);
+    --text-xl: clamp(1.1875rem, 0.5vw + 1.05rem, 1.375rem);
+    --text-2xl: clamp(1.375rem, 1vw + 1.1rem, 1.75rem);
+    --text-3xl: clamp(1.75rem, 2vw + 1.2rem, 2.5rem);
+    --text-4xl: clamp(2.125rem, 3.5vw + 1.2rem, 3.5rem);
+
+    --leading-tight: 1.25;
+    --leading-normal: 1.6;
+    --leading-relaxed: 1.85;
+
+    /* --- 間距（4px 基準） --- */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+
+    /* --- 圓角 --- */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 999px;
+
+    /* --- 陰影 --- */
+    --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06),
+                 0 1px 3px rgba(16, 24, 40, 0.08);
+    --shadow-md: 0 4px 8px -2px rgba(16, 24, 40, 0.08),
+                 0 2px 4px -2px rgba(16, 24, 40, 0.06);
+    --shadow-lg: 0 12px 24px -6px rgba(16, 24, 40, 0.12),
+                 0 4px 8px -4px rgba(16, 24, 40, 0.08);
+
+    /* --- 版面 --- */
+    --container: 1120px;
+    --container-narrow: 760px;
+    --header-h: 64px;
+
+    /* --- 動態 --- */
+    --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+    --dur-fast: 120ms;
+    --dur: 220ms;
+    --dur-slow: 400ms;
+}
+
+/* 斷點（CSS 變數不能用在 @media，這裡只作文件用）
+   sm: 480px   md: 768px   lg: 1024px */

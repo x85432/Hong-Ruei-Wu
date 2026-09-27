@@ -1,0 +1,157 @@
+/* ==========================================================================
+   home.css — 首頁專屬樣式
+   只放首頁獨有的東西：hero（純 CSS 輪播）、關鍵字強調、求學歷程卡片清單。
+   header / nav / footer / card / btn 一律沿用 layout.css，不在此重複定義。
+   ========================================================================== */
+
+/* ==========================================================================
+   Hero
+   .hero 自身背景是第一張圖，三個 .hero__slide 疊在上面淡入淡出。
+   這樣動畫循環接縫處露出的底圖就是第一張圖，視覺上無縫。
+   ========================================================================== */
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: clamp(420px, 62vh, 620px);
+    overflow: hidden;
+    color: var(--text-invert);
+    background-image: url("resource/hero-1.webp");
+    background-size: cover;
+    background-position: center 38%;
+}
+
+.hero__slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center 38%;
+    opacity: 0;
+    animation: heroFade 15s infinite;
+}
+
+.hero__slide--1 {
+    background-image: url("resource/hero-1.webp");
+    animation-delay: 0s;
+}
+
+.hero__slide--2 {
+    background-image: url("resource/hero-2.webp");
+    animation-delay: 5s;
+}
+
+.hero__slide--3 {
+    background-image: url("resource/hero-3.webp");
+    animation-delay: 10s;
+}
+
+@keyframes heroFade {
+    0%     { opacity: 0; }
+    6.66%  { opacity: 1; }
+    26.66% { opacity: 1; }
+    33.33% { opacity: 0; }
+    100%   { opacity: 0; }
+}
+
+/* 偏好減少動態：不播放輪播，直接顯示第一張 */
+@media (prefers-reduced-motion: reduce) {
+    .hero__slide {
+        animation: none;
+        opacity: 0;
+    }
+
+    .hero__slide--1 {
+        opacity: 1;
+    }
+}
+
+.hero__scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, var(--scrim-strong), var(--scrim) 55%, transparent);
+}
+
+.hero__content {
+    position: relative;
+    z-index: 1;
+    max-width: 48ch;
+    padding-block: var(--space-16);
+}
+
+.hero__eyebrow {
+    margin: 0 0 var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--text-invert);
+    opacity: 0.85;
+}
+
+.hero__content h1 {
+    margin-block: 0 var(--space-3);
+    color: var(--text-invert);
+}
+
+.hero__lead {
+    margin: 0;
+    max-width: none;
+    font-size: var(--text-lg);
+    color: var(--text-invert);
+    opacity: 0.92;
+}
+
+.hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin-top: var(--space-6);
+}
+
+@media (max-width: 767px) {
+    .hero {
+        align-items: flex-end;
+    }
+
+    .hero__scrim {
+        background: linear-gradient(to top, var(--scrim-strong), var(--scrim) 45%, transparent);
+    }
+
+    .hero__content {
+        max-width: none;
+        padding-block: var(--space-8) var(--space-10);
+        text-align: center;
+    }
+
+    .hero__actions {
+        justify-content: center;
+    }
+}
+
+/* ==========================================================================
+   個人簡介
+   ========================================================================== */
+.intro-section {
+    padding-block: var(--space-16);
+}
+
+.kw {
+    background: var(--brand-soft);
+    color: var(--brand-dark);
+    padding: 0 0.2em;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   求學歷程卡片
+   ========================================================================== */
+.education-section {
+    padding-block: 0 var(--space-16);
+}
+
+.card__links {
+    list-style: none;
+    margin: var(--space-2) 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}

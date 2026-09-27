@@ -1,0 +1,465 @@
+/* ==========================================================================
+   layout.css — 全站版面元件
+   .container / .site-header / .site-nav / .page-header / .card / .btn /
+   .site-footer / .reveal / lightbox。
+   頁面各自的樣式檔只放該頁獨有規則，這裡的元件不得在別處重複定義。
+   手機優先，斷點統一用 max-width: 767px（行動）/ min-width: 768px（桌機）。
+   ========================================================================== */
+
+/* ==========================================================================
+   3.1 容器
+   ========================================================================== */
+.container {
+    width: 100%;
+    max-width: var(--container);
+    margin-inline: auto;
+    padding-inline: var(--space-5);
+}
+
+.container--narrow {
+    max-width: var(--container-narrow);
+}
+
+/* ==========================================================================
+   3.2 網站頁首
+   ========================================================================== */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: var(--header-h);
+    gap: var(--space-4);
+}
+
+/* --- 品牌 logo + 站名 -------------------------------------------------------- */
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-weight: 600;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.brand:hover {
+    /* 品牌字不換色，只加底線，避免與導覽 hover 混淆 */
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.brand__mark {
+    width: 32px;
+    height: 32px;
+}
+
+/* --- 導覽清單 ---------------------------------------------------------------- */
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.site-nav__list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-sm);
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    background: var(--surface-alt);
+    color: var(--text);
+}
+
+/* 目前頁指示 */
+.nav-link[aria-current="page"] {
+    color: var(--brand);
+    background: var(--brand-soft);
+    font-weight: 600;
+}
+
+/* --- 語言切換 ---------------------------------------------------------------- */
+.lang-switch {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding-inline: var(--space-4);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-full);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+.lang-switch:hover {
+    color: var(--brand);
+    border-color: var(--brand);
+}
+
+/* --- 漢堡選單按鈕（≥768px 隱藏，<768px 顯示） --------------------------------- */
+.nav-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nav-toggle__bar {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--text);
+    border-radius: var(--radius-full);
+    transition: transform var(--dur) var(--ease), opacity var(--dur) var(--ease);
+}
+
+/* 展開時把三條 bar 變成 X（純視覺加分，不影響功能判斷） */
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* --- 響應式：手機折成漢堡選單 -------------------------------------------------- */
+@media (max-width: 767px) {
+    .nav-toggle {
+        display: inline-flex;
+    }
+
+    .site-nav {
+        position: fixed;
+        inset: var(--header-h) 0 auto 0;
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow-lg);
+        flex-direction: column;
+        align-items: stretch;
+        padding: var(--space-4);
+        display: none;
+    }
+
+    .site-nav.is-open {
+        display: flex;
+    }
+
+    .site-nav__list {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav-link {
+        padding: var(--space-3) var(--space-4);
+        font-size: var(--text-base);
+    }
+
+    .lang-switch {
+        align-self: flex-start;
+        margin-top: var(--space-2);
+    }
+}
+
+/* ==========================================================================
+   3.3 頁面標題區
+   ========================================================================== */
+.page-header {
+    padding-block: var(--space-12) var(--space-8);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: var(--space-10);
+}
+
+.page-header__title {
+    margin: 0 0 var(--space-3);
+}
+
+.page-header__lead {
+    color: var(--text-muted);
+    font-size: var(--text-lg);
+    margin: 0;
+    max-width: 60ch;
+}
+
+/* ==========================================================================
+   3.4 卡片
+   ========================================================================== */
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+
+.card--link:hover,
+.card--link:focus-within {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+.card__title {
+    margin: 0 0 var(--space-2);
+    font-size: var(--text-xl);
+}
+
+.card__body {
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.card-grid {
+    display: grid;
+    gap: var(--space-6);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* ==========================================================================
+   3.5 按鈕
+   ========================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding-inline: var(--space-6);
+    border: 1px solid var(--brand);
+    border-radius: var(--radius-sm);
+    background: var(--brand);
+    color: var(--text-invert);
+    font-size: var(--text-base);
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease),
+                transform var(--dur) var(--ease);
+}
+
+.btn:hover {
+    background: var(--brand-dark);
+    border-color: var(--brand-dark);
+    color: var(--text-invert);
+}
+
+.btn--ghost {
+    background: var(--surface);
+    color: var(--brand);
+    border-color: var(--border-strong);
+}
+
+.btn--ghost:hover {
+    background: var(--surface-alt);
+    color: var(--brand-dark);
+    border-color: var(--brand);
+}
+
+/* ==========================================================================
+   3.6 網站頁尾
+   ========================================================================== */
+.site-footer {
+    margin-top: auto;
+    background: var(--surface-alt);
+    border-top: 1px solid var(--border);
+    padding-block: var(--space-8);
+}
+
+.site-footer__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+}
+
+.site-footer__copy {
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    margin: 0;
+}
+
+.site-footer__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: var(--text-sm);
+}
+
+.site-footer__links a {
+    color: var(--text-muted);
+}
+
+.site-footer__links a:hover {
+    color: var(--brand-dark);
+}
+
+/* ==========================================================================
+   3.7 進場動畫
+   規格更新：只有在 <html> 有 `.js`（由頁面 <head> 內的行內 script 加上，
+   代表 JS 有成功執行）時才隱藏 `.reveal`，避免 JS 載入失敗或被停用時，
+   內容永久不可見。
+   ========================================================================== */
+.js .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity var(--dur-slow) var(--ease), transform var(--dur-slow) var(--ease);
+}
+
+.js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .js .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ==========================================================================
+   Lightbox（DOM 由 site.js 動態建立，樣式集中放這裡）
+   ========================================================================== */
+
+/* 縮圖觸發按鈕：清掉 button 預設樣式，滑鼠移入放大但不超出容器 */
+.lightbox-trigger {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: none;
+    cursor: zoom-in;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+}
+
+.lightbox-trigger img {
+    width: 100%;
+    transition: transform var(--dur-slow) var(--ease);
+}
+
+.lightbox-trigger:hover img,
+.lightbox-trigger:focus-visible img {
+    transform: scale(1.04);
+}
+
+/* 開啟 lightbox 時鎖住背景捲動 */
+body.has-modal {
+    overflow: hidden;
+}
+
+/* 全螢幕遮罩 */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-6);
+    background: var(--scrim-strong);
+}
+
+/* `.lightbox` 的 display: flex 特異性高於瀏覽器內建的 [hidden] { display: none }，
+   若不補這條，site.js 設定 lightbox.hidden = true 會完全沒有效果，
+   遮罩會在頁面載入後就蓋滿整個畫面。 */
+.lightbox[hidden] {
+    display: none;
+}
+
+.lightbox__figure {
+    position: relative;
+    max-width: min(100%, 960px);
+    max-height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.lightbox__img {
+    max-width: 100%;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+}
+
+.lightbox__caption {
+    color: var(--text-invert);
+    font-size: var(--text-sm);
+    text-align: center;
+    max-width: 60ch;
+}
+
+.lightbox__close {
+    position: absolute;
+    top: calc(var(--space-3) * -1 - 44px);
+    right: 0;
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--text-invert);
+    border-radius: var(--radius-full);
+    background: transparent;
+    color: var(--text-invert);
+    font-size: var(--text-lg);
+    line-height: 1;
+    cursor: pointer;
+}
+
+.lightbox__close:hover {
+    /* 深色遮罩上的 hover 回饋：改用不透明底色，不寫死半透明色碼 */
+    background: var(--surface);
+    color: var(--text);
+}
+
+/* 手機寬度較小，關閉鈕改放到圖片右上角內側，避免超出視窗 */
+@media (max-width: 767px) {
+    .lightbox__close {
+        top: 0;
+        right: 0;
+        background: var(--scrim-strong);
+    }
+}

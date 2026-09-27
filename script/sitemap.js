@@ -1,165 +1,171 @@
-/*
-111652049 吳弘叡 第三次作業 11/1
-111652049 Hong-Ruei Wu The Third Homework 11/1
-*/
-// Open a new tab
-function openNewTab(url) {
-    window.open(url, '_blank');
-}
+/* ==========================================================================
+   sitemap.js — 網站導覽頁專屬互動
+   只留拔蘿蔔：用 Pointer Events 支援滑鼠與觸控拖曳。
+   ========================================================================== */
 
-// AD functions
-function showAd() {
-    document.getElementById('ad').style.display = 'block';
+(function () {
+    "use strict";
 
-    if (document.getElementById('ad').style.display === 'block') {
-        timerElement.classList.add('hidden');
+    var carrots = document.querySelectorAll(".carrot");
+    if (!carrots.length) return;
+
+    var reduceMotion = !!(
+        window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    );
+
+    function setTransform(el, x, y) {
+        el.style.transform = "translate(" + x + "px, " + y + "px)";
     }
-}
 
-function closeAd() {
-    timerElement.classList.remove('hidden');
+    function currentTransform(el) {
+        var style = window.getComputedStyle(el);
+        var transform = style.transform;
+        if (!transform || transform === "none") {
+            return { x: 0, y: 0 };
+        }
+        // matrix(a, b, c, d, tx, ty)
+        var match = transform.match(/matrix\(([^)]+)\)/);
+        if (!match) return { x: 0, y: 0 };
+        var parts = match[1].split(",").map(function (n) {
+            return parseFloat(n);
+        });
+        return { x: parts[4] || 0, y: parts[5] || 0 };
+    }
 
-    document.getElementById('ad').style.display = 'none';
-    setTimeout(showAd, 3000);
-}
+    function clamp(value, min, max) {
+        return Math.min(Math.max(value, min), max);
+    }
 
-// AD timer
-let timerElement = document.getElementById('timer');
-setTimeout(function() {
-    let timerStr = document.getElementById('timer');
-    let theNum = parseFloat(timerStr.innerText);
-    let timer = setInterval(function() {
-        theNum += 0.1;
-        let intPart = parseInt(theNum);
-        intPart = intPart.toString().padStart(4, '0');
+    function fallToBottom(el) {
+        var rect = el.getBoundingClientRect();
+        var targetX = clamp(rect.left, 0, Math.max(0, window.innerWidth - rect.width));
+        var targetY = Math.max(0, window.innerHeight - rect.height);
 
-        let decimalPart = (theNum % 1).toFixed(1).substring(1);
+        if (reduceMotion) {
+            el.style.transition = "none";
+            setTransform(el, targetX, targetY);
+            return;
+        }
 
-        timerStr.innerText = intPart + decimalPart + 's';
-    }, 100);
-}, 100);
+        el.style.transition = "transform 0.6s var(--ease, ease)";
+        // 用 rAF 確保 transition 生效在新的 transform 值上
+        requestAnimationFrame(function () {
+            setTransform(el, targetX, targetY);
+        });
+    }
 
+    function overlaps(rectA, rectB) {
+        return !(
+            rectA.right < rectB.left ||
+            rectA.left > rectB.right ||
+            rectA.bottom < rectB.top ||
+            rectA.top > rectB.bottom
+        );
+    }
 
-// AD
-setTimeout(showAd, 3000);
-document.getElementById('close').onclick = closeAd;
+    function onPointerMove(event) {
+        var drag = event.currentTarget;
+        var state = drag.__dragState;
+        if (!state || !state.dragging) return;
+        var x = event.clientX - state.offsetX;
+        var y = event.clientY - state.offsetY;
+        setTransform(drag, x, y);
+    }
 
+    function onPointerUp(event) {
+        var drag = event.currentTarget;
+        var state = drag.__dragState;
+        if (!state) return;
+        state.dragging = false;
 
+        drag.removeEventListener("pointermove", onPointerMove);
+        drag.removeEventListener("pointerup", onPointerUp);
+        drag.removeEventListener("pointercancel", onPointerUp);
+        drag.classList.remove("is-dragging");
 
-// topic hover
-const topics = document.querySelectorAll('.topic');
+        try {
+            drag.releasePointerCapture(event.pointerId);
+        } catch (err) {
+            /* 部分瀏覽器在指標已經放開時呼叫會丟例外，安靜忽略 */
+        }
 
-topics.forEach(topic => {
-    topic.addEventListener('mouseenter', function() {
-        topic.style.transform = 'rotate(-5deg)';
-        topic.style.transition = 'transform 0.5s ease';
-        setTimeout(() => {
-            topic.style.transform = 'rotate(5deg)';
-        }, 500);
-        setTimeout(() => {
-            topic.style.transform = 'rotate(0deg)';
-        }, 1000);
-    })
+        var dragRect = drag.getBoundingClientRect();
+        var holes = document.querySelectorAll(".carrot.is-empty");
+        var landed = null;
 
-    topic.addEventListener('mouseleave', function() {
-        topic.style.transform = 'rotate(0deg)';
-    })
-})
+        holes.forEach(function (hole) {
+            if (landed) return;
+            if (overlaps(dragRect, hole.getBoundingClientRect())) {
+                landed = hole;
+            }
+        });
 
-// 拔蘿蔔
-const carrots = document.querySelectorAll('.carrot');
-carrots.forEach(carrot => {
-    carrot.addEventListener('click', function() {
+        if (landed) {
+            landed.textContent = "🥕";
+            landed.classList.remove("is-empty");
+            landed.setAttribute("aria-label", "拔一根蘿蔔");
+            drag.remove();
+        } else {
+            fallToBottom(drag);
+        }
+    }
 
-        // Create a new carrot
-        const draggableCarrot = document.createElement('span');
-        draggableCarrot.innerText = '🥕';
-        draggableCarrot.classList.add('draggable');
-        document.body.appendChild(draggableCarrot);
+    function onPointerDown(event) {
+        var drag = event.currentTarget;
+        drag.setPointerCapture(event.pointerId);
+        drag.style.transition = "none";
+        drag.classList.add("is-dragging");
 
-        const rect = this.getBoundingClientRect();
-        draggableCarrot.style.position = 'absolute';
-        draggableCarrot.style.top = `${rect.top + window.scrollY}px`;
-        draggableCarrot.style.left = `${rect.left + window.scrollX}px`;
+        var pos = currentTransform(drag);
+        drag.__dragState = {
+            dragging: true,
+            offsetX: event.clientX - pos.x,
+            offsetY: event.clientY - pos.y
+        };
 
-        // Carrot drop down
-        setTimeout(() => {
-            draggableCarrot.style.transition = `top 1.5s ease, left 1.5s ease`;
-            const viewportBottom = window.innerHeight - draggableCarrot.offsetHeight; // 視窗底部位置
-            draggableCarrot.style.top = `${viewportBottom}px`; // 設定掉落到視窗底部
-            let randomOffset = Math.random() * 100 - 10;
-            draggableCarrot.style.left = `${rect.left + randomOffset}px`;
-        }, 100);
+        drag.addEventListener("pointermove", onPointerMove);
+        drag.addEventListener("pointerup", onPointerUp);
+        drag.addEventListener("pointercancel", onPointerUp);
+    }
 
-        // Remove original carrot
-        this.textContent = '🕳️';
-        this.classList.add('dragzone');
+    function spawnCarrot(originBtn) {
+        originBtn.textContent = "🕳️";
+        originBtn.classList.add("is-empty");
+        originBtn.setAttribute("aria-label", "蘿蔔已經拔起，可以拖曳蘿蔔回來種下");
 
-        // ===================================================================================================
-        // Drag
-        let isDragging = false;
+        var rect = originBtn.getBoundingClientRect();
 
-        // When mouse down => start dragging
-        allCarrots = document.querySelectorAll('.draggable');
-        allZones = document.querySelectorAll('.dragzone');
-        allCarrots.forEach(d_carrot => {
-            d_carrot.addEventListener('mousedown', function (e) {
-                isDragging = true;
-                d_carrot.style.transition = 'none'; // 取消掉落動畫
+        var drag = document.createElement("button");
+        drag.type = "button";
+        drag.className = "carrot-drag";
+        drag.textContent = "🥕";
+        drag.setAttribute("aria-hidden", "true");
+        drag.tabIndex = -1;
+        document.body.appendChild(drag);
 
-                const offsetX = e.clientX - d_carrot.getBoundingClientRect().left;
-                const offsetY = e.clientY - d_carrot.getBoundingClientRect().top;
+        setTransform(drag, rect.left, rect.top);
+        drag.addEventListener("pointerdown", onPointerDown);
 
-                // Move the carrot with mouse
-                const mouseMoveHandler = (e2) => {
-                    if (isDragging) {
-                        d_carrot.style.left = `${e2.clientX - offsetX}px`;
-                        d_carrot.style.top = `${e2.clientY - offsetY}px`;
-                    }
-                    // Scroll offset
-                    if (window.scrollY > 0) {
-                        d_carrot.style.top = `${parseInt(d_carrot.style.top) + scrollY}px`;
-                    }
-                };
+        // 強制 reflow，確保接下來的 transition 會從目前位置開始播放
+        void drag.offsetWidth;
+        fallToBottom(drag);
+    }
 
-                // Release the carrot
-                const mouseUpHandler = () => {
-                    isDragging = false;
-                    d_carrot.style.transition = `top 1.5s ease, left 1.5s ease`;
-                    const viewportBottom = window.innerHeight - d_carrot.offsetHeight;
-                    d_carrot.style.top = `${viewportBottom}px`; // 掉落到視窗底部
-
-                    // ===================================================================================================
-                    // Check if the carrot is back in the hole
-                    // 種蘿蔔
-                    const carrotRect = d_carrot.getBoundingClientRect();
-
-                    allZones.forEach(zone => {
-                        const dropRect = zone.getBoundingClientRect();
-                        if (
-                            carrotRect.left+30 >= dropRect.left &&
-                            carrotRect.right-30 <= dropRect.right &&
-                            carrotRect.top+30 >= dropRect.top &&
-                            carrotRect.bottom-30 <= dropRect.bottom
-                        ) {
-                            // Put the carrot back in the hole
-                            zone.textContent = '🥕';
-                            zone.classList.remove('dragzone');
-                            d_carrot.remove();
-                        }
-                    });
-
-                    document.removeEventListener('mousemove', mouseMoveHandler);
-                    document.removeEventListener('mouseup', mouseUpHandler);
-                };
-
-                document.addEventListener('mousemove', mouseMoveHandler);
-                document.addEventListener('mouseup', mouseUpHandler);
-            });
+    carrots.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            if (btn.classList.contains("is-empty")) return;
+            spawnCarrot(btn);
         });
     });
-});
 
-
-
-
+    // 視窗改變大小時，把還在拖曳／掉落中的蘿蔔拉回可視範圍內
+    window.addEventListener("resize", function () {
+        document.querySelectorAll(".carrot-drag").forEach(function (el) {
+            var rect = el.getBoundingClientRect();
+            var x = clamp(rect.left, 0, Math.max(0, window.innerWidth - rect.width));
+            var y = clamp(rect.top, 0, Math.max(0, window.innerHeight - rect.height));
+            el.style.transition = "none";
+            setTransform(el, x, y);
+        });
+    });
+})();
