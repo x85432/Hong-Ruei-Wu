@@ -4,16 +4,16 @@
     "en": "Hong-Ruei Wu — Personal Website"
   },
   "meta.description": {
-    "zh": "陽明交大資訊工程系學生、應數系排球隊隊長吳弘叡的個人網站。",
-    "en": "Personal website of Hong-Ruei Wu, a Computer Science student at NYCU and captain of the Applied Mathematics volleyball team."
+    "zh": "陽明交大資訊科學與工程研究所碩一學生、應數系排球隊隊長吳弘叡的個人網站。",
+    "en": "Personal website of Hong-Ruei Wu, a first-year master's student at NYCU's Institute of Computer Science and Engineering and captain of the Applied Mathematics volleyball team."
   },
   "welcome-to-hong-ruei": {
     "zh": "Welcome to 弘叡's Home",
     "en": "Welcome to Hong-Ruei's Home"
   },
-  "nycu-computer-science-applied": {
-    "zh": "陽明交大資訊工程系・應數系排球隊隊長",
-    "en": "NYCU Computer Science · Captain of the Applied Mathematics volleyball team"
+  "hero.lead": {
+    "zh": "陽明交大資訊科學與工程研究所碩一・應數系排球隊隊長",
+    "en": "First-year master's student, NYCU Institute of Computer Science and Engineering · Captain of the Applied Mathematics volleyball team"
   },
   "get-to-know-me": {
     "zh": "認識我",
@@ -39,9 +39,13 @@
     "zh": "<mark class=\"kw\">轉系</mark>前: <mark class=\"kw\">陽明交大</mark>應數系，基礎扎實，課程多元，但東西有點太難了。",
     "en": "Before <mark class=\"kw\">transferring</mark>: Applied Mathematics at <mark class=\"kw\">NYCU</mark> — a solid foundation and a diverse curriculum, though the material was a bit too hard."
   },
-  "now-computer-science-at": {
-    "zh": "目前: 陽明交大資工系，師資優良，資金充足，是做研究的好地方，然後我比較有興趣一點。",
-    "en": "Now: Computer Science at NYCU — excellent faculty and ample funding make it a great place for research, and it's what I'm more interested in."
+  "undergrad-cs": {
+    "zh": "大學: 陽明交大資工系，師資優良，資金充足，是做研究的好地方，然後我比較有興趣一點。",
+    "en": "Undergraduate: Computer Science at NYCU — excellent faculty and ample funding make it a great place for research, and it's what I'm more interested in."
+  },
+  "now-grad": {
+    "zh": "目前: 國立陽明交通大學<mark class=\"kw\">資訊科學與工程研究所</mark>碩一。",
+    "en": "Now: first-year master's student at NYCU's <mark class=\"kw\">Institute of Computer Science and Engineering</mark>."
   },
   "my-high-school": {
     "zh": "我的高中",
@@ -54,6 +58,14 @@
   "education": {
     "zh": "求學歷程",
     "en": "Education"
+  },
+  "nycu-grad-cs": {
+    "zh": "國立陽明交通大學資訊科學與工程研究所",
+    "en": "NYCU Institute of Computer Science and Engineering"
+  },
+  "nycu-grad-cs.status": {
+    "zh": "碩士班一年級（就讀中）",
+    "en": "First-year master's student (current)"
   },
   "nycu-department-of-computer": {
     "zh": "陽明交大資訊工程系",

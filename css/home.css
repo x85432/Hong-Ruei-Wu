@@ -147,6 +147,13 @@
     padding-block: 0 var(--space-16);
 }
 
+/* 四張卡片：寬螢幕排成 2×2，避免 3+1 留下一張孤零零的卡片 */
+@media (min-width: 640px) {
+    .education-section .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 .card__links {
     list-style: none;
     margin: var(--space-2) 0 0;
