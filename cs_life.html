@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="page.cs_life.title">資工系生活 — 吳弘叡</title>
+    <meta name="description" data-i18n-content="page.cs_life.desc" content="吳弘叡在陽明交大資訊工程系的實習、黑客松與寫程式生活紀錄。">
+    <meta property="og:title" data-i18n-content="page.cs_life.title" content="資工系生活 — 吳弘叡">
+    <meta property="og:description" data-i18n-content="page.cs_life.desc" content="吳弘叡在陽明交大資訊工程系的實習、黑客松與寫程式生活紀錄。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="resource/mylogo.png">
+    <link rel="icon" href="resource/mylogo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="i18n/common.js"></script>
+    <script src="i18n/cs_life.js"></script>
+    <script src="script/i18n.js"></script>
+</head>
+<body>
+    <a class="skip-link" href="#main" data-i18n="common.skip">跳到主要內容</a>
+
+    <header class="site-header">
+        <div class="site-header__inner container">
+            <a class="brand" href="index.html">
+                <img class="brand__mark" src="resource/mylogo.png" alt="" width="32" height="32">
+                <span class="brand__name" data-i18n="common.brand.name">吳弘叡</span>
+            </a>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="sr-only" data-i18n="common.nav.toggle">開關選單</span>
+            </button>
+
+            <nav class="site-nav" id="site-nav" data-i18n-aria-label="common.nav.aria" aria-label="主要導覽">
+                <ul class="site-nav__list">
+                    <li><a class="nav-link" href="index.html" data-i18n="common.nav.home">首頁</a></li>
+                    <li><a class="nav-link" href="sitemap.html" data-i18n="common.nav.sitemap">網站導覽</a></li>
+                    <li><a class="nav-link" href="introMe.html" data-i18n="common.nav.introMe">自我介紹</a></li>
+                    <li><a class="nav-link" href="contact.html" data-i18n="common.nav.contact">聯絡我</a></li>
+                </ul>
+                <a class="lang-switch" data-lang-switch>EN</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-header__title" data-i18n="cs_life.header.title">資工系生活</h1>
+                <p class="page-header__lead" data-i18n="cs_life.header.lead">實習、黑客松，還有被 deadline 輾過去的日子。</p>
+            </div>
+
+            <section class="photo-wall" data-lightbox>
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="resource/internship.webp" data-i18n-alt="cs_life.photo.internship.alt" alt="中研院實習期間的工作照" width="701" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption data-i18n="cs_life.photo.internship.caption">中研院實習</figcaption>
+                </figure>
+
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="resource/ddl.webp" data-i18n-alt="cs_life.photo.ddl.alt" alt="趕作業到深夜的桌面" width="554" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption data-i18n="cs_life.photo.ddl.caption">被deadline輾過去</figcaption>
+                </figure>
+
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="resource/hackathon.webp" data-i18n-alt="cs_life.photo.hackathon.alt" alt="台北通黑客松在台大的參賽現場" width="675" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption data-i18n="cs_life.photo.hackathon.caption">台北通黑克松 in 台大</figcaption>
+                </figure>
+
+                <figure class="photo-card reveal">
+                    <button class="lightbox-trigger" type="button">
+                        <img src="resource/github-commit.webp" data-i18n-alt="cs_life.photo.github.alt" alt="第一次把作品推上 GitHub 的畫面" width="675" height="1200" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption data-i18n-html="cs_life.photo.github.caption">第一次把作品丟到<a href="https://github.com/kuwaai/genai-os#user-content-----------kuwa-genai-os--">GitHub</a>上</figcaption>
+                </figure>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <p class="site-footer__copy">&copy; 2024–2026 <span data-i18n="common.brand.name">吳弘叡</span></p>
+            <ul class="site-footer__links">
+                <li><a href="sitemap.html" data-i18n="common.nav.sitemap">網站導覽</a></li>
+                <li><a href="introMe.html" data-i18n="common.nav.introMe">自我介紹</a></li>
+                <li><a href="contact.html" data-i18n="common.nav.contact">聯絡我</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script/site.js"></script>
+</body>
+</html>
